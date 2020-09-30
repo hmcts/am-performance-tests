@@ -4,8 +4,30 @@ import io.gatling.core.Predef._
 import io.gatling.http.Predef._
 import uk.gov.hmcts.reform.role_assignment.performance.scenarios.utils.Environment
 
-object GetScenario {
-  val getScenario = scenario("GetScenario")
+object Scenario1 {
+  val Scenario1 = scenario("Scenario1")
+    .feed(Environment.feederFile)
+    .exec(http(requestName="AM_010_PostRoleAssignments")
+      .post("/am/role-assignments")
+      .headers(Environment.headers_1)
+      .headers(Environment.headers_4)
+      .body(ElFileBody("body.json"))
+      .check(status.is(201))
+      .check(bodyString.saveAs("BODY1"))
+      .check(jsonPath("$..actorId").saveAs("actorId"))
+      .check(jsonPath("$..caseId").saveAs("caseId"))
+      .check(jsonPath("$..id").saveAs("assignmentId"))
+      .check(jsonPath("$..process").saveAs("process"))
+      .check(jsonPath("$..reference").saveAs("reference")))
+    .exec{
+      session =>
+        println("This is the response body of AM_010_PostRoleAssignments:" + session("BODY1").as[String])
+        println("This is the IDAM token:" + session("accessToken").as[String])
+        println("This is the S2S token:" + session("s2sToken").as[String])
+        session
+    }
+    .pause(2)
+
     .exec(http(requestName="AM_020_GetRoleAssignments")
       .get("/am/role-assignments/roles")
       .headers(Environment.headers_1)
@@ -54,6 +76,19 @@ object GetScenario {
     .exec{
       session =>
         println("This is the response body of AM_050_GetRoleAssignmentsTypeCase:" + session("BODY5").as[String])
+        session
+    }
+    .pause(2)
+
+    .exec(http(requestName="AM_060_DeleteRoleAssignments")
+      .delete("/am/role-assignments/${assignmentId}")
+      .headers(Environment.headers_1)
+      .headers(Environment.headers_5)
+      .check(status.is(204))
+      .check(bodyString.saveAs("BODY6")))
+    .exec{
+      session =>
+        println("This is the response body of AM_060_DeleteRoleAssignments:" + session("BODY6").as[String])
         session
     }
     .pause(2)

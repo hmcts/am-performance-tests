@@ -14,10 +14,9 @@ class RoleAssignmentSimulation extends Simulation{
     {
          exec(IDAMHelper.getIdamToken)
         .exec(S2SHelper.S2SAuthToken)
-        .exec(PostScenario.postScenario)
-        .exec(GetScenario.getScenario)
-        .exec(DeleteScenario.deleteScenario)
+        .exec(PostScenario.Scenario1)
+        .exec(GetScenario.Scenario2)
     }
 
-  setUp(roleAssignmentScenario.inject(atOnceUsers(users = 1))).protocols(httpProtocol)
+  setUp(roleAssignmentScenario.inject(rampUsers(10) during(300))).protocols(httpProtocol)
 }

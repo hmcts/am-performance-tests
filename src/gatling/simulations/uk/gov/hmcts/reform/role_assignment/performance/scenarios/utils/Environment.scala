@@ -4,8 +4,8 @@ import io.gatling.http.Predef._
 
 object Environment {
 
-  //val baseURL = "http://am-role-assignment-service-aat.service.core-compute-aat.internal"
-  val baseURL = "https://idam-api.perftest.platform.hmcts.net"
+  val baseURL = "http://am-role-assignment-service-aat.service.core-compute-aat.internal"
+  //val baseURL = "https://idam-api.perftest.platform.hmcts.net"
 
   val headers_1 = Map(
    "Authorization" -> "Bearer ${accessToken}",
