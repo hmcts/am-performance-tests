@@ -18,6 +18,16 @@ def product = "am"
 def component = "MANAGE ORGANISATION"
 def channel   = '#xui-pipeline'
 
+def secrets = [
+    's2s-aat': [
+        secret('microservicekey-am-role-assignment-service', 'S2S_SECRET')
+    ],
+    'rd-aat': [
+        secret('role-assignment-service-IDAM-CLIENT-SECRET', 'ROLE_ASSIGNMENT_IDAM_CLIENT_SECRET')
+    ]
+]
+
+
 withNightlyPipeline("java", product, component) {
     // Add any environment variables for executing your performance tests for example see below
     // env.TEST_URL = 'https://ccd-api-gateway-web-aat.service.core-compute-aat.internal'
