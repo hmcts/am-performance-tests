@@ -28,8 +28,6 @@ object Environment {
   "assignmentId" -> "${assignmentId}"
   )
 
-  val feederFile = csv("Feeder_file.csv").random
-
   val thinkTime = 10
 
 }
