@@ -5,8 +5,11 @@ import io.gatling.http.Predef._
 import uk.gov.hmcts.reform.role_assignment.performance.scenarios.utils.Environment
 
 object Scenario2 {
+  
+  val feederFile = csv("Feeder_file.csv").random
+  
   val Scenario2 = scenario("Scenario2")
-    .feed(Environment.feederFile)
+    .feed(feederFile)
     .exec(http(requestName="AM_010_PostRoleAssignments")
       .post("/am/role-assignments")
       .headers(Environment.headers_1)
