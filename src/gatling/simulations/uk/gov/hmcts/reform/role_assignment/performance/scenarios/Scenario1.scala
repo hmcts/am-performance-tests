@@ -28,7 +28,7 @@ object Scenario1 {
     }
     .pause(2)
 
-    .exec(http(requestName="AM_020_GetRoleAssignments")
+    .exec(http(requestName="AM_020_GetRoles")
       .get("/am/role-assignments/roles")
       .headers(Environment.headers_1)
       .check(status.is(200))
