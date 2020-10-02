@@ -20,7 +20,7 @@ public class Env {
         //defaults.setProperty("IDAM_PASSWORD", "Pass19word");
         defaults.setProperty("S2S_BASE_URI", "http://rpe-service-auth-provider-aat.service.core-compute-aat.internal/testing-support");
         //defaults.setProperty("S2S_BASE_URI", "http://rpe-service-auth-provider-perftest.service.core-compute-perftest.internal/testing-support");
-        defaults.setProperty("FUNCTIONAL_TEST_CLIENT_S2S_TOKEN", ConfigFactory.load().getString("aat_service.pass));
+        defaults.setProperty("FUNCTIONAL_TEST_CLIENT_S2S_TOKEN", ConfigFactory.load().getString("aat_service.pass"));
         defaults.setProperty("S2S_SERVICE_NAME", "am_role_assignment_service");
     }
 
