@@ -7,5 +7,4 @@ target/**
 .gradle/
 *.log
 build/*
-src/gatling/resources/application.conf
 .metadata/*
