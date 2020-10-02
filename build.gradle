@@ -17,6 +17,9 @@ tasks.withType(JavaExec) {
     jvmArgs = ['-Xms512m', '-Xmx1024m', '-XX:+UseConcMarkSweepGC']
 }
 
+sourceCompatibility = "11"
+targetCompatibility = "11"
+
 jar {
     manifest {
         attributes 'Implementation-Title': 'EXUI Performance Tests',
