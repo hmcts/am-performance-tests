@@ -20,11 +20,22 @@ tasks.withType(JavaExec) {
 sourceCompatibility = "11"
 targetCompatibility = "11"
 
+//jar {
+//    manifest {
+//        attributes 'Implementation-Title': 'EXUI Performance Tests',
+//                'Implementation-Version': version
+//    }
+//}
+
 jar {
     manifest {
-        attributes 'Implementation-Title': 'EXUI Performance Tests',
-                'Implementation-Version': version
+        attributes 'Main-Class': 'io.gatling.app.Gatling'
     }
+    from {
+        configurations.testCompile.collect { it.isDirectory() ? it : zipTree(it) }
+    }
+    from sourceSets.test.output
+    exclude 'META-INF/*.RSA', 'META-INF/*.SF', 'META-INF/*.DSA'
 }
 
 /*dependencyCheck {
