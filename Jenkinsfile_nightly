@@ -14,7 +14,7 @@ properties([
 @Library("Infrastructure") 
 
 
-def product = "xui"
+def product = "AM"
 def component = "MANAGE ORGANISATION"
 def channel   = '#xui-pipeline'
 
