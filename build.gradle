@@ -20,6 +20,10 @@ tasks.withType(JavaExec) {
 sourceCompatibility = "11"
 targetCompatibility = "11"
 
+dependencyCheck {	
+    suppressionFile = 'config/owasp/suppressions.xml'
+}
+
 repositories {
     jcenter()
 }
