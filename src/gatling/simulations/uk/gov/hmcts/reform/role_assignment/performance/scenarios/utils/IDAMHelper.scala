@@ -14,7 +14,7 @@ object IDAMHelper {
          .header("Content-Type", "application/x-www-form-urlencoded")
          .header("Content-Length", "0")
          //.check(status.is(200))
-         .check(jsonPath("$.access_token").saveAs("accessToken")))
+         //.check(jsonPath("$.access_token").saveAs("accessToken")))
     .pause(2)
 
 
