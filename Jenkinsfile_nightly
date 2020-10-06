@@ -41,7 +41,6 @@ withNightlyPipeline("java", product, component) {
     // env.TEST_URL = 'https://ccd-api-gateway-web-aat.service.core-compute-aat.internal'
     
     enablePerformanceTest()
-    overrideVaultEnvironments(vaultOverrides)
     loadVaultSecrets(secrets)
 
     after('performanceTest') {
