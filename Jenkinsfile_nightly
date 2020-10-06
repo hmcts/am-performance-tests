@@ -19,10 +19,10 @@ def product = "am"
 def component = "role-assignment-service"
 
 def secrets = [
-      's2s-${ENVIRONMENT}': [
+      's2s-aat': [
         secret('microservicekey-am-role-assignment-service', 'S2S_SECRET')
     ],
-      'am-${ENVIRONMENT}': [
+      'am-aat': [
         secret('role-assignment-service-IDAM-CLIENT-SECRET', 'ROLE_ASSIGNMENT_IDAM_CLIENT_SECRET')
     ]
 ]
