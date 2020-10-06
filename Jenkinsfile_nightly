@@ -14,15 +14,15 @@ properties([
 @Library("Infrastructure") 
 
 
+def type = "java"
 def product = "am"
-def component = "MANAGE ORGANISATION"
-def channel   = '#xui-pipeline'
+def component = "role-assignment-service"
 
 def secrets = [
     's2s-aat': [
         secret('microservicekey-am-role-assignment-service', 'S2S_SECRET')
     ],
-    'abcde-aat': [
+    'am-aat': [
         secret('role-assignment-service-IDAM-CLIENT-SECRET', 'ROLE_ASSIGNMENT_IDAM_CLIENT_SECRET')
     ]
 ]
