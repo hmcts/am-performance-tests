@@ -40,8 +40,8 @@ withNightlyPipeline("java", product, component) {
     // Add any environment variables for executing your performance tests for example see below
     // env.TEST_URL = 'https://ccd-api-gateway-web-aat.service.core-compute-aat.internal'
     
-    enablePerformanceTest()
     loadVaultSecrets(secrets)
+    enablePerformanceTest()
 
     after('performanceTest') {
         steps.archiveArtifacts allowEmptyArchive: true, artifacts: 'functional-output/**/*'
