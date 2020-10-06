@@ -22,7 +22,7 @@ def secrets = [
     's2s-aat': [
         secret('microservicekey-am-role-assignment-service', 'S2S_SECRET')
     ],
-    'am-aat': [
+    'abcde-aat': [
         secret('role-assignment-service-IDAM-CLIENT-SECRET', 'ROLE_ASSIGNMENT_IDAM_CLIENT_SECRET')
     ]
 ]
