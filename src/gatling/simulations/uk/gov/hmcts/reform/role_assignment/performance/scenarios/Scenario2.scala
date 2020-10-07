@@ -16,6 +16,7 @@ object Scenario2 {
       .headers(Environment.headers_4)
       .body(ElFileBody("body.json"))
       .check(status.is(201))
+      .check(jsonPath("$..caseId").saveAs("caseId"))
       .check(jsonPath("$..process").saveAs("process"))
       .check(jsonPath("$..reference").saveAs("reference")))
     .pause(2)
