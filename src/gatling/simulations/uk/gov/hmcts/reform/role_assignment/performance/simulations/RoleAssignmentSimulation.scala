@@ -18,6 +18,5 @@ class RoleAssignmentSimulation extends Simulation{
         .exec(Scenario2.Scenario2)
     }
 
-  //setUp(roleAssignmentScenario.inject(atOnceUsers(1))).protocols(httpProtocol)
   setUp(roleAssignmentScenario.inject(rampUsers(10) during(300))).protocols(httpProtocol)
 }
