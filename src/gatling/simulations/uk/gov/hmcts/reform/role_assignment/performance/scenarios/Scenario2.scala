@@ -24,6 +24,7 @@ object Scenario2 {
     .exec(http(requestName="AM_020_PostRoleAssignmentsQuery")
       .post("/am/role-assignments/query")
       .headers(Environment.headers_1)
+      .headers(Environment.headers_4)
       .body(ElFileBody("body2.json"))
       .check(status.is(200)))
     .pause(2)
