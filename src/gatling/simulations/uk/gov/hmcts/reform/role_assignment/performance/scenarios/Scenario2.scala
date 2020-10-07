@@ -21,7 +21,7 @@ object Scenario2 {
       .check(jsonPath("$..reference").saveAs("reference")))
     .pause(2)
   
-    .exec(http(requestName="AM_020_PostRoleAssignmentsQuery")
+    .exec(http(requestName="AM_050_PostRoleAssignmentsQuery")
       .post("/am/role-assignments/query")
       .headers(Environment.headers_1)
       .headers(Environment.headers_4)
