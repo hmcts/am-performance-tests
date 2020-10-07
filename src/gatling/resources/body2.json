@@ -1,5 +1,5 @@
 {
         "attributes": {
-            "caseId": ["1234567890123456"]
+            "caseId": ["${caseId}"]
         }
 }
