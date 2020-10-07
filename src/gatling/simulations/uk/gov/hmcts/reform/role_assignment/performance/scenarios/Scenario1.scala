@@ -20,20 +20,20 @@ object Scenario1 {
       .check(jsonPath("$..id").saveAs("assignmentId")))
     .pause(2)
 
-    .exec(http(requestName="AM_030_GetRoles")
+    .exec(http(requestName="AM_020_GetRoles")
       .get("/am/role-assignments/roles")
       .headers(Environment.headers_1)
       .check(status.is(200)))
     .pause(2)
 
-    .exec(http(requestName="AM_040_GetRoleAssignmentsActor")
+    .exec(http(requestName="AM_030_GetRoleAssignmentsActor")
       .get("/am/role-assignments/actors/${actorId}")
       .headers(Environment.headers_1)
       .headers(Environment.headers_2)
       .check(status.is(200)))
     .pause(2)
 
-    .exec(http(requestName="AM_050_DeleteRoleAssignments")
+    .exec(http(requestName="AM_040_DeleteRoleAssignments")
       .delete("/am/role-assignments/${assignmentId}")
       .headers(Environment.headers_1)
       .headers(Environment.headers_5)
