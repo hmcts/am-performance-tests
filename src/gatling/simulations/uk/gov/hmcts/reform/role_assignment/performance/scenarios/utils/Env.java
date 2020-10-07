@@ -12,7 +12,6 @@ public class Env {
         defaults.setProperty("OAUTH_CLIENT", "am_role_assignment");
         //defaults.setProperty("OAUTH_CLIENT", "paybubble");
         defaults.setProperty("IDAM_OAUTH_SECRET", ConfigFactory.load().getString("auth.clientSecret"));
-        //defaults.setProperty("IDAM_OAUTH_SECRET", ConfigFactory.load().getString("IDAM_SECRET_PERFTEST"));
         defaults.setProperty("IDAM_SCOPE", "openid%20profile%20roles%20authorities");
         defaults.setProperty("IDAM_USERNAME", "befta.caseworker.2.solicitor.2@gmail.com");
         //defaults.setProperty("IDAM_USERNAME", "amogh.role.assignments@mailinator.com");
