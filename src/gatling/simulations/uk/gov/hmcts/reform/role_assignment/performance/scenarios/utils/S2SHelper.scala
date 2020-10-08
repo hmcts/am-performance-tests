@@ -19,7 +19,7 @@ object  S2SHelper {
 
   val S2SAuthToken =
 
-    exec(http("PaymentAPI_020_GetServiceToken")
+    exec(http("AM_020_GetServiceToken")
       .post(Env.getS2sUrl+"/lease")
       .header("Content-Type", "application/json")
       .body(StringBody(
