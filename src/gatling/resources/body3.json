@@ -1,0 +1,332 @@
+{
+  "roleRequest":
+  {
+    "process": "process1",
+    "reference": "This reference can be a UUID or a unique string. You will need to generate it every time",
+    "assignerId": "123e4567-e89b-42d3-a456-556642445678",
+    "replaceExisting": false
+  },
+  "requestedRoles":
+  [
+    {
+      "actorIdType": "IDAM",
+      "actorId": "6b36bfc6-bb21-11ea-b3de-0242ac150000",
+      "roleType": "ORGANISATION",
+      "roleName": "judge",
+      "roleCategory": "JUDICIAL",
+      "classification": "PUBLIC",
+      "grantType": "STANDARD",
+      "readOnly": true,
+      "beginTime" : "2021-11-10T00:00",
+      "endTime" : "2022-07-03T00:00",
+
+      "attributes":
+      {
+        "jurisdiction": "divorce",
+        "region": "London",
+        "contractType": "SALARIED"
+      },
+      "notes":
+      [
+        {
+          "userId": "S-042",
+          "time": "2020-01-01T00:00",
+          "comment": "Need Access to case number 1234567890123456 for a year"
+        },
+        {
+          "userId": "HMCTS1",
+          "time": "2020-01-02T00:00",
+          "comment": "Access granted for 3 months"
+        }
+      ]
+    },
+    {
+      "actorIdType": "IDAM",
+      "actorId": "6b36bfc6-bb21-11ea-b3de-0242ac130001",
+      "roleType": "ORGANISATION",
+      "roleName": "judge",
+      "roleCategory": "JUDICIAL",
+      "classification": "PUBLIC",
+      "grantType": "STANDARD",
+      "readOnly": true,
+      "beginTime" : "2021-11-10T00:00",
+      "endTime" : "2022-07-01T00:00",
+
+      "attributes":
+      {
+        "jurisdiction": "divorce",
+        "region": "London",
+        "contractType": "SALARIED"
+      },
+      "notes":
+      [
+        {
+          "userId": "S-042",
+          "time": "2020-01-01T00:00",
+          "comment": "Need Access to case number 1234567890123456 for a year"
+        },
+        {
+          "userId": "HMCTS",
+          "time": "2020-01-02T00:00",
+          "comment": "Access granted for 3 months"
+        }
+      ]
+    },
+    {
+      "actorIdType": "IDAM",
+      "actorId": "6b36bfc6-bb21-11ea-b3de-0242ac130002",
+      "roleType": "ORGANISATION",
+      "roleName": "judge",
+      "roleCategory": "JUDICIAL",
+      "classification": "PUBLIC",
+      "grantType": "STANDARD",
+      "readOnly": true,
+      "beginTime" : "2021-11-10T00:00",
+      "endTime" : "2022-07-01T00:00",
+
+      "attributes":
+      {
+        "jurisdiction": "divorce",
+        "region": "London",
+        "contractType": "SALARIED"
+      },
+      "notes":
+      [
+        {
+          "userId": "S-042",
+          "time": "2020-01-01T00:00",
+          "comment": "Need Access to case number 1234567890123456 for a year"
+        },
+        {
+          "userId": "HMCTS",
+          "time": "2020-01-02T00:00",
+          "comment": "Access granted for 3 months"
+        }
+      ]
+    },
+    {
+      "actorIdType": "IDAM",
+      "actorId": "6b36bfc6-bb21-11ea-b3de-0242ac130003",
+      "roleType": "ORGANISATION",
+      "roleName": "judge",
+      "roleCategory": "JUDICIAL",
+      "classification": "PUBLIC",
+      "grantType": "STANDARD",
+      "readOnly": true,
+      "beginTime" : "2021-11-10T00:00",
+      "endTime" : "2022-07-01T00:00",
+
+      "attributes":
+      {
+        "jurisdiction": "divorce",
+        "region": "London",
+        "contractType": "SALARIED"
+      },
+      "notes":
+      [
+        {
+          "userId": "S-042",
+          "time": "2020-01-01T00:00",
+          "comment": "Need Access to case number 1234567890123456 for a year"
+        },
+        {
+          "userId": "HMCTS",
+          "time": "2020-01-02T00:00",
+          "comment": "Access granted for 3 months"
+        }
+      ]
+    },
+    {
+      "actorIdType": "IDAM",
+      "actorId": "6b36bfc6-bb21-11ea-b3de-0242ac130004",
+      "roleType": "ORGANISATION",
+      "roleName": "judge",
+      "roleCategory": "JUDICIAL",
+      "classification": "PUBLIC",
+      "grantType": "STANDARD",
+      "readOnly": true,
+      "beginTime" : "2021-11-10T00:00",
+      "endTime" : "2022-07-01T00:00",
+
+      "attributes":
+      {
+        "jurisdiction": "divorce",
+        "region": "London",
+        "contractType": "SALARIED"
+      },
+      "notes":
+      [
+        {
+          "userId": "S-042",
+          "time": "2020-01-01T00:00",
+          "comment": "Need Access to case number 1234567890123456 for a year"
+        },
+        {
+          "userId": "HMCTS",
+          "time": "2020-01-02T00:00",
+          "comment": "Access granted for 3 months"
+        }
+      ]
+    },
+    {
+      "actorIdType": "IDAM",
+      "actorId": "6b36bfc6-bb21-11ea-b3de-0242ac130005",
+      "roleType": "ORGANISATION",
+      "roleName": "judge",
+      "roleCategory": "JUDICIAL",
+      "classification": "PUBLIC",
+      "grantType": "STANDARD",
+      "readOnly": true,
+      "beginTime" : "2021-11-10T00:00",
+      "endTime" : "2022-07-01T00:00",
+
+      "attributes":
+      {
+        "jurisdiction": "divorce",
+        "region": "London",
+        "contractType": "SALARIED"
+      },
+      "notes":
+      [
+        {
+          "userId": "S-042",
+          "time": "2020-01-01T00:00",
+          "comment": "Need Access to case number 1234567890123456 for a year"
+        },
+        {
+          "userId": "HMCTS",
+          "time": "2020-01-02T00:00",
+          "comment": "Access granted for 3 months"
+        }
+      ]
+    },
+    {
+      "actorIdType": "IDAM",
+      "actorId": "6b36bfc6-bb21-11ea-b3de-0242ac130006",
+      "roleType": "ORGANISATION",
+      "roleName": "judge",
+      "roleCategory": "JUDICIAL",
+      "classification": "PUBLIC",
+      "grantType": "STANDARD",
+      "readOnly": true,
+      "beginTime" : "2021-11-10T00:00",
+      "endTime" : "2022-07-01T00:00",
+
+      "attributes":
+      {
+        "jurisdiction": "divorce",
+        "region": "London",
+        "contractType": "SALARIED"
+      },
+      "notes":
+      [
+        {
+          "userId": "S-042",
+          "time": "2020-01-01T00:00",
+          "comment": "Need Access to case number 1234567890123456 for a year"
+        },
+        {
+          "userId": "HMCTS",
+          "time": "2020-01-02T00:00",
+          "comment": "Access granted for 3 months"
+        }
+      ]
+    },
+    {
+      "actorIdType": "IDAM",
+      "actorId": "6b36bfc6-bb21-11ea-b3de-0242ac130007",
+      "roleType": "ORGANISATION",
+      "roleName": "judge",
+      "roleCategory": "JUDICIAL",
+      "classification": "PUBLIC",
+      "grantType": "STANDARD",
+      "readOnly": true,
+      "beginTime" : "2021-11-10T00:00",
+      "endTime" : "2022-07-01T00:00",
+
+      "attributes":
+      {
+        "jurisdiction": "divorce",
+        "region": "London",
+        "contractType": "SALARIED"
+      },
+      "notes":
+      [
+        {
+          "userId": "S-042",
+          "time": "2020-01-01T00:00",
+          "comment": "Need Access to case number 1234567890123456 for a year"
+        },
+        {
+          "userId": "HMCTS",
+          "time": "2020-01-02T00:00",
+          "comment": "Access granted for 3 months"
+        }
+      ]
+    },
+    {
+      "actorIdType": "IDAM",
+      "actorId": "6b36bfc6-bb21-11ea-b3de-0242ac130008",
+      "roleType": "ORGANISATION",
+      "roleName": "judge",
+      "roleCategory": "JUDICIAL",
+      "classification": "PUBLIC",
+      "grantType": "STANDARD",
+      "readOnly": true,
+      "beginTime" : "2021-11-10T00:00",
+      "endTime" : "2022-07-01T00:00",
+
+      "attributes":
+      {
+        "jurisdiction": "divorce",
+        "region": "London",
+        "contractType": "SALARIED"
+      },
+      "notes":
+      [
+        {
+          "userId": "S-042",
+          "time": "2020-01-01T00:00",
+          "comment": "Need Access to case number 1234567890123456 for a year"
+        },
+        {
+          "userId": "HMCTS",
+          "time": "2020-01-02T00:00",
+          "comment": "Access granted for 3 months"
+        }
+      ]
+    },
+    {
+      "actorIdType": "IDAM",
+      "actorId": "6b36bfc6-bb21-11ea-b3de-0242ac130009",
+      "roleType": "ORGANISATION",
+      "roleName": "judge",
+      "roleCategory": "JUDICIAL",
+      "classification": "PUBLIC",
+      "grantType": "STANDARD",
+      "readOnly": true,
+      "beginTime" : "2021-11-10T00:00",
+      "endTime" : "2022-07-01T00:00",
+
+      "attributes":
+      {
+        "jurisdiction": "divorce",
+        "region": "London",
+        "contractType": "SALARIED"
+      },
+      "notes":
+      [
+        {
+          "userId": "S-042",
+          "time": "2020-01-01T00:00",
+          "comment": "Need Access to case number 1234567890123456 for a year"
+        },
+        {
+          "userId": "HMCTS",
+          "time": "2020-01-02T00:00",
+          "comment": "Access granted for 3 months"
+        }
+      ]
+    }
+  ]
+}

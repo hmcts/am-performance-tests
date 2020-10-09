@@ -15,6 +15,8 @@ object Scenario1 {
       .headers(Environment.headers_1)
       .headers(Environment.headers_4)
       .body(ElFileBody("body.json"))
+      .body(ElFileBody("body3.json"))
+      .body(ElFileBody("body4.json"))
       .check(status.is(201))
       .check(jsonPath("$..actorId").saveAs("actorId"))
       .check(jsonPath("$..id").saveAs("assignmentId")))
