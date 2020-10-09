@@ -35,6 +35,606 @@
           "comment": "${comment_2}"
         }
       ]
+    },
+    {
+      "actorIdType": "${actor_id_type}",
+      "actorId": "${actor_id}",
+      "roleType": "${role_type}",
+      "roleName": "${role_name}",
+      "classification": "${classification}",
+      "grantType": "${grant_type}",
+      "roleCategory": "${role_category}",
+      "readOnly": ${read_only},
+      "beginTime": ${begin_time},
+      "endTime": ${end_time},
+      "attributes": {
+        "contractType": "${contract_type}",
+        "jurisdiction": "${jurisdiction}",
+        "caseId": "${case_id}",
+        "region": "${region}"
+      },
+      "notes": [
+        {
+          "userId": "${user_id_1}",
+          "time": "${time_1}",
+          "comment": "${comment_1}"
+        },
+        {
+          "userId": "${user_id_2}",
+          "time": "${time_2}",
+          "comment": "${comment_2}"
+        }
+      ]
+    },
+    {
+      "actorIdType": "${actor_id_type}",
+      "actorId": "${actor_id}",
+      "roleType": "${role_type}",
+      "roleName": "${role_name}",
+      "classification": "${classification}",
+      "grantType": "${grant_type}",
+      "roleCategory": "${role_category}",
+      "readOnly": ${read_only},
+      "beginTime": ${begin_time},
+      "endTime": ${end_time},
+      "attributes": {
+        "contractType": "${contract_type}",
+        "jurisdiction": "${jurisdiction}",
+        "caseId": "${case_id}",
+        "region": "${region}"
+      },
+      "notes": [
+        {
+          "userId": "${user_id_1}",
+          "time": "${time_1}",
+          "comment": "${comment_1}"
+        },
+        {
+          "userId": "${user_id_2}",
+          "time": "${time_2}",
+          "comment": "${comment_2}"
+        }
+      ]
+    },
+    {
+      "actorIdType": "${actor_id_type}",
+      "actorId": "${actor_id}",
+      "roleType": "${role_type}",
+      "roleName": "${role_name}",
+      "classification": "${classification}",
+      "grantType": "${grant_type}",
+      "roleCategory": "${role_category}",
+      "readOnly": ${read_only},
+      "beginTime": ${begin_time},
+      "endTime": ${end_time},
+      "attributes": {
+        "contractType": "${contract_type}",
+        "jurisdiction": "${jurisdiction}",
+        "caseId": "${case_id}",
+        "region": "${region}"
+      },
+      "notes": [
+        {
+          "userId": "${user_id_1}",
+          "time": "${time_1}",
+          "comment": "${comment_1}"
+        },
+        {
+          "userId": "${user_id_2}",
+          "time": "${time_2}",
+          "comment": "${comment_2}"
+        }
+      ]
+    },
+    {
+      "actorIdType": "${actor_id_type}",
+      "actorId": "${actor_id}",
+      "roleType": "${role_type}",
+      "roleName": "${role_name}",
+      "classification": "${classification}",
+      "grantType": "${grant_type}",
+      "roleCategory": "${role_category}",
+      "readOnly": ${read_only},
+      "beginTime": ${begin_time},
+      "endTime": ${end_time},
+      "attributes": {
+        "contractType": "${contract_type}",
+        "jurisdiction": "${jurisdiction}",
+        "caseId": "${case_id}",
+        "region": "${region}"
+      },
+      "notes": [
+        {
+          "userId": "${user_id_1}",
+          "time": "${time_1}",
+          "comment": "${comment_1}"
+        },
+        {
+          "userId": "${user_id_2}",
+          "time": "${time_2}",
+          "comment": "${comment_2}"
+        }
+      ]
+    },
+    {
+      "actorIdType": "${actor_id_type}",
+      "actorId": "${actor_id}",
+      "roleType": "${role_type}",
+      "roleName": "${role_name}",
+      "classification": "${classification}",
+      "grantType": "${grant_type}",
+      "roleCategory": "${role_category}",
+      "readOnly": ${read_only},
+      "beginTime": ${begin_time},
+      "endTime": ${end_time},
+      "attributes": {
+        "contractType": "${contract_type}",
+        "jurisdiction": "${jurisdiction}",
+        "caseId": "${case_id}",
+        "region": "${region}"
+      },
+      "notes": [
+        {
+          "userId": "${user_id_1}",
+          "time": "${time_1}",
+          "comment": "${comment_1}"
+        },
+        {
+          "userId": "${user_id_2}",
+          "time": "${time_2}",
+          "comment": "${comment_2}"
+        }
+      ]
+    },
+    {
+      "actorIdType": "${actor_id_type}",
+      "actorId": "${actor_id}",
+      "roleType": "${role_type}",
+      "roleName": "${role_name}",
+      "classification": "${classification}",
+      "grantType": "${grant_type}",
+      "roleCategory": "${role_category}",
+      "readOnly": ${read_only},
+      "beginTime": ${begin_time},
+      "endTime": ${end_time},
+      "attributes": {
+        "contractType": "${contract_type}",
+        "jurisdiction": "${jurisdiction}",
+        "caseId": "${case_id}",
+        "region": "${region}"
+      },
+      "notes": [
+        {
+          "userId": "${user_id_1}",
+          "time": "${time_1}",
+          "comment": "${comment_1}"
+        },
+        {
+          "userId": "${user_id_2}",
+          "time": "${time_2}",
+          "comment": "${comment_2}"
+        }
+      ]
+    },
+    {
+      "actorIdType": "${actor_id_type}",
+      "actorId": "${actor_id}",
+      "roleType": "${role_type}",
+      "roleName": "${role_name}",
+      "classification": "${classification}",
+      "grantType": "${grant_type}",
+      "roleCategory": "${role_category}",
+      "readOnly": ${read_only},
+      "beginTime": ${begin_time},
+      "endTime": ${end_time},
+      "attributes": {
+        "contractType": "${contract_type}",
+        "jurisdiction": "${jurisdiction}",
+        "caseId": "${case_id}",
+        "region": "${region}"
+      },
+      "notes": [
+        {
+          "userId": "${user_id_1}",
+          "time": "${time_1}",
+          "comment": "${comment_1}"
+        },
+        {
+          "userId": "${user_id_2}",
+          "time": "${time_2}",
+          "comment": "${comment_2}"
+        }
+      ]
+    },
+    {
+      "actorIdType": "${actor_id_type}",
+      "actorId": "${actor_id}",
+      "roleType": "${role_type}",
+      "roleName": "${role_name}",
+      "classification": "${classification}",
+      "grantType": "${grant_type}",
+      "roleCategory": "${role_category}",
+      "readOnly": ${read_only},
+      "beginTime": ${begin_time},
+      "endTime": ${end_time},
+      "attributes": {
+        "contractType": "${contract_type}",
+        "jurisdiction": "${jurisdiction}",
+        "caseId": "${case_id}",
+        "region": "${region}"
+      },
+      "notes": [
+        {
+          "userId": "${user_id_1}",
+          "time": "${time_1}",
+          "comment": "${comment_1}"
+        },
+        {
+          "userId": "${user_id_2}",
+          "time": "${time_2}",
+          "comment": "${comment_2}"
+        }
+      ]
+    },
+    {
+      "actorIdType": "${actor_id_type}",
+      "actorId": "${actor_id}",
+      "roleType": "${role_type}",
+      "roleName": "${role_name}",
+      "classification": "${classification}",
+      "grantType": "${grant_type}",
+      "roleCategory": "${role_category}",
+      "readOnly": ${read_only},
+      "beginTime": ${begin_time},
+      "endTime": ${end_time},
+      "attributes": {
+        "contractType": "${contract_type}",
+        "jurisdiction": "${jurisdiction}",
+        "caseId": "${case_id}",
+        "region": "${region}"
+      },
+      "notes": [
+        {
+          "userId": "${user_id_1}",
+          "time": "${time_1}",
+          "comment": "${comment_1}"
+        },
+        {
+          "userId": "${user_id_2}",
+          "time": "${time_2}",
+          "comment": "${comment_2}"
+        }
+      ]
+    },
+    {
+      "actorIdType": "${actor_id_type}",
+      "actorId": "${actor_id}",
+      "roleType": "${role_type}",
+      "roleName": "${role_name}",
+      "classification": "${classification}",
+      "grantType": "${grant_type}",
+      "roleCategory": "${role_category}",
+      "readOnly": ${read_only},
+      "beginTime": ${begin_time},
+      "endTime": ${end_time},
+      "attributes": {
+        "contractType": "${contract_type}",
+        "jurisdiction": "${jurisdiction}",
+        "caseId": "${case_id}",
+        "region": "${region}"
+      },
+      "notes": [
+        {
+          "userId": "${user_id_1}",
+          "time": "${time_1}",
+          "comment": "${comment_1}"
+        },
+        {
+          "userId": "${user_id_2}",
+          "time": "${time_2}",
+          "comment": "${comment_2}"
+        }
+      ]
+    },
+    {
+      "actorIdType": "${actor_id_type}",
+      "actorId": "${actor_id}",
+      "roleType": "${role_type}",
+      "roleName": "${role_name}",
+      "classification": "${classification}",
+      "grantType": "${grant_type}",
+      "roleCategory": "${role_category}",
+      "readOnly": ${read_only},
+      "beginTime": ${begin_time},
+      "endTime": ${end_time},
+      "attributes": {
+        "contractType": "${contract_type}",
+        "jurisdiction": "${jurisdiction}",
+        "caseId": "${case_id}",
+        "region": "${region}"
+      },
+      "notes": [
+        {
+          "userId": "${user_id_1}",
+          "time": "${time_1}",
+          "comment": "${comment_1}"
+        },
+        {
+          "userId": "${user_id_2}",
+          "time": "${time_2}",
+          "comment": "${comment_2}"
+        }
+      ]
+    },
+    {
+      "actorIdType": "${actor_id_type}",
+      "actorId": "${actor_id}",
+      "roleType": "${role_type}",
+      "roleName": "${role_name}",
+      "classification": "${classification}",
+      "grantType": "${grant_type}",
+      "roleCategory": "${role_category}",
+      "readOnly": ${read_only},
+      "beginTime": ${begin_time},
+      "endTime": ${end_time},
+      "attributes": {
+        "contractType": "${contract_type}",
+        "jurisdiction": "${jurisdiction}",
+        "caseId": "${case_id}",
+        "region": "${region}"
+      },
+      "notes": [
+        {
+          "userId": "${user_id_1}",
+          "time": "${time_1}",
+          "comment": "${comment_1}"
+        },
+        {
+          "userId": "${user_id_2}",
+          "time": "${time_2}",
+          "comment": "${comment_2}"
+        }
+      ]
+    },
+    {
+      "actorIdType": "${actor_id_type}",
+      "actorId": "${actor_id}",
+      "roleType": "${role_type}",
+      "roleName": "${role_name}",
+      "classification": "${classification}",
+      "grantType": "${grant_type}",
+      "roleCategory": "${role_category}",
+      "readOnly": ${read_only},
+      "beginTime": ${begin_time},
+      "endTime": ${end_time},
+      "attributes": {
+        "contractType": "${contract_type}",
+        "jurisdiction": "${jurisdiction}",
+        "caseId": "${case_id}",
+        "region": "${region}"
+      },
+      "notes": [
+        {
+          "userId": "${user_id_1}",
+          "time": "${time_1}",
+          "comment": "${comment_1}"
+        },
+        {
+          "userId": "${user_id_2}",
+          "time": "${time_2}",
+          "comment": "${comment_2}"
+        }
+      ]
+    },
+    {
+      "actorIdType": "${actor_id_type}",
+      "actorId": "${actor_id}",
+      "roleType": "${role_type}",
+      "roleName": "${role_name}",
+      "classification": "${classification}",
+      "grantType": "${grant_type}",
+      "roleCategory": "${role_category}",
+      "readOnly": ${read_only},
+      "beginTime": ${begin_time},
+      "endTime": ${end_time},
+      "attributes": {
+        "contractType": "${contract_type}",
+        "jurisdiction": "${jurisdiction}",
+        "caseId": "${case_id}",
+        "region": "${region}"
+      },
+      "notes": [
+        {
+          "userId": "${user_id_1}",
+          "time": "${time_1}",
+          "comment": "${comment_1}"
+        },
+        {
+          "userId": "${user_id_2}",
+          "time": "${time_2}",
+          "comment": "${comment_2}"
+        }
+      ]
+    },
+    {
+      "actorIdType": "${actor_id_type}",
+      "actorId": "${actor_id}",
+      "roleType": "${role_type}",
+      "roleName": "${role_name}",
+      "classification": "${classification}",
+      "grantType": "${grant_type}",
+      "roleCategory": "${role_category}",
+      "readOnly": ${read_only},
+      "beginTime": ${begin_time},
+      "endTime": ${end_time},
+      "attributes": {
+        "contractType": "${contract_type}",
+        "jurisdiction": "${jurisdiction}",
+        "caseId": "${case_id}",
+        "region": "${region}"
+      },
+      "notes": [
+        {
+          "userId": "${user_id_1}",
+          "time": "${time_1}",
+          "comment": "${comment_1}"
+        },
+        {
+          "userId": "${user_id_2}",
+          "time": "${time_2}",
+          "comment": "${comment_2}"
+        }
+      ]
+    },
+    {
+      "actorIdType": "${actor_id_type}",
+      "actorId": "${actor_id}",
+      "roleType": "${role_type}",
+      "roleName": "${role_name}",
+      "classification": "${classification}",
+      "grantType": "${grant_type}",
+      "roleCategory": "${role_category}",
+      "readOnly": ${read_only},
+      "beginTime": ${begin_time},
+      "endTime": ${end_time},
+      "attributes": {
+        "contractType": "${contract_type}",
+        "jurisdiction": "${jurisdiction}",
+        "caseId": "${case_id}",
+        "region": "${region}"
+      },
+      "notes": [
+        {
+          "userId": "${user_id_1}",
+          "time": "${time_1}",
+          "comment": "${comment_1}"
+        },
+        {
+          "userId": "${user_id_2}",
+          "time": "${time_2}",
+          "comment": "${comment_2}"
+        }
+      ]
+    },
+    {
+      "actorIdType": "${actor_id_type}",
+      "actorId": "${actor_id}",
+      "roleType": "${role_type}",
+      "roleName": "${role_name}",
+      "classification": "${classification}",
+      "grantType": "${grant_type}",
+      "roleCategory": "${role_category}",
+      "readOnly": ${read_only},
+      "beginTime": ${begin_time},
+      "endTime": ${end_time},
+      "attributes": {
+        "contractType": "${contract_type}",
+        "jurisdiction": "${jurisdiction}",
+        "caseId": "${case_id}",
+        "region": "${region}"
+      },
+      "notes": [
+        {
+          "userId": "${user_id_1}",
+          "time": "${time_1}",
+          "comment": "${comment_1}"
+        },
+        {
+          "userId": "${user_id_2}",
+          "time": "${time_2}",
+          "comment": "${comment_2}"
+        }
+      ]
+    },
+    {
+      "actorIdType": "${actor_id_type}",
+      "actorId": "${actor_id}",
+      "roleType": "${role_type}",
+      "roleName": "${role_name}",
+      "classification": "${classification}",
+      "grantType": "${grant_type}",
+      "roleCategory": "${role_category}",
+      "readOnly": ${read_only},
+      "beginTime": ${begin_time},
+      "endTime": ${end_time},
+      "attributes": {
+        "contractType": "${contract_type}",
+        "jurisdiction": "${jurisdiction}",
+        "caseId": "${case_id}",
+        "region": "${region}"
+      },
+      "notes": [
+        {
+          "userId": "${user_id_1}",
+          "time": "${time_1}",
+          "comment": "${comment_1}"
+        },
+        {
+          "userId": "${user_id_2}",
+          "time": "${time_2}",
+          "comment": "${comment_2}"
+        }
+      ]
+    },
+    {
+      "actorIdType": "${actor_id_type}",
+      "actorId": "${actor_id}",
+      "roleType": "${role_type}",
+      "roleName": "${role_name}",
+      "classification": "${classification}",
+      "grantType": "${grant_type}",
+      "roleCategory": "${role_category}",
+      "readOnly": ${read_only},
+      "beginTime": ${begin_time},
+      "endTime": ${end_time},
+      "attributes": {
+        "contractType": "${contract_type}",
+        "jurisdiction": "${jurisdiction}",
+        "caseId": "${case_id}",
+        "region": "${region}"
+      },
+      "notes": [
+        {
+          "userId": "${user_id_1}",
+          "time": "${time_1}",
+          "comment": "${comment_1}"
+        },
+        {
+          "userId": "${user_id_2}",
+          "time": "${time_2}",
+          "comment": "${comment_2}"
+        }
+      ]
+    },
+    {
+      "actorIdType": "${actor_id_type}",
+      "actorId": "${actor_id}",
+      "roleType": "${role_type}",
+      "roleName": "${role_name}",
+      "classification": "${classification}",
+      "grantType": "${grant_type}",
+      "roleCategory": "${role_category}",
+      "readOnly": ${read_only},
+      "beginTime": ${begin_time},
+      "endTime": ${end_time},
+      "attributes": {
+        "contractType": "${contract_type}",
+        "jurisdiction": "${jurisdiction}",
+        "caseId": "${case_id}",
+        "region": "${region}"
+      },
+      "notes": [
+        {
+          "userId": "${user_id_1}",
+          "time": "${time_1}",
+          "comment": "${comment_1}"
+        },
+        {
+          "userId": "${user_id_2}",
+          "time": "${time_2}",
+          "comment": "${comment_2}"
+        }
+      ]
     }
   ]
 }
