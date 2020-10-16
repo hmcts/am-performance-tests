@@ -14,8 +14,9 @@ object Scenario1 {
       .post("/am/role-assignments")
       .headers(Environment.headers_1)
       .headers(Environment.headers_4)
-      .body(ElFileBody("body.json"))
-      .body(ElFileBody("body3.json"))
+      //disabling the body and body 3 temporarily, to simulate the replace =true with 10 assignments
+      //.body(ElFileBody("body.json"))
+      //.body(ElFileBody("body3.json"))
       .body(ElFileBody("body4.json"))
       .check(status.is(201))
       .check(jsonPath("$..actorId").saveAs("actorId"))
