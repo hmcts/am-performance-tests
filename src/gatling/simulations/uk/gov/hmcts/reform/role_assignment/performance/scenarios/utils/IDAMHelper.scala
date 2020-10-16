@@ -9,7 +9,7 @@ object IDAMHelper {
 
   val getIdamToken = 
 
-    exec(http("AM_010_015_GetAuthToken")
+    exec(http("Token_010_015_GetAuthToken")
          .post(Env.getIdamUrl()+"/o/token?client_id="+Env.getOAuthClient()+"&client_secret="+Env.getOAuthSecret()+"&grant_type=password&scope="+Env.getScope()+"&username="+Env.getUsername()+"&password="+Env.getPassword())
          .header("Content-Type", "application/x-www-form-urlencoded")
          .header("Content-Length", "0")
