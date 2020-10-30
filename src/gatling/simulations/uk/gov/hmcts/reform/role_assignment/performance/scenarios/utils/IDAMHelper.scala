@@ -1,7 +1,8 @@
 package uk.gov.hmcts.reform.role_assignment.performance.scenarios.utils
 
 import io.gatling.core.Predef._
-import io.gatling.http.Predef._;
+import io.gatling.http.Predef._
+import uk.gov.hmcts.reform.role_assignment.performance.scenarios.utils.Environment._
 
 object IDAMHelper {
 
@@ -10,7 +11,7 @@ object IDAMHelper {
   val getIdamToken = 
 
     exec(http("Token_010_015_GetAuthToken")
-         .post(Env.getIdamUrl()+"/o/token?client_id="+Env.getOAuthClient()+"&client_secret="+Env.getOAuthSecret()+"&grant_type=password&scope="+Env.getScope()+"&username="+Env.getUsername()+"&password="+Env.getPassword())
+         .post(idamURL + "/o/token?client_id=" + idamClient + "&client_secret=" + idamSecret + "&grant_type=password&scope=" + idamScope + "&username=" + idamUsername + "&password=" + idamPassword)
          .header("Content-Type", "application/x-www-form-urlencoded")
          .header("Content-Length", "0")
          .check(status.is(200))

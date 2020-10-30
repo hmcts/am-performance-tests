@@ -2,7 +2,8 @@ package uk.gov.hmcts.reform.role_assignment.performance.scenarios.utils
 
 import com.warrenstrange.googleauth.GoogleAuthenticator
 import io.gatling.core.Predef._
-import io.gatling.http.Predef._;
+import io.gatling.http.Predef._
+import uk.gov.hmcts.reform.role_assignment.performance.scenarios.utils.Environment._
 
 object  S2SHelper {
   val thinktime = 5
@@ -10,7 +11,7 @@ object  S2SHelper {
   val getOTP =
   exec(
     session => {
-      val otp: String = String.valueOf(new GoogleAuthenticator().getTotpPassword(Env.getS2sSecret))
+      val otp: String = String.valueOf(new GoogleAuthenticator().getTotpPassword(s2sSecret))
       session.set("OTP", otp)
 
     })
@@ -20,11 +21,11 @@ object  S2SHelper {
   val S2SAuthToken =
 
     exec(http("Token_020_GetServiceToken")
-      .post(Env.getS2sUrl+"/lease")
+      .post(s2sURL+"/lease")
       .header("Content-Type", "application/json")
       .body(StringBody(
         s"""{
-       "microservice": "${Env.getS2sMicroservice}"
+       "microservice": "${s2sService}"
         }"""
       )).asJson
       .check(bodyString.saveAs("s2sToken"))
