@@ -3,13 +3,29 @@ package uk.gov.hmcts.reform.role_assignment.performance.scenarios
 import io.gatling.core.Predef._
 import io.gatling.http.Predef._
 import uk.gov.hmcts.reform.role_assignment.performance.scenarios.utils.Environment
+import scala.util.Random
 
 object Scenario1 {
+    
+  private val rng: Random = new Random()
+  private def UUID1(): String = rng.alphanumeric.take(8).mkString
+  private def UUID2(): String = rng.alphanumeric.take(4).mkString
+  private def UUID3(): String = rng.alphanumeric.take(4).mkString
+  private def UUID4(): String = rng.alphanumeric.take(4).mkString
+  private def UUID5(): String = rng.alphanumeric.take(12).mkString
   
   val feederFile = csv("Feeder_file.csv").random
   
   val Scenario1 = scenario("Scenario1")
     .feed(feederFile)
+    .exec(_.setAll(
+    ("UUID1", UUID1()),
+    ("UUID2", UUID2()),
+    ("UUID3", UUID3()),
+    ("UUID4",UUID4()),
+    ("UUID5",UUID5())
+  ))
+  
     .exec(http(requestName="AM_010_PostRoleAssignments")
       .post("/am/role-assignments")
       .headers(Environment.headers_1)
