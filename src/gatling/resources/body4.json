@@ -31,12 +31,12 @@
         {
           "userId": "S-042",
           "time": "2020-01-01T00:00",
-          "comment": "Need Access to case number 1234567890123456 for a year"
+          "comment": "${String1}"
         },
         {
           "userId": "HMCTS1",
           "time": "2020-01-02T00:00",
-          "comment": "Access granted for 3 months"
+          "comment": "${String2}"
         }
       ]
     },
@@ -63,12 +63,12 @@
         {
           "userId": "S-042",
           "time": "2020-01-01T00:00",
-          "comment": "Need Access to case number 1234567890123456 for a year"
+          "comment": "${String1}"
         },
         {
           "userId": "HMCTS",
           "time": "2020-01-02T00:00",
-          "comment": "Access granted for 3 months"
+          "comment": "${String2}"
         }
       ]
     },
@@ -95,12 +95,12 @@
         {
           "userId": "S-042",
           "time": "2020-01-01T00:00",
-          "comment": "Need Access to case number 1234567890123456 for a year"
+          "comment": "${String1}"
         },
         {
           "userId": "HMCTS",
           "time": "2020-01-02T00:00",
-          "comment": "Access granted for 3 months"
+          "comment": "${String2}"
         }
       ]
     },
@@ -127,12 +127,12 @@
         {
           "userId": "S-042",
           "time": "2020-01-01T00:00",
-          "comment": "Need Access to case number 1234567890123456 for a year"
+          "comment": "${String1}"
         },
         {
           "userId": "HMCTS",
           "time": "2020-01-02T00:00",
-          "comment": "Access granted for 3 months"
+          "comment": "${String2}"
         }
       ]
     },
@@ -159,12 +159,12 @@
         {
           "userId": "S-042",
           "time": "2020-01-01T00:00",
-          "comment": "Need Access to case number 1234567890123456 for a year"
+          "comment": "${String1}"
         },
         {
           "userId": "HMCTS",
           "time": "2020-01-02T00:00",
-          "comment": "Access granted for 3 months"
+          "comment": "${String2}"
         }
       ]
     },
@@ -191,12 +191,12 @@
         {
           "userId": "S-042",
           "time": "2020-01-01T00:00",
-          "comment": "Need Access to case number 1234567890123456 for a year"
+          "comment": "${String1}"
         },
         {
           "userId": "HMCTS",
           "time": "2020-01-02T00:00",
-          "comment": "Access granted for 3 months"
+          "comment": "${String2}"
         }
       ]
     },
@@ -223,12 +223,12 @@
         {
           "userId": "S-042",
           "time": "2020-01-01T00:00",
-          "comment": "Need Access to case number 1234567890123456 for a year"
+          "comment": "${String1}"
         },
         {
           "userId": "HMCTS",
           "time": "2020-01-02T00:00",
-          "comment": "Access granted for 3 months"
+          "comment": "${String2}"
         }
       ]
     },
@@ -255,12 +255,12 @@
         {
           "userId": "S-042",
           "time": "2020-01-01T00:00",
-          "comment": "Need Access to case number 1234567890123456 for a year"
+          "comment": "${String1}"
         },
         {
           "userId": "HMCTS",
           "time": "2020-01-02T00:00",
-          "comment": "Access granted for 3 months"
+          "comment": "${String2}"
         }
       ]
     },
@@ -287,12 +287,12 @@
         {
           "userId": "S-042",
           "time": "2020-01-01T00:00",
-          "comment": "Need Access to case number 1234567890123456 for a year"
+          "comment": "${String1}"
         },
         {
           "userId": "HMCTS",
           "time": "2020-01-02T00:00",
-          "comment": "Access granted for 3 months"
+          "comment": "${String2}"
         }
       ]
     },
@@ -319,12 +319,12 @@
         {
           "userId": "S-042",
           "time": "2020-01-01T00:00",
-          "comment": "Need Access to case number 1234567890123456 for a year"
+          "comment": "${String1}"
         },
         {
           "userId": "HMCTS",
           "time": "2020-01-02T00:00",
-          "comment": "Access granted for 3 months"
+          "comment": "${String2}"
         }
       ]
     }
