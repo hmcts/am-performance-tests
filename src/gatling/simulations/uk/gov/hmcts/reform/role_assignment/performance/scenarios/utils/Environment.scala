@@ -42,6 +42,10 @@ object Environment {
   "assignmentId" -> "${assignmentId}"
   )
 
+  val headers_6 = Map(
+  "assignerId" -> "${uid}"
+  )
+
   val thinkTime = 10
 
 }

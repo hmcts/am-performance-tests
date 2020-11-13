@@ -18,6 +18,13 @@ object IDAMHelper {
          .check(jsonPath("$.access_token").saveAs("accessToken")))
     .pause(2)
 
+    val getIdamUserId =
 
+      exec(http("Token_010_016_GetIdamUserId")
+         .post(idamURL + "/o/userinfo")
+         .header("Authorization", getIdamToken)
+         .check(status.is(200))
+         .check(jsonPath("$.uid").saveAs("uid")))
+    .pause(2)
 
 }
