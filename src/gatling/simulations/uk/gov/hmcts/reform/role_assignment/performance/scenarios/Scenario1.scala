@@ -19,7 +19,8 @@ object Scenario1 {
     ("String1",String1()),
     ("String2",String2())
   ))
-  
+
+    .pause(1)
     .exec(http(requestName="AM_010_PostRoleAssignments")
       .post("/am/role-assignments")
       .headers(Environment.headers_1)
@@ -28,8 +29,9 @@ object Scenario1 {
       .check(status.is(201))
       .check(jsonPath("$..actorId").saveAs("actorId"))
       .check(jsonPath("$..id").saveAs("assignmentId")))
-    .pause(2)
-  
+    .pause(1)
+
+    .pause(1)
     .exec(http(requestName="AM_020_PostRoleAssignments")
       .post("/am/role-assignments")
       .headers(Environment.headers_1)
@@ -37,8 +39,9 @@ object Scenario1 {
       .body(ElFileBody("body3.json"))
       .check(status.is(201))
       .check(jsonPath("$..id").saveAs("assignmentId2")))
-    .pause(2)
+    .pause(1)
 
+    .pause(1)
     .exec(http(requestName="AM_030_PostRoleAssignments")
       .post("/am/role-assignments")
       .headers(Environment.headers_1)
@@ -46,39 +49,43 @@ object Scenario1 {
       .body(ElFileBody("body4.json"))
       .check(status.is(201))
       .check(jsonPath("$..id").saveAs("assignmentId3")))
-    .pause(2)
+    .pause(1)
 
+    .pause(1)
     .exec(http(requestName="AM_040_GetRoles")
       .get("/am/role-assignments/roles")
       .headers(Environment.headers_1)
       .check(status.is(200)))
-    .pause(2)
+    .pause(1)
 
+    .pause(1)
     .exec(http(requestName="AM_050_GetRoleAssignmentsActor")
       .get("/am/role-assignments/actors/${actorId}")
       .headers(Environment.headers_1)
       .headers(Environment.headers_2)
       .check(status.is(200)))
-    .pause(2)
+    .pause(1)
 
+    .pause(1)
     .exec(http(requestName="AM_060_DeleteRoleAssignments")
       .delete("/am/role-assignments/${assignmentId}")
       .headers(Environment.headers_1)
       .headers(Environment.headers_5)
       .check(status.is(204)))
-    .pause(2)
-  
-  .exec(http(requestName="AM_070_DeleteRoleAssignments")
+    .pause(1)
+
+    .pause(1)
+    .exec(http(requestName="AM_070_DeleteRoleAssignments")
       .delete("/am/role-assignments/${assignmentId2}")
       .headers(Environment.headers_1)
       .headers(Environment.headers_5)
       .check(status.is(204)))
-    .pause(2)
+    .pause(1)
   
-  .exec(http(requestName="AM_080_DeleteRoleAssignments")
+    .exec(http(requestName="AM_080_DeleteRoleAssignments")
       .delete("/am/role-assignments/${assignmentId3}")
       .headers(Environment.headers_1)
       .headers(Environment.headers_5)
       .check(status.is(204)))
-    .pause(2)
+    .pause(1)
 }
