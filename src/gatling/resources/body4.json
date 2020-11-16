@@ -17,28 +17,12 @@
       "classification": "PUBLIC",
       "grantType": "STANDARD",
       "readOnly": true,
-      "beginTime" : "2021-11-10T00:00",
-      "endTime" : "2022-07-03T00:00",
-
       "attributes":
       {
         "jurisdiction": "divorce",
-        "region": "London",
+        "region": "south-east",
         "contractType": "SALARIED"
-      },
-      "notes":
-      [
-        {
-          "userId": "S-042",
-          "time": "2020-01-01T00:00",
-          "comment": "${String1}"
-        },
-        {
-          "userId": "HMCTS1",
-          "time": "2020-01-02T00:00",
-          "comment": "${String2}"
-        }
-      ]
+      }
     },
     {
       "actorIdType": "IDAM",
@@ -49,28 +33,12 @@
       "classification": "PUBLIC",
       "grantType": "STANDARD",
       "readOnly": true,
-      "beginTime" : "2021-11-10T00:00",
-      "endTime" : "2022-07-01T00:00",
-
       "attributes":
       {
         "jurisdiction": "divorce",
-        "region": "London",
+        "region": "south-east",
         "contractType": "SALARIED"
-      },
-      "notes":
-      [
-        {
-          "userId": "S-042",
-          "time": "2020-01-01T00:00",
-          "comment": "${String1}"
-        },
-        {
-          "userId": "HMCTS",
-          "time": "2020-01-02T00:00",
-          "comment": "${String2}"
-        }
-      ]
+      }
     },
     {
       "actorIdType": "IDAM",
@@ -81,28 +49,12 @@
       "classification": "PUBLIC",
       "grantType": "STANDARD",
       "readOnly": true,
-      "beginTime" : "2021-11-10T00:00",
-      "endTime" : "2022-07-01T00:00",
-
       "attributes":
       {
         "jurisdiction": "divorce",
-        "region": "London",
+        "region": "south-east",
         "contractType": "SALARIED"
-      },
-      "notes":
-      [
-        {
-          "userId": "S-042",
-          "time": "2020-01-01T00:00",
-          "comment": "${String1}"
-        },
-        {
-          "userId": "HMCTS",
-          "time": "2020-01-02T00:00",
-          "comment": "${String2}"
-        }
-      ]
+      }
     },
     {
       "actorIdType": "IDAM",
@@ -113,28 +65,12 @@
       "classification": "PUBLIC",
       "grantType": "STANDARD",
       "readOnly": true,
-      "beginTime" : "2021-11-10T00:00",
-      "endTime" : "2022-07-01T00:00",
-
       "attributes":
       {
         "jurisdiction": "divorce",
-        "region": "London",
+        "region": "south-east",
         "contractType": "SALARIED"
-      },
-      "notes":
-      [
-        {
-          "userId": "S-042",
-          "time": "2020-01-01T00:00",
-          "comment": "${String1}"
-        },
-        {
-          "userId": "HMCTS",
-          "time": "2020-01-02T00:00",
-          "comment": "${String2}"
-        }
-      ]
+      }
     },
     {
       "actorIdType": "IDAM",
@@ -145,28 +81,12 @@
       "classification": "PUBLIC",
       "grantType": "STANDARD",
       "readOnly": true,
-      "beginTime" : "2021-11-10T00:00",
-      "endTime" : "2022-07-01T00:00",
-
       "attributes":
       {
         "jurisdiction": "divorce",
-        "region": "London",
+        "region": "south-east",
         "contractType": "SALARIED"
-      },
-      "notes":
-      [
-        {
-          "userId": "S-042",
-          "time": "2020-01-01T00:00",
-          "comment": "${String1}"
-        },
-        {
-          "userId": "HMCTS",
-          "time": "2020-01-02T00:00",
-          "comment": "${String2}"
-        }
-      ]
+      }
     },
     {
       "actorIdType": "IDAM",
@@ -177,28 +97,12 @@
       "classification": "PUBLIC",
       "grantType": "STANDARD",
       "readOnly": true,
-      "beginTime" : "2021-11-10T00:00",
-      "endTime" : "2022-07-01T00:00",
-
       "attributes":
       {
         "jurisdiction": "divorce",
-        "region": "London",
+        "region": "south-east",
         "contractType": "SALARIED"
-      },
-      "notes":
-      [
-        {
-          "userId": "S-042",
-          "time": "2020-01-01T00:00",
-          "comment": "${String1}"
-        },
-        {
-          "userId": "HMCTS",
-          "time": "2020-01-02T00:00",
-          "comment": "${String2}"
-        }
-      ]
+      }
     },
     {
       "actorIdType": "IDAM",
@@ -209,28 +113,12 @@
       "classification": "PUBLIC",
       "grantType": "STANDARD",
       "readOnly": true,
-      "beginTime" : "2021-11-10T00:00",
-      "endTime" : "2022-07-01T00:00",
-
       "attributes":
       {
         "jurisdiction": "divorce",
-        "region": "London",
+        "region": "south-east",
         "contractType": "SALARIED"
-      },
-      "notes":
-      [
-        {
-          "userId": "S-042",
-          "time": "2020-01-01T00:00",
-          "comment": "${String1}"
-        },
-        {
-          "userId": "HMCTS",
-          "time": "2020-01-02T00:00",
-          "comment": "${String2}"
-        }
-      ]
+      }
     },
     {
       "actorIdType": "IDAM",
@@ -241,28 +129,12 @@
       "classification": "PUBLIC",
       "grantType": "STANDARD",
       "readOnly": true,
-      "beginTime" : "2021-11-10T00:00",
-      "endTime" : "2022-07-01T00:00",
-
       "attributes":
       {
         "jurisdiction": "divorce",
-        "region": "London",
+        "region": "south-east",
         "contractType": "SALARIED"
-      },
-      "notes":
-      [
-        {
-          "userId": "S-042",
-          "time": "2020-01-01T00:00",
-          "comment": "${String1}"
-        },
-        {
-          "userId": "HMCTS",
-          "time": "2020-01-02T00:00",
-          "comment": "${String2}"
-        }
-      ]
+      }
     },
     {
       "actorIdType": "IDAM",
@@ -273,28 +145,12 @@
       "classification": "PUBLIC",
       "grantType": "STANDARD",
       "readOnly": true,
-      "beginTime" : "2021-11-10T00:00",
-      "endTime" : "2022-07-01T00:00",
-
       "attributes":
       {
         "jurisdiction": "divorce",
-        "region": "London",
+        "region": "south-east",
         "contractType": "SALARIED"
-      },
-      "notes":
-      [
-        {
-          "userId": "S-042",
-          "time": "2020-01-01T00:00",
-          "comment": "${String1}"
-        },
-        {
-          "userId": "HMCTS",
-          "time": "2020-01-02T00:00",
-          "comment": "${String2}"
-        }
-      ]
+      }
     },
     {
       "actorIdType": "IDAM",
@@ -305,28 +161,12 @@
       "classification": "PUBLIC",
       "grantType": "STANDARD",
       "readOnly": true,
-      "beginTime" : "2021-11-10T00:00",
-      "endTime" : "2022-07-01T00:00",
-
       "attributes":
       {
         "jurisdiction": "divorce",
-        "region": "London",
+        "region": "south-east",
         "contractType": "SALARIED"
-      },
-      "notes":
-      [
-        {
-          "userId": "S-042",
-          "time": "2020-01-01T00:00",
-          "comment": "${String1}"
-        },
-        {
-          "userId": "HMCTS",
-          "time": "2020-01-02T00:00",
-          "comment": "${String2}"
-        }
-      ]
+      }
     }
   ]
 }

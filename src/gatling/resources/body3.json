@@ -17,28 +17,12 @@
       "classification": "PUBLIC",
       "grantType": "STANDARD",
       "readOnly": true,
-      "beginTime" : "2021-11-10T00:00",
-      "endTime" : "2022-07-03T00:00",
-
       "attributes":
       {
         "jurisdiction": "divorce",
-        "region": "London",
+        "region": "south-east",
         "contractType": "SALARIED"
-      },
-      "notes":
-      [
-        {
-          "userId": "S-042",
-          "time": "2020-01-01T00:00",
-          "comment": "Need Access to case number 1234567890123456 for a year"
-        },
-        {
-          "userId": "HMCTS1",
-          "time": "2020-01-02T00:00",
-          "comment": "Access granted for 3 months"
-        }
-      ]
+      }
     },
     {
       "actorIdType": "IDAM",
@@ -49,28 +33,12 @@
       "classification": "PUBLIC",
       "grantType": "STANDARD",
       "readOnly": true,
-      "beginTime" : "2021-11-10T00:00",
-      "endTime" : "2022-07-01T00:00",
-
       "attributes":
       {
         "jurisdiction": "divorce",
-        "region": "London",
+        "region": "south-east",
         "contractType": "SALARIED"
-      },
-      "notes":
-      [
-        {
-          "userId": "S-042",
-          "time": "2020-01-01T00:00",
-          "comment": "Need Access to case number 1234567890123456 for a year"
-        },
-        {
-          "userId": "HMCTS",
-          "time": "2020-01-02T00:00",
-          "comment": "Access granted for 3 months"
-        }
-      ]
+      }
     },
     {
       "actorIdType": "IDAM",
@@ -81,28 +49,12 @@
       "classification": "PUBLIC",
       "grantType": "STANDARD",
       "readOnly": true,
-      "beginTime" : "2021-11-10T00:00",
-      "endTime" : "2022-07-01T00:00",
-
       "attributes":
       {
         "jurisdiction": "divorce",
-        "region": "London",
+        "region": "south-east",
         "contractType": "SALARIED"
-      },
-      "notes":
-      [
-        {
-          "userId": "S-042",
-          "time": "2020-01-01T00:00",
-          "comment": "Need Access to case number 1234567890123456 for a year"
-        },
-        {
-          "userId": "HMCTS",
-          "time": "2020-01-02T00:00",
-          "comment": "Access granted for 3 months"
-        }
-      ]
+      }
     },
     {
       "actorIdType": "IDAM",
@@ -113,28 +65,12 @@
       "classification": "PUBLIC",
       "grantType": "STANDARD",
       "readOnly": true,
-      "beginTime" : "2021-11-10T00:00",
-      "endTime" : "2022-07-01T00:00",
-
       "attributes":
       {
         "jurisdiction": "divorce",
-        "region": "London",
+        "region": "south-east",
         "contractType": "SALARIED"
-      },
-      "notes":
-      [
-        {
-          "userId": "S-042",
-          "time": "2020-01-01T00:00",
-          "comment": "Need Access to case number 1234567890123456 for a year"
-        },
-        {
-          "userId": "HMCTS",
-          "time": "2020-01-02T00:00",
-          "comment": "Access granted for 3 months"
-        }
-      ]
+      }
     },
     {
       "actorIdType": "IDAM",
@@ -145,13 +81,10 @@
       "classification": "PUBLIC",
       "grantType": "STANDARD",
       "readOnly": true,
-      "beginTime" : "2021-11-10T00:00",
-      "endTime" : "2022-07-01T00:00",
-
       "attributes":
       {
         "jurisdiction": "divorce",
-        "region": "London",
+        "region": "south-east",
         "contractType": "SALARIED"
       },
       "notes":
@@ -177,28 +110,12 @@
       "classification": "PUBLIC",
       "grantType": "STANDARD",
       "readOnly": true,
-      "beginTime" : "2021-11-10T00:00",
-      "endTime" : "2022-07-01T00:00",
-
       "attributes":
       {
         "jurisdiction": "divorce",
-        "region": "London",
+        "region": "south-east",
         "contractType": "SALARIED"
-      },
-      "notes":
-      [
-        {
-          "userId": "S-042",
-          "time": "2020-01-01T00:00",
-          "comment": "Need Access to case number 1234567890123456 for a year"
-        },
-        {
-          "userId": "HMCTS",
-          "time": "2020-01-02T00:00",
-          "comment": "Access granted for 3 months"
-        }
-      ]
+      }
     },
     {
       "actorIdType": "IDAM",
@@ -209,28 +126,12 @@
       "classification": "PUBLIC",
       "grantType": "STANDARD",
       "readOnly": true,
-      "beginTime" : "2021-11-10T00:00",
-      "endTime" : "2022-07-01T00:00",
-
       "attributes":
       {
         "jurisdiction": "divorce",
-        "region": "London",
+        "region": "south-east",
         "contractType": "SALARIED"
-      },
-      "notes":
-      [
-        {
-          "userId": "S-042",
-          "time": "2020-01-01T00:00",
-          "comment": "Need Access to case number 1234567890123456 for a year"
-        },
-        {
-          "userId": "HMCTS",
-          "time": "2020-01-02T00:00",
-          "comment": "Access granted for 3 months"
-        }
-      ]
+      }
     },
     {
       "actorIdType": "IDAM",
@@ -241,28 +142,12 @@
       "classification": "PUBLIC",
       "grantType": "STANDARD",
       "readOnly": true,
-      "beginTime" : "2021-11-10T00:00",
-      "endTime" : "2022-07-01T00:00",
-
       "attributes":
       {
         "jurisdiction": "divorce",
-        "region": "London",
+        "region": "south-east",
         "contractType": "SALARIED"
-      },
-      "notes":
-      [
-        {
-          "userId": "S-042",
-          "time": "2020-01-01T00:00",
-          "comment": "Need Access to case number 1234567890123456 for a year"
-        },
-        {
-          "userId": "HMCTS",
-          "time": "2020-01-02T00:00",
-          "comment": "Access granted for 3 months"
-        }
-      ]
+      }
     },
     {
       "actorIdType": "IDAM",
@@ -273,28 +158,12 @@
       "classification": "PUBLIC",
       "grantType": "STANDARD",
       "readOnly": true,
-      "beginTime" : "2021-11-10T00:00",
-      "endTime" : "2022-07-01T00:00",
-
       "attributes":
       {
         "jurisdiction": "divorce",
-        "region": "London",
+        "region": "south-east",
         "contractType": "SALARIED"
-      },
-      "notes":
-      [
-        {
-          "userId": "S-042",
-          "time": "2020-01-01T00:00",
-          "comment": "Need Access to case number 1234567890123456 for a year"
-        },
-        {
-          "userId": "HMCTS",
-          "time": "2020-01-02T00:00",
-          "comment": "Access granted for 3 months"
-        }
-      ]
+      }
     },
     {
       "actorIdType": "IDAM",
@@ -305,28 +174,12 @@
       "classification": "PUBLIC",
       "grantType": "STANDARD",
       "readOnly": true,
-      "beginTime" : "2021-11-10T00:00",
-      "endTime" : "2022-07-01T00:00",
-
       "attributes":
       {
         "jurisdiction": "divorce",
-        "region": "London",
+        "region": "south-east",
         "contractType": "SALARIED"
-      },
-      "notes":
-      [
-        {
-          "userId": "S-042",
-          "time": "2020-01-01T00:00",
-          "comment": "Need Access to case number 1234567890123456 for a year"
-        },
-        {
-          "userId": "HMCTS",
-          "time": "2020-01-02T00:00",
-          "comment": "Access granted for 3 months"
-        }
-      ]
+      }
     }
   ]
 }
