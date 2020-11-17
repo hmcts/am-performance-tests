@@ -26,7 +26,7 @@
     },
     {
       "actorIdType": "IDAM",
-      "actorId": "6b36bfc6-bb21-11ea-b3de-0242ac130001",
+      "actorId": "${UUID}",
       "roleType": "ORGANISATION",
       "roleName": "judge",
       "roleCategory": "JUDICIAL",
@@ -42,7 +42,7 @@
     },
     {
       "actorIdType": "IDAM",
-      "actorId": "6b36bfc6-bb21-11ea-b3de-0242ac130002",
+      "actorId": "${UUID}",
       "roleType": "ORGANISATION",
       "roleName": "judge",
       "roleCategory": "JUDICIAL",
@@ -58,7 +58,7 @@
     },
     {
       "actorIdType": "IDAM",
-      "actorId": "6b36bfc6-bb21-11ea-b3de-0242ac130003",
+      "actorId": "${UUID}",
       "roleType": "ORGANISATION",
       "roleName": "judge",
       "roleCategory": "JUDICIAL",
@@ -74,7 +74,7 @@
     },
     {
       "actorIdType": "IDAM",
-      "actorId": "6b36bfc6-bb21-11ea-b3de-0242ac130004",
+      "actorId": "${UUID}",
       "roleType": "ORGANISATION",
       "roleName": "judge",
       "roleCategory": "JUDICIAL",
@@ -103,7 +103,7 @@
     },
     {
       "actorIdType": "IDAM",
-      "actorId": "6b36bfc6-bb21-11ea-b3de-0242ac130005",
+      "actorId": "${UUID}",
       "roleType": "ORGANISATION",
       "roleName": "judge",
       "roleCategory": "JUDICIAL",
@@ -119,7 +119,7 @@
     },
     {
       "actorIdType": "IDAM",
-      "actorId": "6b36bfc6-bb21-11ea-b3de-0242ac130006",
+      "actorId": "${UUID}",
       "roleType": "ORGANISATION",
       "roleName": "judge",
       "roleCategory": "JUDICIAL",
@@ -135,7 +135,7 @@
     },
     {
       "actorIdType": "IDAM",
-      "actorId": "6b36bfc6-bb21-11ea-b3de-0242ac130007",
+      "actorId": "${UUID}",
       "roleType": "ORGANISATION",
       "roleName": "judge",
       "roleCategory": "JUDICIAL",
@@ -151,7 +151,7 @@
     },
     {
       "actorIdType": "IDAM",
-      "actorId": "6b36bfc6-bb21-11ea-b3de-0242ac130008",
+      "actorId": "${UUID}",
       "roleType": "ORGANISATION",
       "roleName": "judge",
       "roleCategory": "JUDICIAL",
@@ -167,7 +167,7 @@
     },
     {
       "actorIdType": "IDAM",
-      "actorId": "6b36bfc6-bb21-11ea-b3de-0242ac130009",
+      "actorId": "${UUID}",
       "roleType": "ORGANISATION",
       "roleName": "judge",
       "roleCategory": "JUDICIAL",
