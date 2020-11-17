@@ -4,14 +4,13 @@ import io.gatling.core.Predef._
 import io.gatling.http.Predef._
 import uk.gov.hmcts.reform.role_assignment.performance.scenarios.utils.Environment
 import scala.util.Random
-import java.util.UUID
 
 object Scenario1 {
     
   private val rng: Random = new Random()
   private def String1(): String = rng.alphanumeric.take(10).mkString
   private def String2(): String = rng.alphanumeric.take(10).mkString
-  private def UUID(): String = UUID.randomUUID.toString
+  private def UUID(): String = java.util.UUID.randomUUID.toString
   
   val feederFile = csv("Feeder_file.csv").random
   
