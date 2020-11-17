@@ -11,7 +11,7 @@ object Scenario1 {
   private val rng: Random = new Random()
   private def String1(): String = rng.alphanumeric.take(10).mkString
   private def String2(): String = rng.alphanumeric.take(10).mkString
-  private def UUID(): String = UUID.randomUUID.toString
+  private def UUID() = UUID.randomUUID.toString
   
   val feederFile = csv("Feeder_file.csv").random
   
