@@ -11,7 +11,7 @@ object Scenario1 {
   private val rng: Random = new Random()
   private def String1(): String = rng.alphanumeric.take(10).mkString
   private def String2(): String = rng.alphanumeric.take(10).mkString
-  private def UUID() = UUID.randomUUID.toString
+  private def UUID = UUID.randomUUID.toString
   
   val feederFile = csv("Feeder_file.csv").random
   
@@ -20,7 +20,7 @@ object Scenario1 {
     .exec(_.setAll(
     ("String1",String1()),
     ("String2",String2()),
-    ("UUID",UUID())
+    ("UUID",UUID)
   ))
   
     .exec(http(requestName="AM_010_PostRoleAssignments")
