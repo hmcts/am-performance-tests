@@ -10,7 +10,7 @@
   [
     {
       "actorIdType": "IDAM",
-      "actorId": "6b36bfc6-bb21-11ea-b3de-0242ac150000",
+      "actorId": "${UUID}",
       "roleType": "ORGANISATION",
       "roleName": "judge",
       "roleCategory": "JUDICIAL",
