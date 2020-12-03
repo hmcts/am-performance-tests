@@ -19,7 +19,7 @@
       "readOnly": true,
       "attributes":
       {
-        "jurisdiction": "divorce1",
+        "jurisdiction": "divorce",
         "region": "south-east",
         "contractType": "SALARIED"
       }
@@ -35,7 +35,7 @@
       "readOnly": true,
       "attributes":
       {
-        "jurisdiction": "divorce2",
+        "jurisdiction": "divorce",
         "region": "south-east",
         "contractType": "SALARIED"
       }
@@ -51,7 +51,7 @@
       "readOnly": true,
       "attributes":
       {
-        "jurisdiction": "divorce3",
+        "jurisdiction": "divorce",
         "region": "south-east",
         "contractType": "SALARIED"
       }
@@ -67,7 +67,7 @@
       "readOnly": true,
       "attributes":
       {
-        "jurisdiction": "divorce4",
+        "jurisdiction": "divorce",
         "region": "south-east",
         "contractType": "SALARIED"
       }
@@ -83,7 +83,7 @@
       "readOnly": true,
       "attributes":
       {
-        "jurisdiction": "divorce5",
+        "jurisdiction": "divorce",
         "region": "south-east",
         "contractType": "SALARIED"
       }
@@ -99,7 +99,7 @@
       "readOnly": true,
       "attributes":
       {
-        "jurisdiction": "divorce6",
+        "jurisdiction": "divorce",
         "region": "south-east",
         "contractType": "SALARIED"
       }
@@ -115,7 +115,7 @@
       "readOnly": true,
       "attributes":
       {
-        "jurisdiction": "divorce7",
+        "jurisdiction": "divorce",
         "region": "south-east",
         "contractType": "SALARIED"
       }
@@ -131,7 +131,7 @@
       "readOnly": true,
       "attributes":
       {
-        "jurisdiction": "divorce8",
+        "jurisdiction": "divorce",
         "region": "south-east",
         "contractType": "SALARIED"
       }
@@ -147,7 +147,7 @@
       "readOnly": true,
       "attributes":
       {
-        "jurisdiction": "divorce9",
+        "jurisdiction": "divorce",
         "region": "south-east",
         "contractType": "SALARIED"
       }
@@ -163,7 +163,7 @@
       "readOnly": true,
       "attributes":
       {
-        "jurisdiction": "divorce10",
+        "jurisdiction": "divorce",
         "region": "south-east",
         "contractType": "SALARIED"
       }
