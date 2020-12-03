@@ -19,10 +19,10 @@
       "readOnly": true,
       "attributes":
       {
-        "jurisdiction": "divorce1",
+        "jurisdiction": "divorce",
         "region": "south-east",
         "contractType": "SALARIED",
-        "primaryLocation": "219164"
+        "primaryLocation": "219161"
       }
     },
     {
@@ -36,10 +36,10 @@
       "readOnly": true,
       "attributes":
       {
-        "jurisdiction": "divorce2",
+        "jurisdiction": "divorce",
         "region": "south-east",
         "contractType": "SALARIED",
-        "primaryLocation": "219164"
+        "primaryLocation": "219162"
       }
     },
     {
@@ -53,10 +53,10 @@
       "readOnly": true,
       "attributes":
       {
-        "jurisdiction": "divorce3",
+        "jurisdiction": "divorce",
         "region": "south-east",
         "contractType": "SALARIED",
-        "primaryLocation": "219164"
+        "primaryLocation": "219163"
       }
     },
     {
@@ -70,7 +70,7 @@
       "readOnly": true,
       "attributes":
       {
-        "jurisdiction": "divorce4",
+        "jurisdiction": "divorce",
         "region": "south-east",
         "contractType": "SALARIED",
         "primaryLocation": "219164"
@@ -86,10 +86,10 @@
       "grantType": "STANDARD",
       "readOnly": true,
       "attributes": {
-        "jurisdiction": "divorce5",
+        "jurisdiction": "divorce",
         "region": "south-east",
         "contractType": "SALARIED",
-        "primaryLocation": "219164"
+        "primaryLocation": "219165"
       }
     }
   ]
