@@ -15,7 +15,7 @@ class RoleAssignmentSimulation extends Simulation{
         .exec(S2SHelper.S2SAuthToken)
         .repeat(1)
         {
-          .exec(Scenario1.Scenario1)
+          exec(Scenario1.Scenario1)
           .exec(Scenario2.Scenario2)
         }
 
