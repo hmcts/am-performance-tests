@@ -53,7 +53,7 @@ object Scenario1 {
     .exec(http(requestName="AM_040_GetRoles")
       .get("/am/role-assignments/roles")
       .headers(Environment.headers_1)
-      .check(status.is(200)))
+      .check(status in (200,304)))
     .pause(5)
 
     .exec(http(requestName="AM_050_GetRoleAssignmentsActor")
