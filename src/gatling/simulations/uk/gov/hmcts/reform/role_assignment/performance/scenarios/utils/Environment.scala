@@ -6,8 +6,8 @@ import io.gatling.http.Predef._
 object Environment {
 
   val env = "aat"
-  val baseURL = "http://am-role-assignment-service-" + env + ".service.core-compute-" + env + ".internal"
-  val idamURL = "https://idam-api." + env + ".platform.hmcts.net"
+  val baseURL = "http://localhost:4096"
+  val idamURL = "http://localhost:5000"
   val idamClient = "am_role_assignment"
   //val idamClient = "paybubble"
   val idamSecret = ConfigFactory.load.getString("auth.clientSecret")
@@ -16,7 +16,7 @@ object Environment {
   //val idamUsername = "amogh.role.assignments@mailinator.com"
   val idamPassword = "PesZvqrb78"
   //val idamPassword = "Pass19word"
-  val s2sURL = "http://rpe-service-auth-provider-" + env + ".service.core-compute-" + env + ".internal/testing-support"
+  val s2sURL = "http://localhost:4502"
   val s2sService = "am_role_assignment_service"
   val s2sSecret = ConfigFactory.load.getString("aat_service.pass")
 
