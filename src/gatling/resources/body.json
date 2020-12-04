@@ -15,8 +15,8 @@
       "grantType": "${grant_type}",
       "roleCategory": "${role_category}",
       "readOnly": ${read_only},
-      "beginTime": ${begin_time},
-      "endTime": ${end_time},
+      "beginTime": "${begin_time}",
+      "endTime": "${end_time}",
       "attributes": {
         "contractType": "${contract_type}",
         "jurisdiction": "${jurisdiction}",
