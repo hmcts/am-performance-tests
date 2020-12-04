@@ -12,10 +12,10 @@ object Scenario1 {
   private def String2(): String = rng.alphanumeric.take(10).mkString
   private def UUID(): String = java.util.UUID.randomUUID.toString
   
-  val feederFile = csv("Feeder_file.csv").random
+  //val feederFile = csv("Feeder_file.csv").random
   
   val Scenario1 = scenario("Scenario1")
-    .feed(feederFile)
+    //.feed(feederFile)
     .exec(_.setAll(
     ("String1",String1()),
     ("String2",String2()),
@@ -30,7 +30,7 @@ object Scenario1 {
       .check(status.is(201))
       .check(jsonPath("$..actorId").saveAs("actorId"))
       .check(jsonPath("$..id").saveAs("assignmentId")))
-    .pause(2)
+    .pause(5)
   
     .exec(http(requestName="AM_020_PostRoleAssignments")
       .post("/am/role-assignments")
@@ -40,7 +40,7 @@ object Scenario1 {
       .check(status.is(201))
       .check(jsonPath("$..process").saveAs("process1"))
       .check(jsonPath("$..reference").saveAs("reference1")))
-    .pause(2)
+    .pause(5)
 
     .exec(http(requestName="AM_030_PostRoleAssignments")
       .post("/am/role-assignments")
@@ -50,13 +50,13 @@ object Scenario1 {
       .check(status.is(201))
       .check(jsonPath("$..process").saveAs("process2"))
       .check(jsonPath("$..reference").saveAs("reference2")))
-    .pause(2)
+    .pause(5)
 
     .exec(http(requestName="AM_040_GetRoles")
       .get("/am/role-assignments/roles")
       .headers(Environment.headers_1)
       .check(status.is(200)))
-    .pause(2)
+    .pause(5)
 
     .exec(http(requestName="AM_050_GetRoleAssignmentsActor")
       .get("/am/role-assignments/actors/${actorId}")
@@ -70,17 +70,17 @@ object Scenario1 {
       .headers(Environment.headers_1)
       .headers(Environment.headers_5)
       .check(status.is(204)))
-    .pause(2)
+    .pause(5)
   
     .exec(http(requestName="AM_110_DeleteRoleAssignmentsReference")
       .delete("/am/role-assignments?process=${process1}&reference=${reference1}")
       .headers(Environment.headers_1)
       .check(status.is(204)))
-    .pause(2)
+    .pause(5)
   
     .exec(http(requestName="AM_110_DeleteRoleAssignmentsReference")
       .delete("/am/role-assignments?process=${process2}&reference=${reference2}")
       .headers(Environment.headers_1)
       .check(status.is(204)))
-    .pause(2)
+    .pause(5)
 }

@@ -10,15 +10,20 @@ class RoleAssignmentSimulation extends Simulation{
   val httpProtocol = http.proxy(Proxy("proxyout.reform.hmcts.net", 8080).httpsPort(8080))
     .baseUrl(Environment.baseURL)
 
-  val roleAssignmentScenario = scenario("RoleAssignmentScenario").repeat(1)
-  {
-         exec(IDAMHelper.getIdamToken)
+  val feederFile = csv("Feeder_file.csv").random
+
+  val roleAssignmentScenario = scenario("RoleAssignmentScenario")
+
+          .exec(IDAMHelper.getIdamToken)
         .exec(S2SHelper.S2SAuthToken)
-        .exec(Scenario1.Scenario1)
+    .repeat(10)
+    {
+      feed(feederFile)
+          .exec(Scenario1.Scenario1)
         .exec(Scenario2.Scenario2)
   }
 
-  setUp(roleAssignmentScenario.inject(rampUsers(10) during(300))).protocols(httpProtocol)
+  setUp(roleAssignmentScenario.inject(rampUsers(1) during(3))).protocols(httpProtocol)
   .assertions(global.successfulRequests.percent.is(100))
   //.assertions(forAll.responseTime.percentile3.lte(500))
 }

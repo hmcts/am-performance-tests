@@ -6,10 +6,9 @@ import uk.gov.hmcts.reform.role_assignment.performance.scenarios.utils.Environme
 
 object Scenario2 {
   
-  val feederFile = csv("Feeder_file.csv").random
-  
+
   val Scenario2 = scenario("Scenario2")
-    .feed(feederFile)
+    //.feed(feederFile)
     .exec(http(requestName="AM_090_PostRoleAssignments")
       .post("/am/role-assignments")
       .headers(Environment.headers_1)
@@ -19,7 +18,7 @@ object Scenario2 {
       .check(jsonPath("$..caseId").saveAs("caseId"))
       .check(jsonPath("$..process").saveAs("process"))
       .check(jsonPath("$..reference").saveAs("reference")))
-    .pause(2)
+    .pause(5)
   
     .exec(http(requestName="AM_100_QueryRoleAssignments")
       .post("/am/role-assignments/query")
@@ -27,11 +26,11 @@ object Scenario2 {
       .headers(Environment.headers_4)
       .body(ElFileBody("body2.json"))
       .check(status.is(200)))
-    .pause(2)
+    .pause(5)
 
     .exec(http(requestName="AM_110_DeleteRoleAssignmentsReference")
       .delete("/am/role-assignments?process=${process}&reference=${reference}")
       .headers(Environment.headers_1)
       .check(status.is(204)))
-    .pause(2)
+    .pause(5)
 }
