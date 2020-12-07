@@ -38,7 +38,8 @@ object Scenario1 {
       .headers(Environment.headers_4)
       .body(ElFileBody("body3.json"))
       .check(status.is(201))
-      .check(jsonPath("$..id").saveAs("assignmentId2")))
+      .check(jsonPath("$..process").saveAs("process1"))
+      .check(jsonPath("$..reference").saveAs("reference1")))
     .pause(2)
 
     .exec(http(requestName="AM_030_PostRoleAssignments")
@@ -47,7 +48,8 @@ object Scenario1 {
       .headers(Environment.headers_4)
       .body(ElFileBody("body4.json"))
       .check(status.is(201))
-      .check(jsonPath("$..id").saveAs("assignmentId3")))
+      .check(jsonPath("$..process").saveAs("process2"))
+      .check(jsonPath("$..reference").saveAs("reference2")))
     .pause(2)
 
     .exec(http(requestName="AM_040_GetRoles")
@@ -70,17 +72,15 @@ object Scenario1 {
       .check(status.is(204)))
     .pause(5)
   
-  .exec(http(requestName="AM_070_DeleteRoleAssignments")
-      .delete("/am/role-assignments/${assignmentId2}")
+  .exec(http(requestName="AM_110_DeleteRoleAssignmentsReference")
+      .delete("/am/role-assignments?process=${process1}&reference=${reference1}")
       .headers(Environment.headers_1)
-      .headers(Environment.headers_5)
       .check(status.is(204)))
     .pause(2)
 
-  .exec(http(requestName="AM_080_DeleteRoleAssignments")
-      .delete("/am/role-assignments/${assignmentId3}")
+  .exec(http(requestName="AM_110_DeleteRoleAssignmentsReference")
+      .delete("/am/role-assignments?process=${process2}&reference=${reference2}")
       .headers(Environment.headers_1)
-      .headers(Environment.headers_5)
       .check(status.is(204)))
     .pause(2)
 }
