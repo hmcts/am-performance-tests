@@ -13,14 +13,14 @@ class RoleAssignmentSimulation extends Simulation{
 
   val roleAssignmentScenario = scenario("RoleAssignmentScenario")
 
-          .exec(IDAMHelper.getIdamToken)
+        .exec(IDAMHelper.getIdamToken)
         .exec(S2SHelper.S2SAuthToken)
     .repeat(10)
     {
       feed(feederFile)
-          .exec(Scenario1.Scenario1)
+        .exec(Scenario1.Scenario1)
         .exec(Scenario2.Scenario2)
-  }
+    }
 
   setUp(roleAssignmentScenario.inject(rampUsers(1) during(3))).protocols(httpProtocol)
   .assertions(global.successfulRequests.percent.is(100))
