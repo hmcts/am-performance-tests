@@ -16,7 +16,7 @@ class RoleAssignmentSimulation extends Simulation{
 
         .exec(IDAMHelper.getIdamToken)
         .exec(S2SHelper.S2SAuthToken)
-    .repeat(30)
+    .repeat(20)
     {
       feed(feederFile)
         .exec(Scenario1.Scenario1)
