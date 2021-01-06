@@ -16,7 +16,7 @@ properties([
 
 def type = "java"
 def product = "am"
-def component = "role-assignment-servic"
+def component = "role-assignment-service"
 
 def secrets = [
       's2s-aat': [
