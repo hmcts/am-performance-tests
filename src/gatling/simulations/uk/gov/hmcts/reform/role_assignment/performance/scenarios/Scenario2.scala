@@ -18,7 +18,7 @@ object Scenario2 {
       .check(jsonPath("$..caseId").saveAs("caseId"))
       .check(jsonPath("$..process").saveAs("process"))
       .check(jsonPath("$..reference").saveAs("reference")))
-    .pause(7)
+    .pause(10)
 
     .exec(http(requestName="AM_100_QueryRoleAssignments")
       .post("/am/role-assignments/query")
@@ -26,11 +26,11 @@ object Scenario2 {
       .headers(Environment.headers_4)
       .body(ElFileBody("body2.json"))
       .check(status.is(200)))
-    .pause(7)
+    .pause(10)
 
     .exec(http(requestName="AM_110_DeleteRoleAssignmentsReference")
       .delete("/am/role-assignments?process=${process}&reference=${reference}")
       .headers(Environment.headers_1)
       .check(status.is(204)))
-    .pause(7)
+    .pause(10)
 }
