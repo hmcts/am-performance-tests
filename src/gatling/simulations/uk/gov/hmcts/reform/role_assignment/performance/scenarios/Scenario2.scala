@@ -9,6 +9,7 @@ object Scenario2 {
 
   val Scenario2 = scenario("Scenario2")
     //.feed(feederFile)
+    // posts role assignments from body.json
     .exec(http(requestName="AM_090_PostRoleAssignments")
       .post("/am/role-assignments")
       .headers(Environment.headers_1)
@@ -20,6 +21,7 @@ object Scenario2 {
       .check(jsonPath("$..reference").saveAs("reference")))
     .pause(10)
 
+    // queries role assignments
     .exec(http(requestName="AM_100_QueryRoleAssignments")
       .post("/am/role-assignments/query")
       .headers(Environment.headers_1)
@@ -28,6 +30,7 @@ object Scenario2 {
       .check(status.is(200)))
     .pause(10)
 
+    // deletes role assignments based on process and reference
     .exec(http(requestName="AM_110_DeleteRoleAssignmentsReference")
       .delete("/am/role-assignments?process=${process}&reference=${reference}")
       .headers(Environment.headers_1)
