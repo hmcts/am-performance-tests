@@ -20,7 +20,6 @@ class RoleAssignmentSimulation extends Simulation{
     {
       feed(feederFile)
         .exec(Scenario1.Scenario1)
-        .exec(Scenario2.Scenario2)
     }
 
   setUp(roleAssignmentScenario.inject(rampUsers(10) during(300))).protocols(httpProtocol)
