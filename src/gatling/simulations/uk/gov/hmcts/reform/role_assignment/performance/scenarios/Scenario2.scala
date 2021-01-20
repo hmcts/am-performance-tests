@@ -9,13 +9,13 @@ object Scenario2 {
 
   val Scenario2 = scenario("Scenario2")
     //.feed(feederFile)
-    // posts role assignments from body.json
+    // posts role assignments from body4.json
     .pause(10)
-    .exec(http(requestName="AM_090_PostRoleAssignments")
+    .exec(http(requestName="AM_080_PostRoleAssignments")
       .post("/am/role-assignments")
       .headers(Environment.headers_1)
       .headers(Environment.headers_4)
-      .body(ElFileBody("body.json"))
+      .body(ElFileBody("body4.json"))
       .check(status.is(201))
       .check(jsonPath("$..caseId").saveAs("caseId"))
       .check(jsonPath("$..process").saveAs("process"))
@@ -23,7 +23,7 @@ object Scenario2 {
     .pause(5)
 
     // queries role assignments
-    .exec(http(requestName="AM_100_QueryRoleAssignments")
+    .exec(http(requestName="AM_090_QueryRoleAssignments")
       .post("/am/role-assignments/query")
       .headers(Environment.headers_1)
       .headers(Environment.headers_4)
@@ -32,7 +32,7 @@ object Scenario2 {
     .pause(5)
 
     // deletes role assignments based on process and reference
-    .exec(http(requestName="AM_110_DeleteRoleAssignmentsReference")
+    .exec(http(requestName="AM_100_DeleteRoleAssignmentsReference")
       .delete("/am/role-assignments?process=${process}&reference=${reference}")
       .headers(Environment.headers_1)
       .check(status.is(204)))
