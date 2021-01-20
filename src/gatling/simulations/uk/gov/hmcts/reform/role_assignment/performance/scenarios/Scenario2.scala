@@ -10,6 +10,7 @@ object Scenario2 {
   val Scenario2 = scenario("Scenario2")
     //.feed(feederFile)
     // posts role assignments from body.json
+    .pause(10)
     .exec(http(requestName="AM_090_PostRoleAssignments")
       .post("/am/role-assignments")
       .headers(Environment.headers_1)
