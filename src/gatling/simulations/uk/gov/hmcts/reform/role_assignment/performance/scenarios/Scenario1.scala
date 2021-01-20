@@ -99,7 +99,7 @@ object Scenario1 {
     .pause(5)
     
     // deletes role assignments by process and reference
-    .exec(http(requestName="AM_080_DeleteRoleAssignmentsReference")
+    .exec(http(requestName="AM_090_DeleteRoleAssignmentsReference")
       .delete("/am/role-assignments?process=${process2}&reference=${reference2}")
       .headers(Environment.headers_1)
       .check(status.is(204)))
