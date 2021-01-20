@@ -10,7 +10,7 @@ class RoleAssignmentSimulation extends Simulation{
   val httpProtocol = http.proxy(Proxy("proxyout.reform.hmcts.net", 8080).httpsPort(8080))
     .baseUrl(Environment.baseURL)
 
-  val feederFile = csv("Feeder_file.csv").circular
+  val feederFile = csv("Feeder_file.csv").unique
 
   val roleAssignmentScenario = scenario("RoleAssignmentScenario")
 
