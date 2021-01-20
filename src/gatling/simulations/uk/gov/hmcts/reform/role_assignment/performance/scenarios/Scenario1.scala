@@ -31,7 +31,7 @@ object Scenario1 {
       .check(status.is(201))
       .check(jsonPath("$..actorId").saveAs("actorId"))
       .check(jsonPath("$..id").saveAs("assignmentId")))
-    .pause(10)
+    .pause(5)
 
     // posts role assignments from body3.json
     .exec(http(requestName="AM_020_PostRoleAssignments")
@@ -42,7 +42,7 @@ object Scenario1 {
       .check(status.is(201))
       .check(jsonPath("$..process").saveAs("process1"))
       .check(jsonPath("$..reference").saveAs("reference1")))
-    .pause(10)
+    .pause(5)
 
     // posts role assignments from body4.json
     .exec(http(requestName="AM_030_PostRoleAssignments")
@@ -53,14 +53,14 @@ object Scenario1 {
       .check(status.is(201))
       .check(jsonPath("$..process").saveAs("process2"))
       .check(jsonPath("$..reference").saveAs("reference2")))
-    .pause(10)
+    .pause(5)
 
     // gets roles
     .exec(http(requestName="AM_040_GetRoles")
       .get("/am/role-assignments/roles")
       .headers(Environment.headers_1)
       .check(status.is(200)))
-    .pause(10)
+    .pause(5)
 
     // gets role assignments by actor
     .exec(http(requestName="AM_050_GetRoleAssignmentsActor")
@@ -68,7 +68,7 @@ object Scenario1 {
       .headers(Environment.headers_1)
       .headers(Environment.headers_2)
       .check(status.is(200)))
-    .pause(10)
+    .pause(5)
 
     // deletes role assignments
     .exec(http(requestName="AM_060_DeleteRoleAssignments")
@@ -76,19 +76,19 @@ object Scenario1 {
       .headers(Environment.headers_1)
       .headers(Environment.headers_5)
       .check(status.is(204)))
-    .pause(10)
+    .pause(5)
 
     // deletes role assignments by process and reference
     .exec(http(requestName="AM_70_DeleteRoleAssignmentsReference")
       .delete("/am/role-assignments?process=${process1}&reference=${reference1}")
       .headers(Environment.headers_1)
       .check(status.is(204)))
-    .pause(10)
+    .pause(5)
 
     // deletes role assignments by process and reference
     .exec(http(requestName="AM_80_DeleteRoleAssignmentsReference")
       .delete("/am/role-assignments?process=${process2}&reference=${reference2}")
       .headers(Environment.headers_1)
       .check(status.is(204)))
-    .pause(10)
+    .pause(5)
 }
