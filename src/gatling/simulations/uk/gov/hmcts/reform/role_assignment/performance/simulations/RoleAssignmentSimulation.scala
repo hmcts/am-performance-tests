@@ -15,11 +15,10 @@ class RoleAssignmentSimulation extends Simulation{
 
         .exec(IDAMHelper.getIdamToken)
         .exec(S2SHelper.S2SAuthToken)
-    .repeat(100)
+    .repeat(1)
     {
       feed(feederFile)
         .exec(Scenario1.Scenario1)
-        .exec(Scenario2.Scenario2)
     }
 
   setUp(roleAssignmentScenario.inject(rampUsers(1) during(3))).protocols(httpProtocol)
