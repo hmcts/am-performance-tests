@@ -17,8 +17,8 @@ tasks.withType(JavaExec) {
     jvmArgs = ['-Xms512m', '-Xmx1024m', '-XX:+UseConcMarkSweepGC']
 }
 
-sourceCompatibility = "11"
-targetCompatibility = "11"
+//sourceCompatibility = "11"
+//targetCompatibility = "11"
 
 /*dependencyCheck {	
     suppressionFile = 'config/owasp/suppressions.xml'
