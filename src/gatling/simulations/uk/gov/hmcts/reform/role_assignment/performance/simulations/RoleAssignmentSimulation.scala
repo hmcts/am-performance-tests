@@ -14,14 +14,14 @@ class RoleAssignmentSimulation extends Simulation{
 
   val feederFile = csv("Feeder_file.csv").shuffle
 
-  val roleAssignmentScenario = scenario("RoleAssignmentScenario")
+  val roleAssignmentScenario = scenario("Role Assignment Scenario")
 
         .exec(IDAMHelper.getIdamToken)
         .exec(S2SHelper.S2SAuthToken)
     .repeat(1)
     {
       feed(feederFile)
-        .exec(Scenario1.Scenario1)
+        .exec(RA_Scenario.RA_Scenario)
     }
 
   setUp(roleAssignmentScenario.inject(rampUsers(10) during(300))).protocols(httpProtocol)
