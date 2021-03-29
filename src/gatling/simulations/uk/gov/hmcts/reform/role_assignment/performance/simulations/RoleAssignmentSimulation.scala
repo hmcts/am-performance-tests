@@ -8,7 +8,8 @@ import uk.gov.hmcts.reform.role_assignment.performance.scenarios.utils._
 class RoleAssignmentSimulation extends Simulation{
 
   val httpProtocol = 
-    //http.proxy(Proxy("proxyout.reform.hmcts.net", 8080).httpsPort(8080))
+    http
+    //.proxy(Proxy("proxyout.reform.hmcts.net", 8080).httpsPort(8080))
     .baseUrl(Environment.baseURL)
 
   val feederFile = csv("Feeder_file.csv").shuffle
