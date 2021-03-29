@@ -21,24 +21,20 @@ object Environment {
   val s2sSecret = ConfigFactory.load.getString("aat_service.pass")
 
 
-  val headers_1 = Map(
+  val headers_authorisation = Map(
    "Authorization" -> "Bearer ${accessToken}",
    "serviceAuthorization" -> "${s2sToken}"
   )
 
-  val headers_2 = Map(
+  val headers_actor_id = Map(
   "actorId" -> "${actorId}"
   )
 
-  val headers_3 = Map(
-  "roleType" -> "CASE"
-  )
-
-  val headers_4 = Map(
+  val headers_content_type = Map(
   "content-type" -> "application/json"
   )
 
-  val headers_5 = Map(
+  val headers_assignment_id = Map(
   "assignmentId" -> "${assignmentId}"
   )
 
