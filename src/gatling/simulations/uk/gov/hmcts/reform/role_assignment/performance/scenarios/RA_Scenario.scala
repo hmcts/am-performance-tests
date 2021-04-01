@@ -19,7 +19,7 @@ object RA_Scenario {
     .body(ElFileBody("body.json"))
     .check(status.is(201))
     .check(jsonPath("$..actorId").saveAs("actorId"))
-    .check(jsonPath("$..id").saveAs("assignmentId"))
+    .check(jsonPath("$..id").find(1).saveAs("assignmentId"))
     .check(jsonPath("$..caseId").saveAs("caseId")))
   .pause(thinkTime)
 
