@@ -11,9 +11,9 @@ class RoleAssignmentSimulation extends Simulation{
   val rampUpDurationMins = 2
   val rampDownDurationMins = 2
   val testDurationMins = 60
-  val HourlyTarget1:Double = 6240
+  val HourlyTarget1:Double = 78
   val RatePerSec1 = HourlyTarget1 / 3600
-  val HourlyTarget2:Double = 78
+  val HourlyTarget2:Double = 6240
   val RatePerSec2 = HourlyTarget2 / 3600
   val HourlyTarget3:Double = 1
   val RatePerSec3 = HourlyTarget3 / 3600
