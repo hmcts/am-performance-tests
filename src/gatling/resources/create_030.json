@@ -1,16 +1,16 @@
 {
   "roleRequest":
   {
-    "process": "process1",
-    "reference": "6b36bfc6-bb21-11ea-b3de-0242ac130001",
-    "assignerId": "ff0d2548-3110-4dc2-957a-a8d3e7ccfc1b",
+    "process": "processabc",
+    "reference": "${UUID2}",
+    "assignerId": "ff0d2548-3110-4dc2-957a-a8d3e7ccfcs1",
     "replaceExisting": true
   },
   "requestedRoles":
   [
     {
       "actorIdType": "IDAM",
-      "actorId": "${UUID}",
+      "actorId": "${UUID2}",
       "roleType": "ORGANISATION",
       "roleName": "judge",
       "roleCategory": "JUDICIAL",
@@ -20,9 +20,9 @@
       "attributes":
       {
         "jurisdiction": "divorce",
-        "region": "south-east",
+        "region": "north-east",
         "contractType": "SALARIED",
-        "primaryLocation": "219161"
+        "primaryLocation": "2233443"
       }
     }
   ]

@@ -7,6 +7,7 @@ import uk.gov.hmcts.reform.role_assignment.performance.scenarios.utils.Environme
 object RA_Scenario {
     
   private def UUID(): String = java.util.UUID.randomUUID.toString
+  private def UUID2(): String = java.util.UUID.randomUUID.toString
 
   val createRoleAssignmentsCase = scenario("Create role assignments (Case)")
 
@@ -19,8 +20,8 @@ object RA_Scenario {
     .check(status.is(201)))
   .pause(thinkTime)
 
-  val createRoleAssignmentsOrg = scenario("Create role assignments (Org)")
-  .exec(_.set("UUID",UUID()))
+  val createRoleAssignmentsOrgReplaceFalse= scenario("Create role assignments (Org), replace existing false")
+  .exec(_.set("UUID","replacefalse" + UUID()))
 
   // posts role assignments from create_020.json
   .exec(http(requestName="AM_020_PostRoleAssignments")
@@ -31,6 +32,8 @@ object RA_Scenario {
     .check(status.is(201)))
   .pause(thinkTime)
 
+  val createRoleAssignmentsOrgReplaceTrue = scenario("Create role assignments (Org), replace existing true")
+    .exec(_.set("UUID2","replacetrue" + UUID2()))
   // posts role assignments from create_030.json
   .exec(http(requestName="AM_030_PostRoleAssignments")
     .post("/am/role-assignments")
