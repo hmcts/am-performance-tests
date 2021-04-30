@@ -16,18 +16,18 @@ class RoleAssignmentSimulation extends Simulation{
   val testDurationMins = 60
 
   val createCaseHourlyTarget:Double = 300
-  val createCaseScenarioRate: Double = createCaseHourlyTarget / 3600
+  val createCaseRate: Double = createCaseHourlyTarget / 3600
 
   val createOrgHourlyTarget:Double = 104
-  val createOrgHourlyRate: Double = createOrgHourlyTarget / 3600
+  val createOrgRate: Double = createOrgHourlyTarget / 3600
 
   val getRolesHourlyTarget:Double = 10
-  val getRolesHourlyRate: Double = getRolesHourlyTarget / 3600
+  val getRolesRate: Double = getRolesHourlyTarget / 3600
 
-  val getRoleAssignmentsByActorIdHourlyTarget:Double = 4992
-  val getRoleAssignmentsByActorIdRate: Double = getRoleAssignmentsByActorIdHourlyTarget / 3600
+  val getRoleAssignmentsByActorHourlyTarget:Double = 4980
+  val getRoleAssignmentsByActorRate: Double = getRoleAssignmentsByActorHourlyTarget / 3600
 
-  val queryRoleAssignmentsHourlyTarget:Double = 312
+  val queryRoleAssignmentsHourlyTarget:Double = 300
   val queryRoleAssignmentsRate: Double = queryRoleAssignmentsHourlyTarget / 3600
 
   val deleteRoleAssignmentsHourlyTarget:Double = 390 // There are 2 queries within this block, hence rate = 390*2
@@ -86,21 +86,21 @@ class RoleAssignmentSimulation extends Simulation{
     .exec(S2SHelper.S2SAuthToken)
     .exec(RA_Scenario.deleteRoleAssignments)
 
-  setUp(createRoleAssignmentsCaseScenario.inject(rampUsersPerSec(0.00) to (createCaseScenarioRate) during (rampUpDurationMins minutes),
-    constantUsersPerSec(createCaseScenarioRate) during (testDurationMins minutes),
-    rampUsersPerSec(createCaseScenarioRate) to (0.00) during (rampDownDurationMins minutes)),
+  setUp(createRoleAssignmentsCaseScenario.inject(rampUsersPerSec(0.00) to (createCaseRate) during (rampUpDurationMins minutes),
+    constantUsersPerSec(createCaseRate) during (testDurationMins minutes),
+    rampUsersPerSec(createCaseRate) to (0.00) during (rampDownDurationMins minutes)),
 
-    createRoleAssignmentsOrgScenarioReplaceTrue.inject(rampUsersPerSec(0.00) to (createOrgHourlyRate) during (rampUpDurationMins minutes),
-    constantUsersPerSec(createOrgHourlyRate) during (testDurationMins minutes),
-    rampUsersPerSec(createOrgHourlyRate) to (0.00) during (rampDownDurationMins minutes)),
+    createRoleAssignmentsOrgScenarioReplaceTrue.inject(rampUsersPerSec(0.00) to (createOrgRate) during (rampUpDurationMins minutes),
+    constantUsersPerSec(createOrgRate) during (testDurationMins minutes),
+    rampUsersPerSec(createOrgRate) to (0.00) during (rampDownDurationMins minutes)),
 
-    getRolesScenario.inject(rampUsersPerSec(0.00) to (getRolesHourlyRate) during (rampUpDurationMins minutes),
-    constantUsersPerSec(getRolesHourlyRate) during (testDurationMins minutes),
-    rampUsersPerSec(getRolesHourlyRate) to (0.00) during (rampDownDurationMins minutes)),
+    getRolesScenario.inject(rampUsersPerSec(0.00) to (getRolesRate) during (rampUpDurationMins minutes),
+    constantUsersPerSec(getRolesRate) during (testDurationMins minutes),
+    rampUsersPerSec(getRolesRate) to (0.00) during (rampDownDurationMins minutes)),
 
-    getRoleAssignmentsByActorScenario.inject(rampUsersPerSec(0.00) to (getRoleAssignmentsByActorIdRate) during (rampUpDurationMins minutes),
-    constantUsersPerSec(getRoleAssignmentsByActorIdRate) during (testDurationMins minutes),
-    rampUsersPerSec(getRoleAssignmentsByActorIdRate) to (0.00) during (rampDownDurationMins minutes)),
+    getRoleAssignmentsByActorScenario.inject(rampUsersPerSec(0.00) to (getRoleAssignmentsByActorRate) during (rampUpDurationMins minutes),
+    constantUsersPerSec(getRoleAssignmentsByActorRate) during (testDurationMins minutes),
+    rampUsersPerSec(getRoleAssignmentsByActorRate) to (0.00) during (rampDownDurationMins minutes)),
 
     queryRoleAssignmentsScenario.inject(rampUsersPerSec(0.00) to (queryRoleAssignmentsRate) during (rampUpDurationMins minutes),
     constantUsersPerSec(queryRoleAssignmentsRate) during (testDurationMins minutes),

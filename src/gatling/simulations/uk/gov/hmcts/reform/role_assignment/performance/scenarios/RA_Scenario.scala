@@ -18,20 +18,21 @@ object RA_Scenario {
   .pause(thinkTime)
 
   val createRoleAssignmentsOrgReplaceTrue = scenario("Create role assignments (Org), replace existing true")
-    .exec(_.set("UUID", java.util.UUID.randomUUID.toString))
-  // posts role assignments from create_030.json
-  .exec(http(requestName="AM_030_PostOrgRoleAssignments")
+  .exec(_.set("UUID", java.util.UUID.randomUUID.toString))
+
+  // posts role assignments from create_020.json
+  .exec(http(requestName="AM_020_PostOrgRoleAssignments")
     .post("/am/role-assignments")
     .headers(headers_authorisation)
     .headers(headers_content_type)
-    .body(ElFileBody("create_030.json"))
+    .body(ElFileBody("create_020.json"))
     .check(status.is(201)))
   .pause(thinkTime)
 
   val getRoles = scenario("Get roles")
 
   // gets roles
-  .exec(http(requestName="AM_040_GetRoles")
+  .exec(http(requestName="AM_030_GetRoles")
     .get("/am/role-assignments/roles")
     .headers(headers_authorisation)
     .check(status.is(200)))
@@ -40,7 +41,7 @@ object RA_Scenario {
   val getRoleAssignmentsByActor = scenario("Get role assignments by actor")
 
   // gets role assignments by actor
-  .exec(http(requestName="AM_050_GetRoleAssignmentsActor")
+  .exec(http(requestName="AM_040_GetRoleAssignmentsActor")
     .get("/am/role-assignments/actors/${actorId}")
     .headers(headers_authorisation)
     .headers(headers_actor_id)
@@ -50,7 +51,7 @@ object RA_Scenario {
   val queryRoleAssignments = scenario("Query role assignments")
 
   // queries role assignments
-  .exec(http(requestName="AM_060_QueryRoleAssignments")
+  .exec(http(requestName="AM_050_QueryRoleAssignments")
     .post("/am/role-assignments/query")
     .headers(headers_authorisation)
     .headers(headers_content_type)
@@ -61,7 +62,7 @@ object RA_Scenario {
   val deleteRoleAssignments = scenario("Delete role assignments")
 
   // deletes role assignments
-  .exec(http(requestName="AM_070_DeleteRoleAssignments")
+  .exec(http(requestName="AM_060_DeleteRoleAssignments")
     .delete("/am/role-assignments/${assignmentId}")
     .headers(headers_authorisation)
     .headers(headers_assignment_id)
@@ -69,7 +70,7 @@ object RA_Scenario {
   .pause(thinkTime)
 
   // deletes role assignments by process and reference
-  .exec(http(requestName="AM_080_DeleteRoleAssignmentsReference")
+  .exec(http(requestName="AM_070_DeleteRoleAssignmentsReference")
     .delete("/am/role-assignments?process=${process}&reference=${reference}")
     .headers(headers_authorisation)
     .check(status.is(204)))
