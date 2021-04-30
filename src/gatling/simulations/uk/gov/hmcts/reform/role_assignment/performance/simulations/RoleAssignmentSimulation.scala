@@ -15,13 +15,13 @@ class RoleAssignmentSimulation extends Simulation{
   val rampDownDurationMins = 1
   val testDurationMins = 60
 
-  val createCaseHourlyTarget:Double = 1794
+  val createCaseHourlyTarget:Double = 300
   val createCaseScenarioRate: Double = createCaseHourlyTarget / 3600
 
   val createOrgHourlyTarget:Double = 104
   val createOrgHourlyRate: Double = createOrgHourlyTarget / 3600
 
-  val getRolesHourlyTarget:Double = 100
+  val getRolesHourlyTarget:Double = 10
   val getRolesHourlyRate: Double = getRolesHourlyTarget / 3600
 
   val getRoleAssignmentsByActorIdHourlyTarget:Double = 4992
@@ -30,7 +30,7 @@ class RoleAssignmentSimulation extends Simulation{
   val queryRoleAssignmentsHourlyTarget:Double = 312
   val queryRoleAssignmentsRate: Double = queryRoleAssignmentsHourlyTarget / 3600
 
-  val deleteRoleAssignmentsHourlyTarget:Double = 780
+  val deleteRoleAssignmentsHourlyTarget:Double = 390 // There are 2 queries within this block, hence rate = 390*2
   val deleteRoleAssignmentsRate: Double = deleteRoleAssignmentsHourlyTarget / 3600
 
   val httpProtocol: HttpProtocolBuilder = http
@@ -98,17 +98,17 @@ class RoleAssignmentSimulation extends Simulation{
     constantUsersPerSec(getRolesHourlyRate) during (testDurationMins minutes),
     rampUsersPerSec(getRolesHourlyRate) to (0.00) during (rampDownDurationMins minutes)),
 
-/*    getRoleAssignmentsByActorScenario.inject(rampUsersPerSec(0.00) to (getRoleAssignmentsByActorIdRate) during (rampUpDurationMins minutes),
+    getRoleAssignmentsByActorScenario.inject(rampUsersPerSec(0.00) to (getRoleAssignmentsByActorIdRate) during (rampUpDurationMins minutes),
     constantUsersPerSec(getRoleAssignmentsByActorIdRate) during (testDurationMins minutes),
-    rampUsersPerSec(getRoleAssignmentsByActorIdRate) to (0.00) during (rampDownDurationMins minutes)),*/
+    rampUsersPerSec(getRoleAssignmentsByActorIdRate) to (0.00) during (rampDownDurationMins minutes)),
 
     queryRoleAssignmentsScenario.inject(rampUsersPerSec(0.00) to (queryRoleAssignmentsRate) during (rampUpDurationMins minutes),
     constantUsersPerSec(queryRoleAssignmentsRate) during (testDurationMins minutes),
-    rampUsersPerSec(queryRoleAssignmentsRate) to (0.00) during (rampDownDurationMins minutes))/*,
+    rampUsersPerSec(queryRoleAssignmentsRate) to (0.00) during (rampDownDurationMins minutes)),
 
     deleteRoleAssignmentsScenario.inject(rampUsersPerSec(0.00) to (deleteRoleAssignmentsRate) during (rampUpDurationMins minutes),
     constantUsersPerSec(deleteRoleAssignmentsRate) during (testDurationMins minutes),
-    rampUsersPerSec(deleteRoleAssignmentsRate) to (0.00) during (rampDownDurationMins minutes))*/
+    rampUsersPerSec(deleteRoleAssignmentsRate) to (0.00) during (rampDownDurationMins minutes))
   )
   .protocols(httpProtocol)
 
