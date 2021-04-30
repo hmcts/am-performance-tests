@@ -21,7 +21,7 @@ object  S2SHelper {
   val S2SAuthToken =
 
     exec(http("Token_020_GetServiceToken")
-      .post(s2sURL+"/testing-support/lease")
+      .post(s2sURL+"/lease")
       .header("Content-Type", "application/json")
       .body(StringBody(
         s"""{

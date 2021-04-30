@@ -11,7 +11,7 @@ object IDAMHelper {
   val getIdamToken = 
 
     exec(http("Token_010_015_GetAuthToken")
-         .post(idamURL + "/o/token?client_id=" + "am_docker" + "&client_secret=" + "am_docker_secret" + "&grant_type=password&scope=" + "openid%20profile%20roles%20authorities" + "&username=" + "TEST_AM_USER7_BEFTA@test.local" + "&password=" + "Pa55word11")
+         .post(idamURL + "/o/token?client_id=" + idamClient + "&client_secret=" + idamSecret + "&grant_type=password&scope=" + idamScope + "&username=" + idamUsername + "&password=" + idamPassword)
          .header("Content-Type", "application/x-www-form-urlencoded")
          .header("Content-Length", "0")
          .check(status.is(200))
