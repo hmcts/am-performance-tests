@@ -68,11 +68,11 @@ object RA_Scenario {
     .check(status.is(204)))
   .pause(thinkTime)
 
-  /*// deletes role assignments by process and reference
+  // deletes role assignments by process and reference
   .exec(http(requestName="AM_080_DeleteRoleAssignmentsReference")
     .delete("/am/role-assignments?process=${process}&reference=${reference}")
     .headers(headers_authorisation)
     .check(status.is(204)))
-  .pause(thinkTime)*/
+  .pause(thinkTime)
 
 }
