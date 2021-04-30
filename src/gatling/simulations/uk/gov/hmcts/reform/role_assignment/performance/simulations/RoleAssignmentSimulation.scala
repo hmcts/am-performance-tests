@@ -13,25 +13,25 @@ class RoleAssignmentSimulation extends Simulation{
 
   val rampUpDurationMins = 1
   val rampDownDurationMins = 1
-  val testDurationMins = 60
+  val testDurationMins = 1
 
-  val createCaseHourlyTarget:Double = 300
-  val createCaseRate: Double = createCaseHourlyTarget / 3600
+  val createCasePeakTarget:Double = 20
+  val createCaseRate: Double = createCasePeakTarget / 60
 
-  val createOrgHourlyTarget:Double = 104
-  val createOrgRate: Double = createOrgHourlyTarget / 3600
+  val createOrgPeakTarget:Double = 104
+  val createOrgRate: Double = createOrgPeakTarget / 60
 
-  val getRolesHourlyTarget:Double = 10
-  val getRolesRate: Double = getRolesHourlyTarget / 3600
+  val getRolesPeakTarget:Double = 10
+  val getRolesRate: Double = getRolesPeakTarget / 60
 
-  val getRoleAssignmentsByActorHourlyTarget:Double = 4980
-  val getRoleAssignmentsByActorRate: Double = getRoleAssignmentsByActorHourlyTarget / 3600
+  val getRoleAssignmentsByActorPeakTarget:Double = 320
+  val getRoleAssignmentsByActorRate: Double = getRoleAssignmentsByActorPeakTarget / 60
 
-  val queryRoleAssignmentsHourlyTarget:Double = 300
-  val queryRoleAssignmentsRate: Double = queryRoleAssignmentsHourlyTarget / 3600
+  val queryRoleAssignmentsPeakTarget:Double = 20
+  val queryRoleAssignmentsRate: Double = queryRoleAssignmentsPeakTarget / 60
 
-  val deleteRoleAssignmentsHourlyTarget:Double = 390 // There are 2 queries within this block, hence rate = 390*2
-  val deleteRoleAssignmentsRate: Double = deleteRoleAssignmentsHourlyTarget / 3600
+  val deleteRoleAssignmentsPeakTarget:Double = 25 // There are 2 queries within this block, hence rate = 25*2
+  val deleteRoleAssignmentsRate: Double = deleteRoleAssignmentsPeakTarget / 60
 
   val httpProtocol: HttpProtocolBuilder = http
     //.proxy(Proxy("proxyout.reform.hmcts.net", 8080).httpsPort(8080))
