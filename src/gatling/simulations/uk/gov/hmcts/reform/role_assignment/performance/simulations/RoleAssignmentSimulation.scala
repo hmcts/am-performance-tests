@@ -1,44 +1,48 @@
 package uk.gov.hmcts.reform.role_assignment.performance.simulations
 
 import io.gatling.core.Predef._
+import io.gatling.core.feeder.SourceFeederBuilder
 import io.gatling.http.Predef._
+import io.gatling.http.protocol.HttpProtocolBuilder
 import uk.gov.hmcts.reform.role_assignment.performance.scenarios._
 import uk.gov.hmcts.reform.role_assignment.performance.scenarios.utils._
+
 import scala.concurrent.duration.DurationInt
 
 class RoleAssignmentSimulation extends Simulation{
 
-  val rampUpDurationMins = 2
-  val rampDownDurationMins = 2
-  val testDurationMins = 60
-  val HourlyTarget1:Double = 78
-  val RatePerSec1 = HourlyTarget1 / 3600
-  val HourlyTarget2:Double = 3000   // There are replace false/true scenarios
-  val RatePerSec2 = HourlyTarget2 / 3600
+  val rampUpDurationMins = 1
+  val rampDownDurationMins = 1
+  val testDurationMins = 1
 
-  val HourlyTarget22:Double = 2000   // There are replace false/true scenarios
-  val RatePerSec22 = HourlyTarget22 / 3600
+  val createCaseHourlyTarget:Double = 1794
+  val createCaseScenarioRate: Double = createCaseHourlyTarget / 3600
 
+  val createOrgHourlyTarget:Double = 104
+  val createOrgHourlyRate: Double = createOrgHourlyTarget / 3600
 
-  val HourlyTarget3:Double = 1
-  val RatePerSec3 = HourlyTarget3 / 3600
-  val HourlyTarget4:Double = 4992
-  val RatePerSec4 = HourlyTarget4 / 3600
-  val HourlyTarget5:Double = 296
-  val RatePerSec5 = HourlyTarget5 / 3600
-  val HourlyTarget6:Double = 780
-  val RatePerSec6 = HourlyTarget6 / 3600
+  val getRolesHourlyTarget:Double = 100
+  val getRolesHourlyRate: Double = getRolesHourlyTarget / 3600
 
-  val httpProtocol = http
+  val getRoleAssignmentsByActorIdHourlyTarget:Double = 4992
+  val getRoleAssignmentsByActorIdRate: Double = getRoleAssignmentsByActorIdHourlyTarget / 3600
+
+  val queryRoleAssignmentsHourlyTarget:Double = 312
+  val queryRoleAssignmentsRate: Double = queryRoleAssignmentsHourlyTarget / 3600
+
+  val deleteRoleAssignmentsHourlyTarget:Double = 780
+  val deleteRoleAssignmentsRate: Double = deleteRoleAssignmentsHourlyTarget / 3600
+
+  val httpProtocol: HttpProtocolBuilder = http
     //.proxy(Proxy("proxyout.reform.hmcts.net", 8080).httpsPort(8080))
     .baseUrl(Environment.baseURL)
 
-  val createFeederFile = csv("create.csv").circular
-  val caseIdFeederFile = csv("case_ids.csv").circular
-  val actorIdFeederFile = csv("actor_ids.csv").circular
-  val assignmentIdFeederFile = csv("assignment_ids.csv").circular
-  val referencesFeederFile = csv("references.csv").circular
-  val processesFeederFile = csv("processes.csv").circular
+  val createFeederFile: SourceFeederBuilder[String] = csv("create.csv").circular
+  val caseIdFeederFile: SourceFeederBuilder[String] = csv("case_ids.csv").circular
+  val actorIdFeederFile: SourceFeederBuilder[String] = csv("actor_ids.csv").circular
+  val assignmentIdFeederFile: SourceFeederBuilder[String] = csv("assignment_ids.csv").circular
+  val referencesFeederFile: SourceFeederBuilder[String] = csv("references.csv").circular
+  val processesFeederFile: SourceFeederBuilder[String] = csv("processes.csv").circular
 
   val createRoleAssignmentsCaseScenario = scenario("Create Role Assignments (Case) Scenario")
 
@@ -46,12 +50,6 @@ class RoleAssignmentSimulation extends Simulation{
     .exec(IDAMHelper.getIdamToken)
     .exec(S2SHelper.S2SAuthToken)
     .exec(RA_Scenario.createRoleAssignmentsCase)
-
-  val createRoleAssignmentsOrgScenarioReplaceFalse = scenario("Create Role Assignments (Org) Scenario Replace False")
-
-    .exec(IDAMHelper.getIdamToken)
-    .exec(S2SHelper.S2SAuthToken)
-    .exec(RA_Scenario.createRoleAssignmentsOrgReplaceFalse)
 
   val createRoleAssignmentsOrgScenarioReplaceTrue = scenario("Create Role Assignments (Org) Scenario Replace True")
 
@@ -88,33 +86,29 @@ class RoleAssignmentSimulation extends Simulation{
     .exec(S2SHelper.S2SAuthToken)
     .exec(RA_Scenario.deleteRoleAssignments)
 
-  setUp(/*createRoleAssignmentsCaseScenario.inject(rampUsersPerSec(0.00) to (RatePerSec1) during (rampUpDurationMins minutes),
-    constantUsersPerSec(RatePerSec1) during (testDurationMins minutes),
-    rampUsersPerSec(RatePerSec1) to (0.00) during (rampDownDurationMins minutes)),*/
+  setUp(createRoleAssignmentsCaseScenario.inject(rampUsersPerSec(0.00) to (createCaseScenarioRate) during (rampUpDurationMins minutes),
+    constantUsersPerSec(createCaseScenarioRate) during (testDurationMins minutes),
+    rampUsersPerSec(createCaseScenarioRate) to (0.00) during (rampDownDurationMins minutes)),
 
-    createRoleAssignmentsOrgScenarioReplaceFalse.inject(rampUsersPerSec(0.00) to (RatePerSec2) during (rampUpDurationMins minutes),
-    constantUsersPerSec(RatePerSec2) during (testDurationMins minutes),
-    rampUsersPerSec(RatePerSec2) to (0.00) during (rampDownDurationMins minutes)),
+    createRoleAssignmentsOrgScenarioReplaceTrue.inject(rampUsersPerSec(0.00) to (createOrgHourlyRate) during (rampUpDurationMins minutes),
+    constantUsersPerSec(createOrgHourlyRate) during (testDurationMins minutes),
+    rampUsersPerSec(createOrgHourlyRate) to (0.00) during (rampDownDurationMins minutes)),
 
-    createRoleAssignmentsOrgScenarioReplaceTrue.inject(rampUsersPerSec(0.00) to (RatePerSec22) during (rampUpDurationMins minutes),
-      constantUsersPerSec(RatePerSec22) during (testDurationMins minutes),
-      rampUsersPerSec(RatePerSec22) to (0.00) during (rampDownDurationMins minutes))
+    getRolesScenario.inject(rampUsersPerSec(0.00) to (getRolesHourlyRate) during (rampUpDurationMins minutes),
+    constantUsersPerSec(getRolesHourlyRate) during (testDurationMins minutes),
+    rampUsersPerSec(getRolesHourlyRate) to (0.00) during (rampDownDurationMins minutes)),
 
-  /*getRolesScenario.inject(rampUsersPerSec(0.00) to (RatePerSec3) during (rampUpDurationMins minutes),
-  constantUsersPerSec(RatePerSec3) during (testDurationMins minutes),
-  rampUsersPerSec(RatePerSec3) to (0.00) during (rampDownDurationMins minutes)),
+/*    getRoleAssignmentsByActorScenario.inject(rampUsersPerSec(0.00) to (getRoleAssignmentsByActorIdRate) during (rampUpDurationMins minutes),
+    constantUsersPerSec(getRoleAssignmentsByActorIdRate) during (testDurationMins minutes),
+    rampUsersPerSec(getRoleAssignmentsByActorIdRate) to (0.00) during (rampDownDurationMins minutes)),*/
 
-  getRoleAssignmentsByActorScenario.inject(rampUsersPerSec(0.00) to (RatePerSec4) during (rampUpDurationMins minutes),
-  constantUsersPerSec(RatePerSec4) during (testDurationMins minutes),
-  rampUsersPerSec(RatePerSec4) to (0.00) during (rampDownDurationMins minutes)),
+    queryRoleAssignmentsScenario.inject(rampUsersPerSec(0.00) to (queryRoleAssignmentsRate) during (rampUpDurationMins minutes),
+    constantUsersPerSec(queryRoleAssignmentsRate) during (testDurationMins minutes),
+    rampUsersPerSec(queryRoleAssignmentsRate) to (0.00) during (rampDownDurationMins minutes)),
 
-  queryRoleAssignmentsScenario.inject(rampUsersPerSec(0.00) to (RatePerSec5) during (rampUpDurationMins minutes),
-  constantUsersPerSec(RatePerSec5) during (testDurationMins minutes),
-  rampUsersPerSec(RatePerSec5) to (0.00) during (rampDownDurationMins minutes)),
-
-  deleteRoleAssignmentsScenario.inject(rampUsersPerSec(0.00) to (RatePerSec6) during (rampUpDurationMins minutes),
-  constantUsersPerSec(RatePerSec6) during (testDurationMins minutes),
-  rampUsersPerSec(RatePerSec6) to (0.00) during (rampDownDurationMins minutes))*/
+    deleteRoleAssignmentsScenario.inject(rampUsersPerSec(0.00) to (deleteRoleAssignmentsRate) during (rampUpDurationMins minutes),
+    constantUsersPerSec(deleteRoleAssignmentsRate) during (testDurationMins minutes),
+    rampUsersPerSec(deleteRoleAssignmentsRate) to (0.00) during (rampDownDurationMins minutes))
   )
   .protocols(httpProtocol)
 

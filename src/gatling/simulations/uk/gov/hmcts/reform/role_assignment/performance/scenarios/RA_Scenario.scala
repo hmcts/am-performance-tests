@@ -7,7 +7,6 @@ import uk.gov.hmcts.reform.role_assignment.performance.scenarios.utils.Environme
 object RA_Scenario {
     
   private def UUID(): String = java.util.UUID.randomUUID.toString
-  private def UUID2(): String = java.util.UUID.randomUUID.toString
 
   val createRoleAssignmentsCase = scenario("Create role assignments (Case)")
 
@@ -20,20 +19,8 @@ object RA_Scenario {
     .check(status.is(201)))
   .pause(thinkTime)
 
-  val createRoleAssignmentsOrgReplaceFalse= scenario("Create role assignments (Org), replace existing false")
-  .exec(_.set("UUID","replacefalse" + UUID()))
-
-  // posts role assignments from create_020.json
-  .exec(http(requestName="AM_020_PostRoleAssignments")
-    .post("/am/role-assignments")
-    .headers(headers_authorisation)
-    .headers(headers_content_type)
-    .body(ElFileBody("create_020.json"))
-    .check(status.is(201)))
-  .pause(thinkTime)
-
   val createRoleAssignmentsOrgReplaceTrue = scenario("Create role assignments (Org), replace existing true")
-    .exec(_.set("UUID2","replacetrue" + UUID2()))
+    .exec(_.set("UUID", UUID()))
   // posts role assignments from create_030.json
   .exec(http(requestName="AM_030_PostRoleAssignments")
     .post("/am/role-assignments")
@@ -83,11 +70,11 @@ object RA_Scenario {
     .check(status.is(204)))
   .pause(thinkTime)
 
-  // deletes role assignments by process and reference
+  /*// deletes role assignments by process and reference
   .exec(http(requestName="AM_080_DeleteRoleAssignmentsReference")
     .delete("/am/role-assignments?process=${process}&reference=${reference}")
     .headers(headers_authorisation)
     .check(status.is(204)))
-  .pause(thinkTime)
+  .pause(thinkTime)*/
 
 }
