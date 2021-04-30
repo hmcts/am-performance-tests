@@ -1,16 +1,16 @@
 {
   "roleRequest":
   {
-    "process": "processabc",
-    "reference": "${UUID2}",
-    "assignerId": "ff0d2548-3110-4dc2-957a-a8d3e7ccfcs1",
+    "process": "process1",
+    "reference": "${UUID}",
+    "assignerId": "ff0d2548-3110-4dc2-957a-a8d3e7ccfc1b",
     "replaceExisting": true
   },
   "requestedRoles":
   [
     {
       "actorIdType": "IDAM",
-      "actorId": "${UUID2}",
+      "actorId": "${UUID}",
       "roleType": "ORGANISATION",
       "roleName": "judge",
       "roleCategory": "JUDICIAL",
@@ -20,9 +20,162 @@
       "attributes":
       {
         "jurisdiction": "divorce",
-        "region": "north-east",
+        "region": "south-east",
         "contractType": "SALARIED",
-        "primaryLocation": "2233443"
+        "primaryLocation": "219161"
+      }
+    },
+    {
+      "actorIdType": "IDAM",
+      "actorId": "${UUID}",
+      "roleType": "ORGANISATION",
+      "roleName": "judge",
+      "roleCategory": "JUDICIAL",
+      "classification": "PUBLIC",
+      "grantType": "STANDARD",
+      "readOnly": true,
+      "attributes":
+      {
+        "jurisdiction": "divorce",
+        "region": "south-east",
+        "contractType": "SALARIED",
+        "primaryLocation": "219162"
+      }
+    },
+    {
+      "actorIdType": "IDAM",
+      "actorId": "${UUID}",
+      "roleType": "ORGANISATION",
+      "roleName": "judge",
+      "roleCategory": "JUDICIAL",
+      "classification": "PUBLIC",
+      "grantType": "STANDARD",
+      "readOnly": true,
+      "attributes":
+      {
+        "jurisdiction": "divorce",
+        "region": "south-east",
+        "contractType": "SALARIED",
+        "primaryLocation": "219163"
+      }
+    },
+    {
+      "actorIdType": "IDAM",
+      "actorId": "${UUID}",
+      "roleType": "ORGANISATION",
+      "roleName": "judge",
+      "roleCategory": "JUDICIAL",
+      "classification": "PUBLIC",
+      "grantType": "STANDARD",
+      "readOnly": true,
+      "attributes":
+      {
+        "jurisdiction": "divorce",
+        "region": "south-east",
+        "contractType": "SALARIED",
+        "primaryLocation": "219164"
+      }
+    },
+    {
+      "actorIdType": "IDAM",
+      "actorId": "${UUID}",
+      "roleType": "ORGANISATION",
+      "roleName": "judge",
+      "roleCategory": "JUDICIAL",
+      "classification": "PUBLIC",
+      "grantType": "STANDARD",
+      "readOnly": true,
+      "attributes":
+      {
+        "jurisdiction": "divorce",
+        "region": "south-east",
+        "contractType": "SALARIED",
+        "primaryLocation": "219165"
+      }
+    },
+    {
+      "actorIdType": "IDAM",
+      "actorId": "${UUID}",
+      "roleType": "ORGANISATION",
+      "roleName": "judge",
+      "roleCategory": "JUDICIAL",
+      "classification": "PUBLIC",
+      "grantType": "STANDARD",
+      "readOnly": true,
+      "attributes":
+      {
+        "jurisdiction": "divorce",
+        "region": "south-east",
+        "contractType": "SALARIED",
+        "primaryLocation": "219166"
+      }
+    },
+    {
+      "actorIdType": "IDAM",
+      "actorId": "${UUID}",
+      "roleType": "ORGANISATION",
+      "roleName": "judge",
+      "roleCategory": "JUDICIAL",
+      "classification": "PUBLIC",
+      "grantType": "STANDARD",
+      "readOnly": true,
+      "attributes":
+      {
+        "jurisdiction": "divorce",
+        "region": "south-east",
+        "contractType": "SALARIED",
+        "primaryLocation": "219167"
+      }
+    },
+    {
+      "actorIdType": "IDAM",
+      "actorId": "${UUID}",
+      "roleType": "ORGANISATION",
+      "roleName": "judge",
+      "roleCategory": "JUDICIAL",
+      "classification": "PUBLIC",
+      "grantType": "STANDARD",
+      "readOnly": true,
+      "attributes":
+      {
+        "jurisdiction": "divorce",
+        "region": "south-east",
+        "contractType": "SALARIED",
+        "primaryLocation": "219168"
+      }
+    },
+    {
+      "actorIdType": "IDAM",
+      "actorId": "${UUID}",
+      "roleType": "ORGANISATION",
+      "roleName": "judge",
+      "roleCategory": "JUDICIAL",
+      "classification": "PUBLIC",
+      "grantType": "STANDARD",
+      "readOnly": true,
+      "attributes":
+      {
+        "jurisdiction": "divorce",
+        "region": "south-east",
+        "contractType": "SALARIED",
+        "primaryLocation": "219169"
+      }
+    },
+    {
+      "actorIdType": "IDAM",
+      "actorId": "${UUID}",
+      "roleType": "ORGANISATION",
+      "roleName": "judge",
+      "roleCategory": "JUDICIAL",
+      "classification": "PUBLIC",
+      "grantType": "STANDARD",
+      "readOnly": true,
+      "attributes":
+      {
+        "jurisdiction": "divorce",
+        "region": "south-east",
+        "contractType": "SALARIED",
+        "primaryLocation": "219170"
       }
     }
   ]

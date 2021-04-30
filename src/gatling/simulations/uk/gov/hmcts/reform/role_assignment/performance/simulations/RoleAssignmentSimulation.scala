@@ -13,7 +13,7 @@ class RoleAssignmentSimulation extends Simulation{
 
   val rampUpDurationMins = 1
   val rampDownDurationMins = 1
-  val testDurationMins = 1
+  val testDurationMins = 60
 
   val createCaseHourlyTarget:Double = 1794
   val createCaseScenarioRate: Double = createCaseHourlyTarget / 3600
@@ -104,11 +104,11 @@ class RoleAssignmentSimulation extends Simulation{
 
     queryRoleAssignmentsScenario.inject(rampUsersPerSec(0.00) to (queryRoleAssignmentsRate) during (rampUpDurationMins minutes),
     constantUsersPerSec(queryRoleAssignmentsRate) during (testDurationMins minutes),
-    rampUsersPerSec(queryRoleAssignmentsRate) to (0.00) during (rampDownDurationMins minutes)),
+    rampUsersPerSec(queryRoleAssignmentsRate) to (0.00) during (rampDownDurationMins minutes))/*,
 
     deleteRoleAssignmentsScenario.inject(rampUsersPerSec(0.00) to (deleteRoleAssignmentsRate) during (rampUpDurationMins minutes),
     constantUsersPerSec(deleteRoleAssignmentsRate) during (testDurationMins minutes),
-    rampUsersPerSec(deleteRoleAssignmentsRate) to (0.00) during (rampDownDurationMins minutes))
+    rampUsersPerSec(deleteRoleAssignmentsRate) to (0.00) during (rampDownDurationMins minutes))*/
   )
   .protocols(httpProtocol)
 
