@@ -22,20 +22,20 @@ object Environment {
 
 
   val headers_authorisation = Map(
-   "Authorization" -> "Bearer ${accessToken}",
-   "serviceAuthorization" -> "${s2sToken}"
+    "Authorization" -> "Bearer ${accessToken}",
+    "serviceAuthorization" -> "${s2sToken}"
   )
 
   val headers_actor_id = Map(
-  "actorId" -> "${actorId}"
+    "actorId" -> "${actorId}"
   )
 
   val headers_content_type = Map(
-  "content-type" -> "application/json"
+    "content-type" -> "application/json"
   )
 
   val headers_assignment_id = Map(
-  "assignmentId" -> "${assignmentId}"
+    "assignmentId" -> "${assignmentId}"
   )
 
   val thinkTime = 10

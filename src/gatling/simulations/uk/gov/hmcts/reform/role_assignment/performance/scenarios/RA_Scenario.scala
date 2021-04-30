@@ -5,13 +5,11 @@ import io.gatling.http.Predef._
 import uk.gov.hmcts.reform.role_assignment.performance.scenarios.utils.Environment._
 
 object RA_Scenario {
-    
-  private def UUID(): String = java.util.UUID.randomUUID.toString
 
   val createRoleAssignmentsCase = scenario("Create role assignments (Case)")
 
   // posts role assignments from create_010.json
-  .exec(http(requestName="AM_010_PostRoleAssignments")
+  .exec(http(requestName="AM_010_PostCaseAssignments")
     .post("/am/role-assignments")
     .headers(headers_authorisation)
     .headers(headers_content_type)
@@ -19,20 +17,10 @@ object RA_Scenario {
     .check(status.is(201)))
   .pause(thinkTime)
 
-  val createRoleAssignmentsOrg = scenario("Create role assignments (Org)")
-  .exec(_.set("UUID",UUID()))
-
-  // posts role assignments from create_020.json
-  .exec(http(requestName="AM_020_PostRoleAssignments")
-    .post("/am/role-assignments")
-    .headers(headers_authorisation)
-    .headers(headers_content_type)
-    .body(ElFileBody("create_020.json"))
-    .check(status.is(201)))
-  .pause(thinkTime)
-
+  val createRoleAssignmentsOrgReplaceTrue = scenario("Create role assignments (Org), replace existing true")
+    .exec(_.set("UUID", java.util.UUID.randomUUID.toString))
   // posts role assignments from create_030.json
-  .exec(http(requestName="AM_030_PostRoleAssignments")
+  .exec(http(requestName="AM_030_PostOrgRoleAssignments")
     .post("/am/role-assignments")
     .headers(headers_authorisation)
     .headers(headers_content_type)
