@@ -34,16 +34,16 @@ object RA_Scenario {
     .check(jsonPath("$..reference").saveAs("reference1")))
   .pause(thinkTime)
 
-  // posts role assignments from body4.json
-  .exec(http(requestName="AM_030_PostRoleAssignments")
-    .post("/am/role-assignments")
-    .headers(headers_authorisation)
-    .headers(headers_content_type)
-    .body(ElFileBody("body4.json"))
-    .check(status.is(201))
-    .check(jsonPath("$..process").saveAs("process2"))
-    .check(jsonPath("$..reference").saveAs("reference2")))
-  .pause(thinkTime)
+//  // posts role assignments from body4.json
+//  .exec(http(requestName="AM_030_PostRoleAssignments")
+//    .post("/am/role-assignments")
+//    .headers(headers_authorisation)
+//    .headers(headers_content_type)
+//    .body(ElFileBody("body4.json"))
+//    .check(status.is(201))
+//    .check(jsonPath("$..process").saveAs("process2"))
+//    .check(jsonPath("$..reference").saveAs("reference2")))
+//  .pause(thinkTime)
 
   // gets roles
   .exec(http(requestName="AM_040_GetRoles")
@@ -85,10 +85,10 @@ object RA_Scenario {
   .pause(thinkTime)
 
   // deletes role assignments by process and reference
-  .exec(http(requestName="AM_090_DeleteRoleAssignmentsReference")
-    .delete("/am/role-assignments?process=${process2}&reference=${reference2}")
-    .headers(headers_authorisation)
-    .check(status.is(204)))
-  .pause(thinkTime)
+//  .exec(http(requestName="AM_090_DeleteRoleAssignmentsReference")
+//    .delete("/am/role-assignments?process=${process2}&reference=${reference2}")
+//    .headers(headers_authorisation)
+//    .check(status.is(204)))
+//  .pause(thinkTime)
 
 }

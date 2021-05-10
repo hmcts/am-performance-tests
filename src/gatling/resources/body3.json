@@ -2,9 +2,9 @@
   "roleRequest":
   {
     "process": "process1",
-    "reference": "6b36bfc6-bb21-11ea-b3de-0242ac130001",
-    "assignerId": "84d92c5f-5409-477d-b22d-15d54882ecfe",
-    "replaceExisting": false
+    "reference": "${UUID}",
+    "assignerId": "ff0d2548-3110-4dc2-957a-a8d3e7ccfc1b",
+    "replaceExisting": true
   },
   "requestedRoles":
   [
@@ -85,7 +85,8 @@
       "classification": "PUBLIC",
       "grantType": "STANDARD",
       "readOnly": true,
-      "attributes": {
+      "attributes":
+      {
         "jurisdiction": "divorce",
         "region": "south-east",
         "contractType": "SALARIED",
