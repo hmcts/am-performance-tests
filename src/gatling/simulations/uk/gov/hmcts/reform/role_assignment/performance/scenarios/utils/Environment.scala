@@ -10,7 +10,6 @@ object Environment {
   val idamURL = "https://idam-api." + env + ".platform.hmcts.net"
   val idamClient = "am_role_assignment"
   //val idamClient = "paybubble"
-  val idamSecret = ""
   val idamScope = "openid%20profile%20roles%20authorities"
   //val idamUsername = "befta.caseworker.2.solicitor.2@gmail.com"
   val idamUsername = "amogh-performance-tester@mailinator.com"
@@ -18,6 +17,9 @@ object Environment {
   val idamPassword = "Testing1234"
   val s2sURL = "http://rpe-service-auth-provider-" + env + ".service.core-compute-" + env + ".internal/testing-support"
   val s2sService = "am_role_assignment_service"
+  
+  //secrets
+  val idamSecret = ""
   val s2sSecret = ""
 
 
