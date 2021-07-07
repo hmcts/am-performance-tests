@@ -18,7 +18,10 @@ object Environment {
   //val idamPassword = "Pass19word"
   val s2sURL = "http://rpe-service-auth-provider-" + env + ".service.core-compute-" + env + ".internal/testing-support"
   val s2sService = "am_role_assignment_service"
-  val s2sSecret = ConfigFactory.load.getString("aat_service.pass")
+  
+  //secrets
+  val idamSecret = ""
+  val s2sSecret = ""
 
 
   val headers_authorisation = Map(
@@ -38,6 +41,6 @@ object Environment {
   "assignmentId" -> "${assignmentId}"
   )
 
-  val thinkTime = 10
+  val thinkTime = 10 //10
 
 }
