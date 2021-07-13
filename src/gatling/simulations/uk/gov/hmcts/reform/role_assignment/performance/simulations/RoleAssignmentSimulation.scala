@@ -11,6 +11,28 @@ import scala.concurrent.duration.DurationInt
 
 class RoleAssignmentSimulation extends Simulation{
 
+  val rampUpDurationMins = 1
+  val rampDownDurationMins = 1
+  val testDurationMins = 1
+
+  val createCasePeakTarget:Double = 20
+  val createCaseRate: Double = createCasePeakTarget / 60
+
+  val createOrgPeakTarget:Double = 104
+  val createOrgRate: Double = createOrgPeakTarget / 60
+
+  val getRolesPeakTarget:Double = 10
+  val getRolesRate: Double = getRolesPeakTarget / 60
+
+  val getRoleAssignmentsByActorPeakTarget:Double = 320
+  val getRoleAssignmentsByActorRate: Double = getRoleAssignmentsByActorPeakTarget / 6
+
+  val queryRoleAssignmentsPeakTarget:Double = 20
+  val queryRoleAssignmentsRate: Double = queryRoleAssignmentsPeakTarget / 60
+
+  val deleteRoleAssignmentsPeakTarget:Double = 25 // There are 2 queries within this block, hence rate = 25*2
+  val deleteRoleAssignmentsRate: Double = deleteRoleAssignmentsPeakTarget / 60
+
   val httpProtocol = 
     http
     //.proxy(Proxy("proxyout.reform.hmcts.net", 8080).httpsPort(8080))
@@ -19,7 +41,7 @@ class RoleAssignmentSimulation extends Simulation{
   val createFeederFile: SourceFeederBuilder[String] = csv("create.csv").circular
   val caseIdFeederFile: SourceFeederBuilder[String] = csv("case_ids.csv").circular
   val actorIdFeederFile: SourceFeederBuilder[String] = csv("actor_ids.csv").circular
-  val actorIdFeederFileAC: SourceFeederBuilder[String] = csv("actor_cache_control_202107061809_New.csv").random
+  val actorIdFeederFileAC: SourceFeederBuilder[String] = csv("actor_cache_control_202107081104-V1.0.csv").random
   val assignmentIdFeederFile: SourceFeederBuilder[String] = csv("assignment_ids.csv").circular
   val referencesFeederFile: SourceFeederBuilder[String] = csv("references.csv").circular
   val processesFeederFile: SourceFeederBuilder[String] = csv("processes.csv").circular
@@ -54,7 +76,7 @@ class RoleAssignmentSimulation extends Simulation{
     
     .exec(IDAMHelper.getIdamToken)
     .exec(S2SHelper.S2SAuthToken)
-    .repeat(10) {
+    .repeat(1) {
       feed(actorIdFeederFileAC)
       .exec(RA_Scenario.getRoleAssignmentsByActor)
     }
@@ -74,33 +96,47 @@ class RoleAssignmentSimulation extends Simulation{
     .exec(S2SHelper.S2SAuthToken)
     .exec(RA_Scenario.deleteRoleAssignments)
 
-  // setUp(createRoleAssignmentsCaseScenario.inject(rampUsersPerSec(0.00) to (createCaseRate) during (rampUpDurationMins minutes),
-  //   constantUsersPerSec(createCaseRate) during (testDurationMins minutes),
-  //   rampUsersPerSec(createCaseRate) to (0.00) during (rampDownDurationMins minutes)),
+  setUp(createRoleAssignmentsCaseScenario.inject(rampUsersPerSec(0.00) to (createCaseRate) during (rampUpDurationMins minutes),
+    constantUsersPerSec(createCaseRate) during (testDurationMins minutes),
+    rampUsersPerSec(createCaseRate) to (0.00) during (rampDownDurationMins minutes)),
 
-  //   createRoleAssignmentsOrgScenarioReplaceTrue.inject(rampUsersPerSec(0.00) to (createOrgRate) during (rampUpDurationMins minutes),
-  //   constantUsersPerSec(createOrgRate) during (testDurationMins minutes),
-  //   rampUsersPerSec(createOrgRate) to (0.00) during (rampDownDurationMins minutes)),
+    createRoleAssignmentsOrgScenarioReplaceTrue.inject(rampUsersPerSec(0.00) to (createOrgRate) during (rampUpDurationMins minutes),
+    constantUsersPerSec(createOrgRate) during (testDurationMins minutes),
+    rampUsersPerSec(createOrgRate) to (0.00) during (rampDownDurationMins minutes)),
 
-  //   getRolesScenario.inject(rampUsersPerSec(0.00) to (getRolesRate) during (rampUpDurationMins minutes),
-  //   constantUsersPerSec(getRolesRate) during (testDurationMins minutes),
-  //   rampUsersPerSec(getRolesRate) to (0.00) during (rampDownDurationMins minutes)),
+    getRolesScenario.inject(rampUsersPerSec(0.00) to (getRolesRate) during (rampUpDurationMins minutes),
+    constantUsersPerSec(getRolesRate) during (testDurationMins minutes),
+    rampUsersPerSec(getRolesRate) to (0.00) during (rampDownDurationMins minutes)),
 
-  //   getRoleAssignmentsByActorScenario.inject(rampUsersPerSec(0.00) to (getRoleAssignmentsByActorRate) during (rampUpDurationMins minutes),
-  //   constantUsersPerSec(getRoleAssignmentsByActorRate) during (testDurationMins minutes),
-  //   rampUsersPerSec(getRoleAssignmentsByActorRate) to (0.00) during (rampDownDurationMins minutes)),
+    // getRoleAssignmentsByActorScenario.inject(rampUsersPerSec(0.00) to (getRoleAssignmentsByActorRate) during (rampUpDurationMins minutes),
+    getRoleAssignmentsByActorScenarioAccessControl.inject(rampUsersPerSec(0.00) to (getRoleAssignmentsByActorRate) during (rampUpDurationMins minutes),
+    constantUsersPerSec(getRoleAssignmentsByActorRate) during (testDurationMins minutes),
+    rampUsersPerSec(getRoleAssignmentsByActorRate) to (0.00) during (rampDownDurationMins minutes)),
 
-  //   queryRoleAssignmentsScenario.inject(rampUsersPerSec(0.00) to (queryRoleAssignmentsRate) during (rampUpDurationMins minutes),
-  //   constantUsersPerSec(queryRoleAssignmentsRate) during (testDurationMins minutes),
-  //   rampUsersPerSec(queryRoleAssignmentsRate) to (0.00) during (rampDownDurationMins minutes)),
+    queryRoleAssignmentsScenario.inject(rampUsersPerSec(0.00) to (queryRoleAssignmentsRate) during (rampUpDurationMins minutes),
+    constantUsersPerSec(queryRoleAssignmentsRate) during (testDurationMins minutes),
+    rampUsersPerSec(queryRoleAssignmentsRate) to (0.00) during (rampDownDurationMins minutes)),
 
-  //   deleteRoleAssignmentsScenario.inject(rampUsersPerSec(0.00) to (deleteRoleAssignmentsRate) during (rampUpDurationMins minutes),
-  //   constantUsersPerSec(deleteRoleAssignmentsRate) during (testDurationMins minutes),
-  //   rampUsersPerSec(deleteRoleAssignmentsRate) to (0.00) during (rampDownDurationMins minutes))
+    deleteRoleAssignmentsScenario.inject(rampUsersPerSec(0.00) to (deleteRoleAssignmentsRate) during (rampUpDurationMins minutes),
+    constantUsersPerSec(deleteRoleAssignmentsRate) during (testDurationMins minutes),
+    rampUsersPerSec(deleteRoleAssignmentsRate) to (0.00) during (rampDownDurationMins minutes))
+  )
+  .protocols(httpProtocol)
+
+  // setUp(getRoleAssignmentsByActorScenarioAccessControl.inject(atOnceUsers(1))
+  // ).protocols(httpProtocol)
+
+  // setUp(getRoleAssignmentsByActorScenarioAccessControl.inject(constantUsersPerSec(10).during(1.minutes))).throttle(
+  //   reachRps(1).in(10.seconds),
+  //   holdFor(1.minute),
+  //   jumpToRps(10),
+  //   holdFor(2.minutes)
   // )
-  // .protocols(httpProtocol)
-
-  setUp(getRoleAssignmentsByActorScenarioAccessControl.inject(atOnceUsers(1))
-  ).protocols(httpProtocol)
-
+  /*setUp(
+    getRoleAssignmentsByActorScenarioAccessControl.inject(rampUsersPerSec(0.00) to (getRoleAssignmentsByActorRate) during (rampUpDurationMins minutes),
+      constantUsersPerSec(getRoleAssignmentsByActorRate) during (testDurationMins minutes),
+      rampUsersPerSec(getRoleAssignmentsByActorRate) to (0.00) during (rampDownDurationMins minutes))
+  )
+  .protocols(httpProtocol)
+*/
 }
