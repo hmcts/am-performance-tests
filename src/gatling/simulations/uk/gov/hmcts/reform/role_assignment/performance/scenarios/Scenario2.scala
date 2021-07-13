@@ -2,32 +2,29 @@ package uk.gov.hmcts.reform.role_assignment.performance.scenarios
 
 import io.gatling.core.Predef._
 import io.gatling.http.Predef._
-import uk.gov.hmcts.reform.role_assignment.performance.scenarios.utils.Environment
+import uk.gov.hmcts.reform.role_assignment.performance.scenarios.utils.{ASBHelper, Environment}
 
 object Scenario2 {
-  
+
+
+
+  val url = "sb://rd-servicebus-sandbox.servicebus.windows.net"
+  val keyName = "SendAndListenSharedAccessKey"
+  val keyVale = "aWiUfjUgY9kUteIqJ3h5CoHfgVwVFjMbt2rel0VBleo="
+
+  private def sasToken(): String = String.valueOf(ASBHelper.getSaSToken(url, keyName, keyVale))
 
   val Scenario2 = scenario("Scenario2")
     //.feed(feederFile)
-    .exec(http(requestName="AM_090_PostRoleAssignments")
-      .post("/am/role-assignments")
-      .headers(Environment.headers_1)
-      .headers(Environment.headers_4)
-      .body(ElFileBody("body.json"))
-      .check(status.is(201))
-      .check(jsonPath("$..caseId").saveAs("caseId"))
-      .check(jsonPath("$..process").saveAs("process"))
-      .check(jsonPath("$..reference").saveAs("reference")))
+    .exec(_.setAll(
+      ("sasToken",sasToken())
+    ))
 
-    .exec(http(requestName="AM_100_QueryRoleAssignments")
-      .post("/am/role-assignments/query")
-      .headers(Environment.headers_1)
+    .exec(http(requestName="ORM_050_publishCaseworkers")
+      .post("/messages")
+      .headers(Environment.headers_asb_auth)
       .headers(Environment.headers_4)
-      .body(ElFileBody("body2.json"))
-      .check(status.is(200)))
+      .body(ElFileBody("caseworker_ids.json"))
+      .check(status.is(201)))
 
-    .exec(http(requestName="AM_110_DeleteRoleAssignmentsReference")
-      .delete("/am/role-assignments?process=${process}&reference=${reference}")
-      .headers(Environment.headers_1)
-      .check(status.is(204)))
 }

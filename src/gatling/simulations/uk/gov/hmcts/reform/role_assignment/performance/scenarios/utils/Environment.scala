@@ -2,6 +2,7 @@ package uk.gov.hmcts.reform.role_assignment.performance.scenarios.utils
 import com.typesafe.config.ConfigFactory
 import io.gatling.core.Predef._
 import io.gatling.http.Predef._
+import uk.gov.hmcts.reform.role_assignment.performance.scenarios.utils.ASBHelper
 
 object Environment {
 
@@ -19,6 +20,13 @@ object Environment {
   val s2sURL = "http://localhost:4502"
   val s2sService = "am_role_assignment_service"
   val s2sSecret = ConfigFactory.load.getString("aat_service.pass")
+
+  //ASB API URL
+  val asbUrl = "https://rd-servicebus-sandbox.servicebus.windows.net/rd-caseworker-topic-sandbox"
+
+  val headers_asb_auth = Map(
+    "Authorization" -> "${sasToken}"
+  )
 
 
   val headers_1 = Map(

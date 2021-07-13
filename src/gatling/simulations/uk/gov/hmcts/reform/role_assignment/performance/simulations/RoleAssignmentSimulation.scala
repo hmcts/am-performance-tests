@@ -21,7 +21,7 @@ class RoleAssignmentSimulation extends Simulation{
         .exec(Scenario1.Scenario1)
     }
 
-  setUp(roleAssignmentScenario.inject(rampUsers(100) during(60))).protocols(httpProtocol)
+  setUp(roleAssignmentScenario.inject(rampUsers(10) during(100))).protocols(httpProtocol)
   .assertions(global.successfulRequests.percent.is(100))
   //.assertions(forAll.responseTime.percentile3.lte(500))
 }
