@@ -25,7 +25,7 @@ class RoleAssignmentSimulation extends Simulation{
   val getRolesRate: Double = getRolesPeakTarget / 60
 
   val getRoleAssignmentsByActorPeakTarget:Double = 350
-  val getRoleAssignmentsByActorRate: Double = getRoleAssignmentsByActorPeakTarget / 10
+  val getRoleAssignmentsByActorRate: Double = getRoleAssignmentsByActorPeakTarget / 6
 
   val queryRoleAssignmentsPeakTarget:Double = 20
   val queryRoleAssignmentsRate: Double = queryRoleAssignmentsPeakTarget / 60
