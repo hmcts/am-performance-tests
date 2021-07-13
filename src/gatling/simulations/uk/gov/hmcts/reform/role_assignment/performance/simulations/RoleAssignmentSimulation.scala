@@ -67,8 +67,8 @@ class RoleAssignmentSimulation extends Simulation{
   val getRoleAssignmentsByActorScenario = scenario("Get Role Assignments By Actor Scenario")
 
     .feed(actorIdFeederFile)
-    .exec(IDAMHelper.getIdamToken)
-    .exec(S2SHelper.S2SAuthToken)
+    // .exec(IDAMHelper.getIdamToken)
+    // .exec(S2SHelper.S2SAuthToken)
     .exec(RA_Scenario.getRoleAssignmentsByActor)
 
   val queryRoleAssignmentsScenario = scenario("Query Role Assignments Scenario")
