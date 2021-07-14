@@ -24,8 +24,9 @@ class RoleAssignmentSimulation extends Simulation{
   val getRolesPeakTarget:Double = 10
   val getRolesRate: Double = getRolesPeakTarget / 60
 
-  val getRoleAssignmentsByActorPeakTarget:Double = 350
-  val getRoleAssignmentsByActorRate: Double = getRoleAssignmentsByActorPeakTarget / 6
+  // val getRoleAssignmentsByActorPeakTarget:Double = 350
+  // val getRoleAssignmentsByActorRate: Double = getRoleAssignmentsByActorPeakTarget / 6
+  val getRoleAssignmentsByActorRate: Double = 20
 
   val queryRoleAssignmentsPeakTarget:Double = 20
   val queryRoleAssignmentsRate: Double = queryRoleAssignmentsPeakTarget / 60
@@ -67,8 +68,8 @@ class RoleAssignmentSimulation extends Simulation{
   val getRoleAssignmentsByActorScenario = scenario("Get Role Assignments By Actor Scenario")
 
     .feed(actorIdFeederFile)
-    // .exec(IDAMHelper.getIdamToken)
-    // .exec(S2SHelper.S2SAuthToken)
+    .exec(IDAMHelper.getIdamToken)
+    .exec(S2SHelper.S2SAuthToken)
     .exec(RA_Scenario.getRoleAssignmentsByActor)
 
   val queryRoleAssignmentsScenario = scenario("Query Role Assignments Scenario")
