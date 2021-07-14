@@ -26,7 +26,7 @@ class RoleAssignmentSimulation extends Simulation{
 
   // val getRoleAssignmentsByActorPeakTarget:Double = 350
   // val getRoleAssignmentsByActorRate: Double = getRoleAssignmentsByActorPeakTarget / 6
-  val getRoleAssignmentsByActorRate: Double = 35
+  val getRoleAssignmentsByActorRate: Double = 60
 
   val queryRoleAssignmentsPeakTarget:Double = 20
   val queryRoleAssignmentsRate: Double = queryRoleAssignmentsPeakTarget / 60
@@ -41,7 +41,7 @@ class RoleAssignmentSimulation extends Simulation{
   val createFeederFile: SourceFeederBuilder[String] = csv("create.csv").circular
   val caseIdFeederFile: SourceFeederBuilder[String] = csv("case_ids.csv").circular
   // val actorIdFeederFile: SourceFeederBuilder[String] = csv("actor_ids.csv").circular
-  val actorIdFeederFile: SourceFeederBuilder[String] = csv("actor_cache_control_202107081104-V1.0.csv").random
+  val actorIdFeederFile: SourceFeederBuilder[String] = csv("actor_cache_control_202107081104-V1.0.csv").batch.random
   val assignmentIdFeederFile: SourceFeederBuilder[String] = csv("assignment_ids.csv").circular
   val referencesFeederFile: SourceFeederBuilder[String] = csv("references.csv").circular
   val processesFeederFile: SourceFeederBuilder[String] = csv("processes.csv").circular
@@ -88,7 +88,7 @@ class RoleAssignmentSimulation extends Simulation{
     .exec(S2SHelper.S2SAuthToken)
     .exec(RA_Scenario.deleteRoleAssignments)
 
-  setUp(
+  /*setUp(
     // createRoleAssignmentsCaseScenario.inject(rampUsersPerSec(0.00) to (createCaseRate) during (rampUpDurationMins minutes),
     // constantUsersPerSec(createCaseRate) during (testDurationMins minutes),
     // rampUsersPerSec(createCaseRate) to (0.00) during (rampDownDurationMins minutes)),
@@ -114,5 +114,8 @@ class RoleAssignmentSimulation extends Simulation{
     // rampUsersPerSec(deleteRoleAssignmentsRate) to (0.00) during (rampDownDurationMins minutes))
   )
   .protocols(httpProtocol)
+*/
+  setUp(getRoleAssignmentsByActorScenario.inject(atOnceUsers(1))
+  ).protocols(httpProtocol)
 
 }
