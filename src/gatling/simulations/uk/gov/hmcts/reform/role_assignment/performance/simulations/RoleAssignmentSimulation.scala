@@ -68,8 +68,8 @@ class RoleAssignmentSimulation extends Simulation{
   val getRoleAssignmentsByActorScenario = scenario("Get Role Assignments By Actor Scenario")
 
     .feed(actorIdFeederFile)
-    .exec(IDAMHelper.getIdamToken)
-    .exec(S2SHelper.S2SAuthToken)
+    // .exec(IDAMHelper.getIdamToken)
+    // .exec(S2SHelper.S2SAuthToken)
     .exec(RA_Scenario.getRoleAssignmentsByActor)
 
   val queryRoleAssignmentsScenario = scenario("Query Role Assignments Scenario")
@@ -88,7 +88,7 @@ class RoleAssignmentSimulation extends Simulation{
     .exec(S2SHelper.S2SAuthToken)
     .exec(RA_Scenario.deleteRoleAssignments)
 
-  /*setUp(
+  setUp(
     // createRoleAssignmentsCaseScenario.inject(rampUsersPerSec(0.00) to (createCaseRate) during (rampUpDurationMins minutes),
     // constantUsersPerSec(createCaseRate) during (testDurationMins minutes),
     // rampUsersPerSec(createCaseRate) to (0.00) during (rampDownDurationMins minutes)),
@@ -114,8 +114,8 @@ class RoleAssignmentSimulation extends Simulation{
     // rampUsersPerSec(deleteRoleAssignmentsRate) to (0.00) during (rampDownDurationMins minutes))
   )
   .protocols(httpProtocol)
-*/
-  setUp(getRoleAssignmentsByActorScenario.inject(atOnceUsers(1))
-  ).protocols(httpProtocol)
+
+  // setUp(getRoleAssignmentsByActorScenario.inject(atOnceUsers(1))
+  // ).protocols(httpProtocol)
 
 }
