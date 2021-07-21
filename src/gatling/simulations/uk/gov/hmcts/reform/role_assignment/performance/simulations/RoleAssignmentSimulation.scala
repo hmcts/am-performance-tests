@@ -26,7 +26,9 @@ class RoleAssignmentSimulation extends Simulation{
 
   // val getRoleAssignmentsByActorPeakTarget:Double = 350
   // val getRoleAssignmentsByActorRate: Double = getRoleAssignmentsByActorPeakTarget / 6
-  val getRoleAssignmentsByActorRate: Double = 90
+  val getRoleAssignmentsByActorRate: Double = 20
+
+  val idamLoginRate: Double = 1
 
   val queryRoleAssignmentsPeakTarget:Double = 20
   val queryRoleAssignmentsRate: Double = queryRoleAssignmentsPeakTarget / 60
@@ -68,9 +70,14 @@ class RoleAssignmentSimulation extends Simulation{
   val getRoleAssignmentsByActorScenario = scenario("Get Role Assignments By Actor Scenario")
 
     .feed(actorIdFeederFile)
-    // .exec(IDAMHelper.getIdamToken)
-    // .exec(S2SHelper.S2SAuthToken)
+    .exec(IDAMHelper.getIdamToken)
+    .exec(S2SHelper.S2SAuthToken)
     .exec(RA_Scenario.getRoleAssignmentsByActor)
+
+  val getRoleAssignmentsByActorScenarioHC = scenario("Get Role Assignments By Actor Scenario (Hardcoded)")
+
+    .feed(actorIdFeederFile)
+    .exec(RA_Scenario.getRoleAssignmentsByActorHC)
 
   val queryRoleAssignmentsScenario = scenario("Query Role Assignments Scenario")
 
@@ -87,6 +94,12 @@ class RoleAssignmentSimulation extends Simulation{
     .exec(IDAMHelper.getIdamToken)
     .exec(S2SHelper.S2SAuthToken)
     .exec(RA_Scenario.deleteRoleAssignments)
+
+  val idamLogin = scenario("Simulate S2S and Idam Login")
+
+    .exec(IDAMHelper.getIdamToken)
+    .exec(S2SHelper.S2SAuthToken)
+
 
   setUp(
     // createRoleAssignmentsCaseScenario.inject(rampUsersPerSec(0.00) to (createCaseRate) during (rampUpDurationMins minutes),
@@ -112,6 +125,15 @@ class RoleAssignmentSimulation extends Simulation{
     // deleteRoleAssignmentsScenario.inject(rampUsersPerSec(0.00) to (deleteRoleAssignmentsRate) during (rampUpDurationMins minutes),
     // constantUsersPerSec(deleteRoleAssignmentsRate) during (testDurationMins minutes),
     // rampUsersPerSec(deleteRoleAssignmentsRate) to (0.00) during (rampDownDurationMins minutes))
+
+    getRoleAssignmentsByActorScenarioHC.inject(rampUsersPerSec(0.00) to (getRoleAssignmentsByActorRate) during (rampUpDurationMins minutes),
+    constantUsersPerSec(getRoleAssignmentsByActorRate) during (testDurationMins minutes),
+    rampUsersPerSec(getRoleAssignmentsByActorRate) to (0.00) during (rampDownDurationMins minutes)),
+
+    idamLogin.inject(rampUsersPerSec(0.00) to (idamLoginRate) during (rampUpDurationMins minutes),
+    constantUsersPerSec(idamLoginRate) during (testDurationMins minutes),
+    rampUsersPerSec(getRoleAssignmentidamLoginRatesByActorRate) to (0.00) during (rampDownDurationMins minutes)),
+    
   )
   .protocols(httpProtocol)
 
