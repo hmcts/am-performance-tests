@@ -132,7 +132,7 @@ class RoleAssignmentSimulation extends Simulation{
 
     idamLogin.inject(rampUsersPerSec(0.00) to (idamLoginRate) during (rampUpDurationMins minutes),
     constantUsersPerSec(idamLoginRate) during (testDurationMins minutes),
-    rampUsersPerSec(getRoleAssignmentidamLoginRatesByActorRate) to (0.00) during (rampDownDurationMins minutes)),
+    rampUsersPerSec(idamLoginRate) to (0.00) during (rampDownDurationMins minutes)),
     
   )
   .protocols(httpProtocol)
