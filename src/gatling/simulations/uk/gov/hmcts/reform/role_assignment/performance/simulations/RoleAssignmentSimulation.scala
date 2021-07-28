@@ -27,6 +27,7 @@ class RoleAssignmentSimulation extends Simulation{
   // val getRoleAssignmentsByActorPeakTarget:Double = 350
   // val getRoleAssignmentsByActorRate: Double = getRoleAssignmentsByActorPeakTarget / 6
   val getRoleAssignmentsByActorRate: Double = 25
+  val getRoleAssignmentsHCByActorRate: Double = 60
 
   val idamLoginRate: Double = 1
 
@@ -126,9 +127,9 @@ class RoleAssignmentSimulation extends Simulation{
     // constantUsersPerSec(deleteRoleAssignmentsRate) during (testDurationMins minutes),
     // rampUsersPerSec(deleteRoleAssignmentsRate) to (0.00) during (rampDownDurationMins minutes))
 
-    getRoleAssignmentsByActorScenarioHC.inject(rampUsersPerSec(0.00) to (getRoleAssignmentsByActorRate) during (rampUpDurationMins minutes),
-    constantUsersPerSec(getRoleAssignmentsByActorRate) during (testDurationMins minutes),
-    rampUsersPerSec(getRoleAssignmentsByActorRate) to (0.00) during (rampDownDurationMins minutes)),
+    getRoleAssignmentsByActorScenarioHC.inject(rampUsersPerSec(0.00) to (getRoleAssignmentsHCByActorRate) during (rampUpDurationMins minutes),
+    constantUsersPerSec(getRoleAssignmentsHCByActorRate) during (testDurationMins minutes),
+    rampUsersPerSec(getRoleAssignmentsHCByActorRate) to (0.00) during (rampDownDurationMins minutes)),
 
     idamLogin.inject(rampUsersPerSec(0.00) to (idamLoginRate) during (rampUpDurationMins minutes),
     constantUsersPerSec(idamLoginRate) during (testDurationMins minutes),
