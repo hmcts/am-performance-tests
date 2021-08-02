@@ -103,37 +103,39 @@ class RoleAssignmentSimulation extends Simulation{
 
 
   setUp(
-    // createRoleAssignmentsCaseScenario.inject(rampUsersPerSec(0.00) to (createCaseRate) during (rampUpDurationMins minutes),
-    // constantUsersPerSec(createCaseRate) during (testDurationMins minutes),
-    // rampUsersPerSec(createCaseRate) to (0.00) during (rampDownDurationMins minutes)),
+    createRoleAssignmentsCaseScenario.inject(rampUsersPerSec(0.00) to (createCaseRate) during (rampUpDurationMins minutes),
+    constantUsersPerSec(createCaseRate) during (testDurationMins minutes),
+    rampUsersPerSec(createCaseRate) to (0.00) during (rampDownDurationMins minutes)),
 
-    // createRoleAssignmentsOrgScenarioReplaceTrue.inject(rampUsersPerSec(0.00) to (createOrgRate) during (rampUpDurationMins minutes),
-    // constantUsersPerSec(createOrgRate) during (testDurationMins minutes),
-    // rampUsersPerSec(createOrgRate) to (0.00) during (rampDownDurationMins minutes)),
+    createRoleAssignmentsOrgScenarioReplaceTrue.inject(rampUsersPerSec(0.00) to (createOrgRate) during (rampUpDurationMins minutes),
+    constantUsersPerSec(createOrgRate) during (testDurationMins minutes),
+    rampUsersPerSec(createOrgRate) to (0.00) during (rampDownDurationMins minutes)),
 
-    // getRolesScenario.inject(rampUsersPerSec(0.00) to (getRolesRate) during (rampUpDurationMins minutes),
-    // constantUsersPerSec(getRolesRate) during (testDurationMins minutes),
-    // rampUsersPerSec(getRolesRate) to (0.00) during (rampDownDurationMins minutes)),
+    getRolesScenario.inject(rampUsersPerSec(0.00) to (getRolesRate) during (rampUpDurationMins minutes),
+    constantUsersPerSec(getRolesRate) during (testDurationMins minutes),
+    rampUsersPerSec(getRolesRate) to (0.00) during (rampDownDurationMins minutes)),
 
     getRoleAssignmentsByActorScenario.inject(rampUsersPerSec(0.00) to (getRoleAssignmentsByActorRate) during (rampUpDurationMins minutes),
     constantUsersPerSec(getRoleAssignmentsByActorRate) during (testDurationMins minutes),
     rampUsersPerSec(getRoleAssignmentsByActorRate) to (0.00) during (rampDownDurationMins minutes)),
 
-    // queryRoleAssignmentsScenario.inject(rampUsersPerSec(0.00) to (queryRoleAssignmentsRate) during (rampUpDurationMins minutes),
-    // constantUsersPerSec(queryRoleAssignmentsRate) during (testDurationMins minutes),
-    // rampUsersPerSec(queryRoleAssignmentsRate) to (0.00) during (rampDownDurationMins minutes)),
+    queryRoleAssignmentsScenario.inject(rampUsersPerSec(0.00) to (queryRoleAssignmentsRate) during (rampUpDurationMins minutes),
+    constantUsersPerSec(queryRoleAssignmentsRate) during (testDurationMins minutes),
+    rampUsersPerSec(queryRoleAssignmentsRate) to (0.00) during (rampDownDurationMins minutes)),
 
-    // deleteRoleAssignmentsScenario.inject(rampUsersPerSec(0.00) to (deleteRoleAssignmentsRate) during (rampUpDurationMins minutes),
-    // constantUsersPerSec(deleteRoleAssignmentsRate) during (testDurationMins minutes),
-    // rampUsersPerSec(deleteRoleAssignmentsRate) to (0.00) during (rampDownDurationMins minutes))
+    deleteRoleAssignmentsScenario.inject(rampUsersPerSec(0.00) to (deleteRoleAssignmentsRate) during (rampUpDurationMins minutes),
+    constantUsersPerSec(deleteRoleAssignmentsRate) during (testDurationMins minutes),
+    rampUsersPerSec(deleteRoleAssignmentsRate) to (0.00) during (rampDownDurationMins minutes))
 
-    getRoleAssignmentsByActorScenarioHC.inject(rampUsersPerSec(0.00) to (getRoleAssignmentsHCByActorRate) during (rampUpDurationMins minutes),
-    constantUsersPerSec(getRoleAssignmentsHCByActorRate) during (testDurationMins minutes),
-    rampUsersPerSec(getRoleAssignmentsHCByActorRate) to (0.00) during (rampDownDurationMins minutes)),
+    //Scenario for hardcoded tokens for GET roles
+    // getRoleAssignmentsByActorScenarioHC.inject(rampUsersPerSec(0.00) to (getRoleAssignmentsHCByActorRate) during (rampUpDurationMins minutes),
+    // constantUsersPerSec(getRoleAssignmentsHCByActorRate) during (testDurationMins minutes),
+    // rampUsersPerSec(getRoleAssignmentsHCByActorRate) to (0.00) during (rampDownDurationMins minutes)),
 
-    idamLogin.inject(rampUsersPerSec(0.00) to (idamLoginRate) during (rampUpDurationMins minutes),
-    constantUsersPerSec(idamLoginRate) during (testDurationMins minutes),
-    rampUsersPerSec(idamLoginRate) to (0.00) during (rampDownDurationMins minutes)),
+    //Scenario for generating idam and s2s tokens only
+    // idamLogin.inject(rampUsersPerSec(0.00) to (idamLoginRate) during (rampUpDurationMins minutes),
+    // constantUsersPerSec(idamLoginRate) during (testDurationMins minutes),
+    // rampUsersPerSec(idamLoginRate) to (0.00) during (rampDownDurationMins minutes)),
     
   )
   .protocols(httpProtocol)
