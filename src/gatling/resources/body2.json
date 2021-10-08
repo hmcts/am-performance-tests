@@ -1,5 +1,3 @@
 {
-        "attributes": {
-            "caseId": ["${caseId}"]
-        }
+  "actorId": "${actorId}"
 }
