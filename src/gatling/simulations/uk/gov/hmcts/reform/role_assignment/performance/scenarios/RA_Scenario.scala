@@ -19,8 +19,7 @@ object RA_Scenario {
     .body(ElFileBody("body.json"))
     .check(status.is(201))
     .check(jsonPath("$..actorId").saveAs("actorId"))
-    .check(jsonPath("$..id").find(1).saveAs("assignmentId"))
-    .check(jsonPath("$..caseId").saveAs("caseId")))
+    .check(jsonPath("$..id").find(1).saveAs("assignmentId")))
   .pause(thinkTime)
 
   // posts role assignments from body3.json
