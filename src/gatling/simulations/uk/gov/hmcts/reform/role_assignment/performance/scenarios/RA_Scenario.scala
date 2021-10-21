@@ -87,4 +87,13 @@ object RA_Scenario {
     .check(status.is(204)))
   .pause(thinkTime)
 
+  val enhancedDelete = scenario ("Enhanced Delete")
+
+  .exec(http(requestName="AM_080_EnhancedDelete")
+    .post("/am/role-assignments/query/delete")
+    .headers(headers_authorisation)
+    .header("Content-Type", "application/json")
+    .body(ElFileBody("EnhancedDelete.json")))
+  .pause(thinkTime)
+
 }

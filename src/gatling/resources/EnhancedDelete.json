@@ -1,0 +1,12 @@
+{
+  "queryRequests":[
+          {
+              "actorId": ["${actorId}"],
+              "roleType": ["CASE"],
+              "roleName": ["CASE_ROLE1"],
+              "attributes": {
+                  "caseId": ["${caseId}"]
+              }
+          }
+      ]
+  }
