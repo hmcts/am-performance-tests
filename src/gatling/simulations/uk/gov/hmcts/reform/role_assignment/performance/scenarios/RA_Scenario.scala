@@ -92,6 +92,8 @@ object RA_Scenario {
   .exec(http(requestName="AM_080_EnhancedDelete")
     .post("/am/role-assignments/query/delete")
     .headers(headers_authorisation)
+    // .header("Authorization", "Bearer ")
+    // .header("ServiceAuthorization", "")
     .header("Content-Type", "application/json")
     .body(ElFileBody("EnhancedDelete.json")))
   .pause(thinkTime)
