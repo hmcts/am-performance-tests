@@ -149,7 +149,7 @@ class RoleAssignmentSimulation extends Simulation{
     // rampUsersPerSec(idamLoginRate) to (0.00) during (rampDownDurationMins minutes)),
     
   )
-  .protocols(httpProtocol)*/
+  .protocols(httpProtocol)
 
   // setUp(createRoleAssignmentsOrgScenarioReplaceTrue.inject(atOnceUsers(1))
   // ).protocols(httpProtocol)
