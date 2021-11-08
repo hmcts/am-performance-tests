@@ -13,7 +13,7 @@ class RoleAssignmentSimulation extends Simulation{
 
   val rampUpDurationMins = 1
   val rampDownDurationMins = 1
-  val testDurationMins = 10 //60
+  val testDurationMins = 60 //60
 
   val createCasePeakTarget:Double = 20
   val createCaseRate: Double = createCasePeakTarget / 60
@@ -24,12 +24,8 @@ class RoleAssignmentSimulation extends Simulation{
   val getRolesPeakTarget:Double = 10
   val getRolesRate: Double = getRolesPeakTarget / 60
 
-  // val getRoleAssignmentsByActorPeakTarget:Double = 350
-  // val getRoleAssignmentsByActorRate: Double = getRoleAssignmentsByActorPeakTarget / 6
-  val getRoleAssignmentsByActorRate: Double = 25
-  val getRoleAssignmentsHCByActorRate: Double = 60
-
-  val idamLoginRate: Double = 1
+  val getRoleAssignmentsByActorPeakTarget:Double = 320
+  val getRoleAssignmentsByActorRate: Double = getRoleAssignmentsByActorPeakTarget / 60
 
   val queryRoleAssignmentsPeakTarget:Double = 20
   val queryRoleAssignmentsRate: Double = queryRoleAssignmentsPeakTarget / 60
@@ -112,7 +108,7 @@ class RoleAssignmentSimulation extends Simulation{
     .exec(S2SHelper.S2SAuthToken)
     .exec(RA_Scenario.enhancedDelete)
 
-
+  
   setUp(
     createRoleAssignmentsCaseScenario.inject(rampUsersPerSec(0.00) to (createCaseRate) during (rampUpDurationMins minutes),
     constantUsersPerSec(createCaseRate) during (testDurationMins minutes),
@@ -138,9 +134,9 @@ class RoleAssignmentSimulation extends Simulation{
     constantUsersPerSec(deleteRoleAssignmentsRate) during (testDurationMins minutes),
     rampUsersPerSec(deleteRoleAssignmentsRate) to (0.00) during (rampDownDurationMins minutes)),
 
-    enhancedDeleteScenario.inject(rampUsersPerSec(0.00) to (enhancedDeleteRate) during (rampUpDurationMins minutes),
-    constantUsersPerSec(enhancedDeleteRate) during (testDurationMins minutes),
-    rampUsersPerSec(enhancedDeleteRate) to (0.00) during (rampDownDurationMins minutes))
+    // enhancedDeleteScenario.inject(rampUsersPerSec(0.00) to (enhancedDeleteRate) during (rampUpDurationMins minutes),
+    // constantUsersPerSec(enhancedDeleteRate) during (testDurationMins minutes),
+    // rampUsersPerSec(enhancedDeleteRate) to (0.00) during (rampDownDurationMins minutes))
 
     //Scenario for hardcoded tokens for GET roles
     // getRoleAssignmentsByActorScenarioHC.inject(rampUsersPerSec(0.00) to (getRoleAssignmentsHCByActorRate) during (rampUpDurationMins minutes),
@@ -153,9 +149,9 @@ class RoleAssignmentSimulation extends Simulation{
     // rampUsersPerSec(idamLoginRate) to (0.00) during (rampDownDurationMins minutes)),
     
   )
-  .protocols(httpProtocol)
+  .protocols(httpProtocol)*/
 
-  // setUp(enhancedDeleteScenario.inject(atOnceUsers(1))
+  // setUp(createRoleAssignmentsOrgScenarioReplaceTrue.inject(atOnceUsers(1))
   // ).protocols(httpProtocol)
 
 }
