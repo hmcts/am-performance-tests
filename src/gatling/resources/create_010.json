@@ -20,7 +20,6 @@
       "attributes": {
         "contractType": "${contract_type}",
         "jurisdiction": "${jurisdiction}",
-        "caseId": "${case_id}",
         "region": "${region}"
       },
       "notes": [
