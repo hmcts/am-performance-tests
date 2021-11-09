@@ -127,9 +127,9 @@ class RoleAssignmentSimulation extends Simulation{
     constantUsersPerSec(getRoleAssignmentsByActorRate) during (testDurationMins minutes),
     rampUsersPerSec(getRoleAssignmentsByActorRate) to (0.00) during (rampDownDurationMins minutes)),
 
-    queryRoleAssignmentsScenario.inject(rampUsersPerSec(0.00) to (queryRoleAssignmentsRate) during (rampUpDurationMins minutes),
-    constantUsersPerSec(queryRoleAssignmentsRate) during (testDurationMins minutes),
-    rampUsersPerSec(queryRoleAssignmentsRate) to (0.00) during (rampDownDurationMins minutes)),
+    // queryRoleAssignmentsScenario.inject(rampUsersPerSec(0.00) to (queryRoleAssignmentsRate) during (rampUpDurationMins minutes),
+    // constantUsersPerSec(queryRoleAssignmentsRate) during (testDurationMins minutes),
+    // rampUsersPerSec(queryRoleAssignmentsRate) to (0.00) during (rampDownDurationMins minutes)),
 
     deleteRoleAssignmentsScenario.inject(rampUsersPerSec(0.00) to (deleteRoleAssignmentsRate) during (rampUpDurationMins minutes),
     constantUsersPerSec(deleteRoleAssignmentsRate) during (testDurationMins minutes),
