@@ -6,6 +6,7 @@ import io.gatling.http.Predef._
 import io.gatling.http.protocol.HttpProtocolBuilder
 import uk.gov.hmcts.reform.role_assignment.performance.scenarios._
 import uk.gov.hmcts.reform.role_assignment.performance.scenarios.utils._
+import scala.concurrent.duration._
 
 import scala.concurrent.duration.DurationInt
 
@@ -13,7 +14,7 @@ class RoleAssignmentSimulation extends Simulation{
 
   val rampUpDurationMins = 1
   val rampDownDurationMins = 1
-  val testDurationMins = 60 //60
+  val testDurationMins = 7 //60
 
   val createCasePeakTarget:Double = 20
   val createCaseRate: Double = createCasePeakTarget / 60
@@ -151,7 +152,7 @@ class RoleAssignmentSimulation extends Simulation{
   )
   .protocols(httpProtocol)
 
-  // setUp(createRoleAssignmentsOrgScenarioReplaceTrue.inject(atOnceUsers(1))
+  // setUp(createRoleAssignmentsOrgScenarioReplaceTrue.inject(rampUsers(5) during (5 seconds))
   // ).protocols(httpProtocol)
 
 }
