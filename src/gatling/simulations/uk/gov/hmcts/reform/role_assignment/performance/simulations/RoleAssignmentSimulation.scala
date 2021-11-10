@@ -16,17 +16,17 @@ class RoleAssignmentSimulation extends Simulation{
   val rampDownDurationMins = 1
   val testDurationMins = 6 //60
 
-  val createCasePeakTarget:Double = 20
-  val createCaseRate: Double = createCasePeakTarget / 600
+  val createCasePeakTarget:Double = 2
+  val createCaseRate: Double = createCasePeakTarget / 70
 
-  val createOrgPeakTarget:Double = 104
-  val createOrgRate: Double = createOrgPeakTarget / 60
+  val createOrgPeakTarget:Double = 2
+  val createOrgRate: Double = createOrgPeakTarget / 70
 
   val getRolesPeakTarget:Double = 10
   val getRolesRate: Double = getRolesPeakTarget / 60
 
   val getRoleAssignmentsByActorPeakTarget:Double = 320
-  val getRoleAssignmentsByActorRate: Double = getRoleAssignmentsByActorPeakTarget / 9
+  val getRoleAssignmentsByActorRate: Double = getRoleAssignmentsByActorPeakTarget / 7
 
   val queryRoleAssignmentsPeakTarget:Double = 20
   val queryRoleAssignmentsRate: Double = queryRoleAssignmentsPeakTarget / 90
