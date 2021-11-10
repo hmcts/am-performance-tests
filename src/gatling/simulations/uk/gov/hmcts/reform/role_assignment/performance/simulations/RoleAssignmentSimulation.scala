@@ -14,10 +14,10 @@ class RoleAssignmentSimulation extends Simulation{
 
   val rampUpDurationMins = 1
   val rampDownDurationMins = 1
-  val testDurationMins = 60 //60
+  val testDurationMins = 6 //60
 
   val createCasePeakTarget:Double = 20
-  val createCaseRate: Double = createCasePeakTarget / 60
+  val createCaseRate: Double = createCasePeakTarget / 600
 
   val createOrgPeakTarget:Double = 104
   val createOrgRate: Double = createOrgPeakTarget / 60
@@ -26,13 +26,13 @@ class RoleAssignmentSimulation extends Simulation{
   val getRolesRate: Double = getRolesPeakTarget / 60
 
   val getRoleAssignmentsByActorPeakTarget:Double = 320
-  val getRoleAssignmentsByActorRate: Double = getRoleAssignmentsByActorPeakTarget / 60
+  val getRoleAssignmentsByActorRate: Double = getRoleAssignmentsByActorPeakTarget / 9
 
   val queryRoleAssignmentsPeakTarget:Double = 20
-  val queryRoleAssignmentsRate: Double = queryRoleAssignmentsPeakTarget / 60
+  val queryRoleAssignmentsRate: Double = queryRoleAssignmentsPeakTarget / 90
 
-  val deleteRoleAssignmentsPeakTarget:Double = 25 // There are 2 queries within this block, hence rate = 25*2
-  val deleteRoleAssignmentsRate: Double = deleteRoleAssignmentsPeakTarget / 60
+  val deleteRoleAssignmentsPeakTarget:Double = 20 // There are 2 queries within this block, hence rate = 25*2
+  val deleteRoleAssignmentsRate: Double = deleteRoleAssignmentsPeakTarget / 300
 
   val enhancedDeletePeakTarget:Double = 40
   val enhancedDeleteRate:Double = enhancedDeletePeakTarget / 2
@@ -82,9 +82,9 @@ class RoleAssignmentSimulation extends Simulation{
 
   val queryRoleAssignmentsScenario = scenario("Query Role Assignments Scenario")
 
-    .feed(caseIdFeederFile)
-    .exec(IDAMHelper.getIdamToken)
-    .exec(S2SHelper.S2SAuthToken)
+    .feed(createFeederFile)
+    // .exec(IDAMHelper.getIdamToken)
+    // .exec(S2SHelper.S2SAuthToken)
     .exec(RA_Scenario.queryRoleAssignments)
 
   val deleteRoleAssignmentsScenario = scenario("Delete Role Assignments Scenario")
@@ -127,9 +127,9 @@ class RoleAssignmentSimulation extends Simulation{
     constantUsersPerSec(getRoleAssignmentsByActorRate) during (testDurationMins minutes),
     rampUsersPerSec(getRoleAssignmentsByActorRate) to (0.00) during (rampDownDurationMins minutes)),
 
-    // queryRoleAssignmentsScenario.inject(rampUsersPerSec(0.00) to (queryRoleAssignmentsRate) during (rampUpDurationMins minutes),
-    // constantUsersPerSec(queryRoleAssignmentsRate) during (testDurationMins minutes),
-    // rampUsersPerSec(queryRoleAssignmentsRate) to (0.00) during (rampDownDurationMins minutes)),
+    queryRoleAssignmentsScenario.inject(rampUsersPerSec(0.00) to (queryRoleAssignmentsRate) during (rampUpDurationMins minutes),
+    constantUsersPerSec(queryRoleAssignmentsRate) during (testDurationMins minutes),
+    rampUsersPerSec(queryRoleAssignmentsRate) to (0.00) during (rampDownDurationMins minutes)),
 
     deleteRoleAssignmentsScenario.inject(rampUsersPerSec(0.00) to (deleteRoleAssignmentsRate) during (rampUpDurationMins minutes),
     constantUsersPerSec(deleteRoleAssignmentsRate) during (testDurationMins minutes),
@@ -152,7 +152,7 @@ class RoleAssignmentSimulation extends Simulation{
   )
   .protocols(httpProtocol)
 
-  // setUp(createRoleAssignmentsOrgScenarioReplaceTrue.inject(rampUsers(5) during (5 seconds))
+  // setUp(queryRoleAssignmentsScenario.inject(rampUsers(1) during (5 seconds))
   // ).protocols(httpProtocol)
 
 }
