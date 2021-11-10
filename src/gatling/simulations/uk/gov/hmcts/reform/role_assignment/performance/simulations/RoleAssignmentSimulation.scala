@@ -14,7 +14,7 @@ class RoleAssignmentSimulation extends Simulation{
 
   val rampUpDurationMins = 1
   val rampDownDurationMins = 1
-  val testDurationMins = 60 //60
+  val testDurationMins = 6 //60
 
   val createCasePeakTarget:Double = 2
   val createCaseRate: Double = createCasePeakTarget / 70
@@ -43,7 +43,7 @@ class RoleAssignmentSimulation extends Simulation{
 
   val createFeederFile: SourceFeederBuilder[String] = csv("create.csv").circular
   val caseIdFeederFile: SourceFeederBuilder[String] = csv("case_ids.csv").circular
-  val actorIdFeederFile: SourceFeederBuilder[String] = csv("actor_ids.csv").circular
+  val actorIdFeederFile: SourceFeederBuilder[String] = csv("role_assignment_202111101353.csv").circular
   // val actorIdFeederFile: SourceFeederBuilder[String] = csv("actor_cache_control_202107081104-V1.0.csv").random
   val assignmentIdFeederFile: SourceFeederBuilder[String] = csv("assignment_ids.csv").circular
   val referencesFeederFile: SourceFeederBuilder[String] = csv("references.csv").circular
