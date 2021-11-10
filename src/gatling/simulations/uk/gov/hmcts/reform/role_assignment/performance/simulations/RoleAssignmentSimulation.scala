@@ -43,7 +43,7 @@ class RoleAssignmentSimulation extends Simulation{
 
   val createFeederFile: SourceFeederBuilder[String] = csv("create.csv").circular
   val caseIdFeederFile: SourceFeederBuilder[String] = csv("case_ids.csv").circular
-  val actorIdFeederFile: SourceFeederBuilder[String] = csv("role_assignment_202111101353.csv").circular
+  val actorIdFeederFile: SourceFeederBuilder[String] = csv("role_assignment_202111101353.csv").random
   // val actorIdFeederFile: SourceFeederBuilder[String] = csv("actor_cache_control_202107081104-V1.0.csv").random
   val assignmentIdFeederFile: SourceFeederBuilder[String] = csv("assignment_ids.csv").circular
   val referencesFeederFile: SourceFeederBuilder[String] = csv("references.csv").circular
@@ -152,7 +152,7 @@ class RoleAssignmentSimulation extends Simulation{
   )
   .protocols(httpProtocol)
 
-  // setUp(queryRoleAssignmentsScenario.inject(rampUsers(1) during (5 seconds))
+  // setUp(getRoleAssignmentsByActorScenario.inject(rampUsers(1) during (5 seconds))
   // ).protocols(httpProtocol)
 
 }
