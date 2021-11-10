@@ -14,7 +14,7 @@ class RoleAssignmentSimulation extends Simulation{
 
   val rampUpDurationMins = 1
   val rampDownDurationMins = 1
-  val testDurationMins = 6 //60
+  val testDurationMins = 60 //60
 
   val createCasePeakTarget:Double = 2
   val createCaseRate: Double = createCasePeakTarget / 70
