@@ -6,6 +6,7 @@ plugins {
     id 'groovy'
     id 'com.gradle.plugin-publish' version '0.12.0'
     id 'maven-publish'
+    id 'org.owasp.dependencycheck' version '8.0.2'
 }
 
 //apply plugin: 'java'
