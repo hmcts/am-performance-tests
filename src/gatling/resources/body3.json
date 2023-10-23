@@ -2,7 +2,7 @@
   "roleRequest":
   {
     "process": "process1",
-    "reference": "${UUID}",
+    "reference": "#{UUID}",
     "assignerId": "ff0d2548-3110-4dc2-957a-a8d3e7ccfc1b",
     "replaceExisting": true
   },
@@ -10,7 +10,7 @@
   [
     {
       "actorIdType": "IDAM",
-      "actorId": "${UUID}",
+      "actorId": "#{UUID}",
       "roleType": "ORGANISATION",
       "roleName": "judge",
       "roleCategory": "JUDICIAL",
@@ -27,7 +27,7 @@
     },
     {
       "actorIdType": "IDAM",
-      "actorId": "${UUID}",
+      "actorId": "#{UUID}",
       "roleType": "ORGANISATION",
       "roleName": "judge",
       "roleCategory": "JUDICIAL",
@@ -44,7 +44,7 @@
     },
     {
       "actorIdType": "IDAM",
-      "actorId": "${UUID}",
+      "actorId": "#{UUID}",
       "roleType": "ORGANISATION",
       "roleName": "judge",
       "roleCategory": "JUDICIAL",
@@ -61,7 +61,7 @@
     },
     {
       "actorIdType": "IDAM",
-      "actorId": "${UUID}",
+      "actorId": "#{UUID}",
       "roleType": "ORGANISATION",
       "roleName": "judge",
       "roleCategory": "JUDICIAL",
@@ -78,7 +78,7 @@
     },
     {
       "actorIdType": "IDAM",
-      "actorId": "${UUID}",
+      "actorId": "#{UUID}",
       "roleType": "ORGANISATION",
       "roleName": "judge",
       "roleCategory": "JUDICIAL",

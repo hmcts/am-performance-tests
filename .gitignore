@@ -8,3 +8,8 @@ target/**
 *.log
 build/*
 .metadata/*
+.settings/*
+bin/*
+.classpath
+.settings/*
+.vscode/*
