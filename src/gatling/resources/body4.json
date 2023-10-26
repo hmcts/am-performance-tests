@@ -10,7 +10,7 @@
   [
     {
       "actorIdType": "IDAM",
-      "actorId": "${UUID}",
+      "actorId": "#{UUID}",
       "roleType": "ORGANISATION",
       "roleName": "judge",
       "roleCategory": "JUDICIAL",
@@ -27,7 +27,7 @@
     },
     {
       "actorIdType": "IDAM",
-      "actorId": "${UUID}",
+      "actorId": "#{UUID}",
       "roleType": "ORGANISATION",
       "roleName": "judge",
       "roleCategory": "JUDICIAL",
@@ -44,7 +44,7 @@
     },
     {
       "actorIdType": "IDAM",
-      "actorId": "${UUID}",
+      "actorId": "#{UUID}",
       "roleType": "ORGANISATION",
       "roleName": "judge",
       "roleCategory": "JUDICIAL",
@@ -61,7 +61,7 @@
     },
     {
       "actorIdType": "IDAM",
-      "actorId": "${UUID}",
+      "actorId": "#{UUID}",
       "roleType": "ORGANISATION",
       "roleName": "judge",
       "roleCategory": "JUDICIAL",
@@ -78,7 +78,7 @@
     },
     {
       "actorIdType": "IDAM",
-      "actorId": "${UUID}",
+      "actorId": "#{UUID}",
       "roleType": "ORGANISATION",
       "roleName": "judge",
       "roleCategory": "JUDICIAL",
@@ -95,7 +95,7 @@
     },
     {
       "actorIdType": "IDAM",
-      "actorId": "${UUID}",
+      "actorId": "#{UUID}",
       "roleType": "ORGANISATION",
       "roleName": "judge",
       "roleCategory": "JUDICIAL",
@@ -112,7 +112,7 @@
     },
     {
       "actorIdType": "IDAM",
-      "actorId": "${UUID}",
+      "actorId": "#{UUID}",
       "roleType": "ORGANISATION",
       "roleName": "judge",
       "roleCategory": "JUDICIAL",
@@ -129,7 +129,7 @@
     },
     {
       "actorIdType": "IDAM",
-      "actorId": "${UUID}",
+      "actorId": "#{UUID}",
       "roleType": "ORGANISATION",
       "roleName": "judge",
       "roleCategory": "JUDICIAL",
@@ -146,7 +146,7 @@
     },
     {
       "actorIdType": "IDAM",
-      "actorId": "${UUID}",
+      "actorId": "#{UUID}",
       "roleType": "ORGANISATION",
       "roleName": "judge",
       "roleCategory": "JUDICIAL",
@@ -163,7 +163,7 @@
     },
     {
       "actorIdType": "IDAM",
-      "actorId": "${UUID}",
+      "actorId": "#{UUID}",
       "roleType": "ORGANISATION",
       "roleName": "judge",
       "roleCategory": "JUDICIAL",
