@@ -72,7 +72,7 @@ object RA_Scenario {
 
     // queries role assignments
     .repeat(50){
-      .exec(http(requestName="AM_060_QueryRoleAssignments")
+      exec(http(requestName="AM_060_QueryRoleAssignments")
         .post("/am/role-assignments/query")
         .header("Authorization", "Bearer #{accessToken}")
         .header("serviceAuthorization", "#{s2sToken}")
