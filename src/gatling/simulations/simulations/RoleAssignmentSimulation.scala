@@ -32,7 +32,7 @@ class RoleAssignmentSimulation extends Simulation{
 	/* ******************************** */
 
   /* PERFORMANCE TEST CONFIGURATION */
-	val roleAssignmentTarget:Double = 100
+	val roleAssignmentTarget:Double = 250
 
   val rampUpDurationMins = 10
 	val rampDownDurationMins = 10
@@ -61,13 +61,9 @@ class RoleAssignmentSimulation extends Simulation{
     .disableCaching
 
   val feederFile = csv("Feeder_file.csv").shuffle.circular
-  val createFeederFile = csv("create.csv").circular
   val caseIdFeederFile = csv("case_ids.csv").circular
   // val actorIdFeederFile = csv("role_assignments.csv").random
   // val actorIdFeederFile = csv("actor_cache_control_202107081104-V1.0.csv").random
-  val assignmentIdFeederFile = csv("assignment_ids.csv").circular
-  val referencesFeederFile = csv("references.csv").circular
-  val processesFeederFile = csv("processes.csv").circular
 
   val roleAssignmentScenario = scenario("Role Assignment Scenario")
     .exitBlockOnFail {

@@ -71,15 +71,17 @@ object RA_Scenario {
     .pause(Environment.thinkTime)
 
     // queries role assignments
-    .exec(http(requestName="AM_060_QueryRoleAssignments")
-      .post("/am/role-assignments/query")
-      .header("Authorization", "Bearer #{accessToken}")
-      .header("serviceAuthorization", "#{s2sToken}")
-      .header("content-type", "application/json")
-      .body(ElFileBody("body2.json"))
-      .check(status.is(200)))
+    .repeat(50){
+      .exec(http(requestName="AM_060_QueryRoleAssignments")
+        .post("/am/role-assignments/query")
+        .header("Authorization", "Bearer #{accessToken}")
+        .header("serviceAuthorization", "#{s2sToken}")
+        .header("content-type", "application/json")
+        .body(ElFileBody("body2.json"))
+        .check(status.is(200)))
 
-    .pause(Environment.thinkTime)
+      .pause(Environment.thinkTime)
+    }
 
     // deletes role assignments
     .exec(http(requestName="AM_070_DeleteRoleAssignments")
