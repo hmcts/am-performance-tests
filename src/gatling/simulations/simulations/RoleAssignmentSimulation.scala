@@ -61,7 +61,7 @@ class RoleAssignmentSimulation extends Simulation{
     .disableCaching
 
   val feederFile = csv("Feeder_file.csv").shuffle.circular
-  val caseIdFeederFile = csv("case_ids.csv").circular
+  
   // val actorIdFeederFile = csv("role_assignments.csv").random
   // val actorIdFeederFile = csv("actor_cache_control_202107081104-V1.0.csv").random
 
@@ -71,7 +71,6 @@ class RoleAssignmentSimulation extends Simulation{
       .exec(IDAMHelper.getIdamToken)
       .exec(S2SHelper.S2SAuthToken)
       .feed(feederFile)
-      .feed(caseIdFeederFile)
       .exec(RA_Scenario.RA_Scenario)
     }
 

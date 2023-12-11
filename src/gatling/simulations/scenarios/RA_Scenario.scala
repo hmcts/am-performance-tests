@@ -8,6 +8,8 @@ object RA_Scenario {
     
   private def UUID(): String = java.util.UUID.randomUUID.toString
 
+  val caseIdFeederFile = csv("case_ids.csv").shuffle.circular
+
   val RA_Scenario = 
 
     exec(_.set("UUID",UUID()))
@@ -72,7 +74,10 @@ object RA_Scenario {
 
     // queries role assignments
     .repeat(50){
-      exec(http(requestName="AM_060_QueryRoleAssignments")
+
+      feed(caseIdFeederFile)
+      
+      .exec(http(requestName="AM_060_QueryRoleAssignments")
         .post("/am/role-assignments/query")
         .header("Authorization", "Bearer #{accessToken}")
         .header("serviceAuthorization", "#{s2sToken}")
