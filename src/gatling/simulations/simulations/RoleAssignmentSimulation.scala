@@ -1,15 +1,16 @@
 package simulations
 
 import com.typesafe.config.{Config, ConfigFactory}
+import io.gatling.commons.stats.assertion.Assertion
 import io.gatling.core.Predef._
-import io.gatling.http.Predef._
+import io.gatling.core.controller.inject.open.OpenInjectionStep
+import io.gatling.core.pause.PauseType
 import io.gatling.core.scenario.Simulation
+import io.gatling.http.Predef._
 import scenarios._
 import scenarios.utils._
+
 import scala.concurrent.duration._
-import io.gatling.core.controller.inject.open.{AtOnceOpenInjection, OpenInjectionStep}
-import io.gatling.commons.stats.assertion.Assertion
-import io.gatling.core.pause.PauseType
 
 class RoleAssignmentSimulation extends Simulation{
 
@@ -21,7 +22,7 @@ class RoleAssignmentSimulation extends Simulation{
 	//set the environment based on the test type
 	val environment = testType match{
 		case "perftest" => "perftest"
-		case "pipeline" => "aat"
+		case "pipeline" => "perftest"
 		case _ => "**INVALID**"
 	}
 
