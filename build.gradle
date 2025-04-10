@@ -1,5 +1,5 @@
 plugins {
-    id 'org.owasp.dependencycheck' version '8.3.1'
+    id 'org.owasp.dependencycheck' version '9.0.9'
     id 'scala'
     id 'java-library'
     id 'io.gatling.gradle' version '3.9.5'
@@ -13,7 +13,7 @@ java {
 
 tasks.withType(JavaExec) {
     // Configure the size of the JVM if necessary
-    jvmArgs = ['-Xms1024m', '-Xmx2048m']
+    // jvmArgs = ['-Xms1024m', '-Xmx2048m']
     /* Use the following args to build a report when a test was terminated
     args = [
         "--reports-only", "fact-20201109092032896",

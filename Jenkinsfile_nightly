@@ -9,7 +9,6 @@ properties([
 
 @Library("Infrastructure") 
 
-def type = "java"
 def product = "am"
 def component = "role-assignment-service"
 
@@ -34,7 +33,7 @@ static LinkedHashMap<String, Object> secret(String secretName, String envVar) {
 withNightlyPipeline("java", product, component) {    
 
     loadVaultSecrets(secrets)
-    enablePerformanceTest()
+    enablePerformanceTest(30)
 
     after('performanceTest') {
         steps.archiveArtifacts allowEmptyArchive: true, artifacts: 'functional-output/**/*'
