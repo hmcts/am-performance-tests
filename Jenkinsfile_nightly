@@ -7,7 +7,7 @@ properties([
         ])
 ])
 
-@Library("Infrastructure@jenkins-alerts-poc")
+@Library("Infrastructure")
 
 def product = "am"
 def component = "role-assignment-service"
