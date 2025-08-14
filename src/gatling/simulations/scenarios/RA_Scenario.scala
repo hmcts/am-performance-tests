@@ -9,10 +9,13 @@ object RA_Scenario {
   private def UUID(): String = java.util.UUID.randomUUID.toString
 
   val caseIdFeederFile = csv("case_ids.csv").shuffle.circular
+  val actorFeeder = csv("Feeder_file.csv").random
 
   val RA_Scenario = 
 
     exec(_.set("UUID",UUID()))
+
+    .feed(actorFeeder)
   
     // posts role assignments from body.json
     .exec(http(requestName="AM_010_PostRoleAssignments")
@@ -62,16 +65,6 @@ object RA_Scenario {
 
     .pause(Environment.thinkTime)
 
-    // gets role assignments by actor
-    .exec(http(requestName="AM_050_GetRoleAssignmentsActor")
-      .get("/am/role-assignments/actors/#{actorId}")
-      .header("Authorization", "Bearer #{accessToken}")
-      .header("serviceAuthorization", "#{s2sToken}")
-      .header("actorId", "${actorId}")
-      .check(status.is(200)))
-
-    .pause(Environment.thinkTime)
-
     // queries role assignments
     .repeat(50){
 
@@ -115,5 +108,22 @@ object RA_Scenario {
   //    .check(status.is(204)))
 
   //  .pause(Environment.thinkTime)
+
+  val getActorById =
+
+    // gets role assignments by actor
+    repeat(100) {
+
+      feed(actorFeeder)
+
+      .exec(http(requestName = "AM_050_GetRoleAssignmentsActor")
+        .get("/am/role-assignments/actors/#{actor_id}")
+        .header("Authorization", "Bearer #{accessToken}")
+        .header("serviceAuthorization", "#{s2sToken}")
+        .header("actorId", "${actor_id}")
+        .check(status.is(200)))
+
+      .pause(Environment.thinkTime)
+  }
 
 }

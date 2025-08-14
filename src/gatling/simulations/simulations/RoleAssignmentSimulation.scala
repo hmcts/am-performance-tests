@@ -34,6 +34,7 @@ class RoleAssignmentSimulation extends Simulation{
 
   /* PERFORMANCE TEST CONFIGURATION */
 	val roleAssignmentTarget:Double = 250
+	val getActorTarget:Double = 500
 
   val rampUpDurationMins = 10
 	val rampDownDurationMins = 10
@@ -71,9 +72,16 @@ class RoleAssignmentSimulation extends Simulation{
       exec(_.set("env", s"${env}"))
       .exec(IDAMHelper.getIdamToken)
       .exec(S2SHelper.S2SAuthToken)
-      .feed(feederFile)
       .exec(RA_Scenario.RA_Scenario)
     }
+
+	val getRoleAssignmentsByActor = scenario("Get Actor by ID Scenario")
+		.exitBlockOnFail{
+			exec(_.set("env", s"${env}"))
+			.exec(IDAMHelper.getIdamToken)
+			.exec(S2SHelper.S2SAuthToken)
+			.exec(RA_Scenario.getActorById)
+		}
 
 	def simulationProfile(simulationType: String, userPerHourRate: Double, numberOfPipelineUsers: Double): Seq[OpenInjectionStep] = {
 		val userPerSecRate = userPerHourRate / 3600
@@ -119,6 +127,7 @@ class RoleAssignmentSimulation extends Simulation{
 
   setUp(
     roleAssignmentScenario.inject(simulationProfile(testType, roleAssignmentTarget, numberOfPipelineUsers)).pauses(pauseOption),
+		getRoleAssignmentsByActor.inject(simulationProfile(testType, getActorTarget, numberOfPipelineUsers)).pauses(pauseOption)
   )
   .protocols(httpProtocol)
   .assertions(assertions(testType))
