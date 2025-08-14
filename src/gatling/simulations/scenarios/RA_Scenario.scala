@@ -112,11 +112,11 @@ object RA_Scenario {
   val getActorById =
 
     // gets role assignments by actor
-    repeat(100) {
+    repeat(200) {
 
       feed(actorFeeder)
 
-      .exec(http(requestName = "AM_050_GetRoleAssignmentsActor")
+      .exec(http(requestName = "AM_050_GetRoleAssignmentsActor_")
         .get("/am/role-assignments/actors/#{actor_id}")
         .header("Authorization", "Bearer #{accessToken}")
         .header("serviceAuthorization", "#{s2sToken}")
