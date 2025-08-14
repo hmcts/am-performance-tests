@@ -34,7 +34,7 @@ class RoleAssignmentSimulation extends Simulation{
 
   /* PERFORMANCE TEST CONFIGURATION */
 	val roleAssignmentTarget:Double = 250
-	val getActorTarget:Double = 1500
+	val getActorTarget:Double = 1400
 
   val rampUpDurationMins = 10
 	val rampDownDurationMins = 10
