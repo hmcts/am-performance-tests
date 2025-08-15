@@ -116,7 +116,7 @@ object RA_Scenario {
 
       feed(actorFeeder)
 
-      .exec(http(requestName = "AM_050_GetRoleAssignmentsActor_")
+      .exec(http(requestName = "AM_050_GetRoleAssignmentsActor")
         .get("/am/role-assignments/actors/#{actor_id}")
         .header("Authorization", "Bearer #{accessToken}")
         .header("serviceAuthorization", "#{s2sToken}")
