@@ -86,7 +86,7 @@ object RA_Scenario {
       .delete("/am/role-assignments/#{assignmentId}")
       .header("Authorization", "Bearer #{accessToken}")
       .header("serviceAuthorization", "#{s2sToken}")
-      .header("assignmentId", "${assignmentId}")
+      .header("assignmentId", "#{assignmentId}")
       .check(status.is(204)))
 
     .pause(Environment.thinkTime)
@@ -120,7 +120,7 @@ object RA_Scenario {
         .get("/am/role-assignments/actors/#{actor_id}")
         .header("Authorization", "Bearer #{accessToken}")
         .header("serviceAuthorization", "#{s2sToken}")
-        .header("actorId", "${actor_id}")
+        .header("actorId", "#{actor_id}")
         .check(status.is(200)))
 
       .pause(Environment.thinkTime)
