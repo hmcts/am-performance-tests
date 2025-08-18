@@ -16,7 +16,7 @@ object Environment {
   val s2sURL = "http://rpe-service-auth-provider-#{env}.service.core-compute-#{env}.internal/testing-support"
   val s2sService = "am_role_assignment_service"
 
-  val thinkTime = 10
+  val thinkTime = 7
 
   val HttpProtocol = http
 
