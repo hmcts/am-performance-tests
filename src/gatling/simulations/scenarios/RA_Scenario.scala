@@ -112,7 +112,7 @@ object RA_Scenario {
   val getActorById =
 
     // gets role assignments by actor
-    repeat(200) {
+    repeat(150) {
 
       feed(actorFeeder)
 
