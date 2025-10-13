@@ -1,0 +1,46 @@
+{
+  "roleRequest": {
+    "assignerId": "84d92c5f-5409-477d-b22d-15d54882ecfe",
+    "process": "S-052",
+    "reference": "S-052",
+    "replaceExisting": "FALSE"
+  },
+  "requestedRoles": [
+    {
+      "actorIdType": "IDAM",
+      "actorId": "#{actorId}",
+      "roleType": "ORGANISATION",
+      "roleName": "judge",
+      "classification": "PUBLIC",
+      "grantType": "STANDARD",
+      "roleCategory": "JUDICIAL",
+      "readOnly": "FALSE",
+      "beginTime": "2025-09-24T00:00+01:00",
+      "endTime": "2026-10-01T00:00+01:00",
+      "attributes": {
+        "contractType": "SALARIED",
+        "jurisdiction": "IA",
+        "region": "north-east"
+      },
+      "authorisations": [
+        "SKILL:AB01:PROCESS_APP_001",
+        "SKILL:AB01:PROCESS_APP_002",
+        "SKILL:AB01:_FOLLOW_UP_OVERDUE_RESPONDENT_EVIDENCE_001",
+        "SKILL:AB01:_FOLLOW_UP_OVERDUE_RESPONDENT_EVIDENCE_002",
+        "SKILL:AB01:_REVIEW_SPECIFIC_ACCESS_001",
+        "SKILL:AB01:_REVIEW_SPECIFIC_ACCESS_002",
+        "SKILL:AB01:_VALIDATE_MANDATORY_TASK_ATTRIBUTES_001",
+        "SKILL:AB01:_VALIDATE_MANDATORY_TASK_ATTRIBUTES_002",
+        "SKILL:AB01:TASK_ATTRIBUTES_DEFAULT_VALUE_001",
+        "SKILL:AB01:TASK_ATTRIBUTES_DEFAULT_VALUE_002"
+      ],
+      "notes": [
+        {
+          "userId": "S-042",
+          "time": "2025-10-01T00:00",
+          "comment": "Setting access for Skills"
+        }
+      ]
+    }
+  ]
+}

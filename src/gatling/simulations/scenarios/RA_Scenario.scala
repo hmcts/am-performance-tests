@@ -10,6 +10,7 @@ object RA_Scenario {
 
   val caseIdFeederFile = csv("case_ids.csv").shuffle.circular
   val actorFeeder = csv("Feeder_file.csv").random
+  val skillsFeeder = csv("SkillsUsers.csv")
 
   val RA_Scenario = 
 
@@ -125,5 +126,21 @@ object RA_Scenario {
 
       .pause(Environment.thinkTime)
   }
+
+  val addRoleAssignment =
+
+    repeat(1) {
+
+      feed(skillsFeeder)
+
+      .exec(http("AM_010_PostRoleAssignments")
+        .post("/am/role-assignments")
+        .header("Authorization", "Bearer #{accessToken}")
+        .header("serviceAuthorization", "#{s2sToken}")
+        .header("content-type", "application/json")
+        .body(ElFileBody("SkillsBody.json"))
+        .check(status.is(201)))
+    }
+
 
 }
