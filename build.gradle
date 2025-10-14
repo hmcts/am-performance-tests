@@ -40,7 +40,6 @@ allprojects {
 
 dependencyCheck {
     suppressionFile = "common/common-performance/owasp/owasp-suppressions.xml"
-    suppressionFile = "config/owasp/suppressions.xml"
     analyzers.assemblyEnabled = false
 }
 
