@@ -32,16 +32,17 @@ static LinkedHashMap<String, Object> secret(String secretName, String envVar) {
 
 withNightlyPipeline("java", product, component) {
 
-    stage('Verify Suppression File') {
-        steps {
-            sh 'ls -la common/common-performance/owasp/owasp-suppressions.xml'
-            sh 'cat common/common-performance/owasp/owasp-suppressions.xml'
-        }
-    }
-    
     loadVaultSecrets(secrets)
     afterAlways('checkout') {
         sh """git submodule update --init --recursive"""
+
+        // Verify suppression file exists and show its contents
+        sh """
+            echo "Checking for suppression file..."
+            ls -la common/common-performance/owasp/owasp-suppressions.xml || echo "File not found!"
+            echo "Suppression file contents:"
+            cat common/common-performance/owasp/owasp-suppressions.xml || echo "Cannot read file!"
+        """
     }
     enablePerformanceTest(timeout=30, perfGatlingAlerts=true, perfRerunOnFail=true)
 
