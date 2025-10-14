@@ -40,7 +40,7 @@ allprojects {
 
 subprojects {
     dependencyCheck {
-        suppressionFile = "${rootProject.projectDir}/config/owasp/suppressions.xml"
+        suppressionFile = "/config/owasp/suppressions.xml"
     }
 }
 
