@@ -34,13 +34,18 @@ dependencies {
     gatlingImplementation project(':common-performance')
 }
 
-dependencyCheck {
-    suppressionFile = "common/common-performance/owasp/owasp-suppressions.xml"
-    analyzers.assemblyEnabled = false
+allprojects {
+    apply plugin: 'org.owasp.dependencycheck'
+}
+
+subprojects {
+    dependencyCheck {
+        suppressionFile = "${rootProject.projectDir}/config/owasp/suppressions.xml"
+    }
 }
 
 dependencyCheck {
-    suppressionFile = "config/owasp/suppressions.xml"
+    suppressionFile = "common/common-performance/owasp/owasp-suppressions.xml"
     analyzers.assemblyEnabled = false
 }
 
