@@ -10,5 +10,4 @@ java {
 
 performance {
     simulationClass = 'simulations.RoleAssignmentSimulation'
-    transactionNamesToGraph = ['']
 }
