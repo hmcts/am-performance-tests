@@ -1,3 +1,7 @@
+pluginManagement {
+    includeBuild('common/common-performance/build-logic')
+}
+
 rootProject.name = 'am-performance' //e.g. 'probate-performance'
 
 include ':common-performance'
