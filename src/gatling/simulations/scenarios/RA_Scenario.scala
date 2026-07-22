@@ -66,7 +66,7 @@ object RA_Scenario {
     .pause(Environment.thinkTime)
 
     // queries role assignments
-    .repeat(50){
+    .repeat(100){
 
       feed(caseIdFeederFile)
       
