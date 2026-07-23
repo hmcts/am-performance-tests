@@ -126,4 +126,17 @@ object RA_Scenario {
       .pause(Environment.thinkTime)
   }
 
+  val deleteCaseRoles =
+
+    feed(actorFeeder)
+
+    .exec(http(requestName="AM_070_DeleteCaseRoleAssignments")
+      .delete("/am/role-assignments/")
+      .header("Authorization", "Bearer #{accessToken}")
+      .header("serviceAuthorization", "#{s2sToken}")
+      .header("accept", "*/*")
+      .check(status.is(204)))
+
+    .pause(Environment.thinkTime)
+
 }
