@@ -33,7 +33,7 @@ class RoleAssignmentSimulation extends Simulation{
 	/* ******************************** */
 
   /* PERFORMANCE TEST CONFIGURATION */
-	val roleAssignmentTarget:Double = 2500
+	val roleAssignmentTarget:Double = 2800
 	val getActorTarget:Double = 2700
 
   val rampUpDurationMins = 10
@@ -76,6 +76,14 @@ class RoleAssignmentSimulation extends Simulation{
     }
 
 	val getRoleAssignmentsByActor = scenario("Get Actor by ID Scenario")
+		.exitBlockOnFail{
+			exec(_.set("env", s"${env}"))
+			.exec(IDAMHelper.getIdamToken)
+			.exec(S2SHelper.S2SAuthToken)
+			.exec(RA_Scenario.getActorById)
+		}
+
+	val clearCaseRolesByActor = scenario("Delete case roles for Actor ID")
 		.exitBlockOnFail{
 			exec(_.set("env", s"${env}"))
 			.exec(IDAMHelper.getIdamToken)
